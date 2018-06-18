@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\MainPagePricesTabs;
 use App\Models\Client;
 use App\Models\Feedback;
+use App\Models\Slider;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,7 @@ class HomeController extends Controller
         $data['pricesTabs'] = MainPagePricesTabs::all()->sortBy('order');
         $data['clients'] = Client::all();
         $data['feedback'] = Feedback::all();
+        $data['slider'] = Slider::all();
 
         return view('home', $data);
     }

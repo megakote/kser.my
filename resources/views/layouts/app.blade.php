@@ -23,7 +23,6 @@
 <div class="wrapper">
 <!-- Header -->
 <header>
-
     <div class="header-row row-1 resp-fixed">
         <div class="row clearfix">
             <div class="left">
@@ -31,11 +30,9 @@
                     <div class="append-elem" data-append-elem="2"></div>
                     <div class="append-elem align-center" data-append-elem="4"></div>
                     <ul class="nav-1 main-nav">
-                        <li><a href="#" class="active">Главная</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Статьи</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Адреса сервисных центров</a></li>
+                        @foreach($menu_header as $item)
+                            <li><a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class="active"' : '' }}>{{ $item->title }}</a></li>
+                        @endforeach
                     </ul>
                     <div class="append-elem align-center" data-append-elem="3"></div>
                 </div>
@@ -89,7 +86,7 @@
             </div>
             <div class="col-3 left">
                 <div class="append-elem" data-append-desktop-elem="3" data-min-screen="768">
-                    <a href="#88001006550" class="tel-link">8(800) 100-65-50</a><br/>
+                    <a href="tel:88001006550" class="tel-link">8(800) 100-65-50</a><br/>
                     <a href="#" class="transparent-pill show_popup" data-popup-name="popup_3">Заказать звонок</a>
                 </div>
             </div>
@@ -193,26 +190,16 @@
             <div class="left clearfix">
                 <div class="col-1">
                     <ul class="seo-text">
-                        <li><a href="#">Заправка картриджей</a></li>
-                        <li><a href="#">Замена картриджа</a></li>
-                        <li><a href="#">Вечный картридж</a></li>
-                        <li><a href="#">Ремонт принтеров</a></li>
-                        <li><a href="#">Обслуживание принтеров</a></li>
-                        <li><a href="#">Ремонт плоттеров</a></li>
-                        <li><a href="#">Покопийное обслуживание</a></li>
-                        <li><a href="#" class="active">Другие услуги</a></li>
+                        @foreach($menu_footer1 as $item)
+                            <li><a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class="active"' : '' }}>{{ $item->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-2">
                     <ul class="seo-text seo-text_2">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Акции</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Статьи</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        @foreach($menu_footer2 as $item)
+                            <li><a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class="active"' : '' }}>{{ $item->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

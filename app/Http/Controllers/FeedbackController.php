@@ -15,7 +15,7 @@ class FeedbackController extends Controller
     public function index()
     {
         $data = [];
-        $data['feedback'] = Feedback::all();
+        $data['feedback'] = Feedback::paginate(15);
 
         return view('feedback', $data);
     }

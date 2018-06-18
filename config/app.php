@@ -172,6 +172,14 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * SleepingOwl Service Providers...
+         */
+        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+        Admin\Providers\AdminSectionsServiceProvider::class,
+
+        App\Providers\ComposerServiceProvider::class,
+
     ],
 
     /*

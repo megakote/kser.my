@@ -4,7 +4,7 @@ namespace App\Providers;
 
 
 use Illuminate\Support\ServiceProvider;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Schema;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         setlocale(LC_TIME, 'ru_RU.utf8');
+        Schema::defaultStringLength(191);
+
     }
 
     /**

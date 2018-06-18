@@ -19,11 +19,11 @@ Route::get('/feedback', 'FeedbackController@index')->name('feedback');
 
 Route::get('/lk', 'NewsController@index')->name('lk');
 
-Route::get('/{slug}', function($slug){
+Route::get('/page/{slug}', function($slug){
 
     $page = App\Models\Page::where('slug', $slug)->first();
 
-    return ($page) ? $page : abort(404);
+    return ($page) ? view('page', $page) : abort(404);
 });
 
 

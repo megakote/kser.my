@@ -21,7 +21,7 @@ use SleepingOwl\Admin\Navigation\Page;
 //
 // AdminSection::addMenuPage(\App\User::class)
 
-return [
+$navigation->setFromArray([
     [
         'title' => 'Dashboard',
         'icon'  => 'fa fa-dashboard',
@@ -32,6 +32,13 @@ return [
         'title' => 'Information',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => route('admin.information'),
+    ],
+
+    [
+        'title' => 'Главная',
+        'icon'  => 'fa fa-exclamation-circle',
+        'url'   => '#',
+        'id'    => 'main_page',
     ],
 
     // Examples
@@ -86,4 +93,4 @@ return [
     //        ]
     //    ]
     // ]
-];
+]);

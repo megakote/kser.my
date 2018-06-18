@@ -8,31 +8,13 @@
             <div class="promo-article clearfix">
                 <div class="left">
                     <div class="promo-slider">
-                        <div class="slide">
-                            <h3>Решим задачу любой сложности</h3>
-                            <p>А широкий спектр услуг позволит вам навсегда забыть о проблемах с печатью</p>
-                            <img src="img/printers.png" alt="" />
-                        </div>
-                        <div class="slide">
-                            <h3>Решим задачу любой сложности 2</h3>
-                            <p>А широкий спектр услуг позволит вам навсегда забыть о проблемах с печатью</p>
-                            <img src="img/printers.png" alt="" />
-                        </div>
-                        <div class="slide">
-                            <h3>Решим задачу любой сложности 3</h3>
-                            <p>А широкий спектр услуг позволит вам навсегда забыть о проблемах с печатью</p>
-                            <img src="img/printers.png" alt="" />
-                        </div>
-                        <div class="slide">
-                            <h3>Решим задачу любой сложности 4</h3>
-                            <p>А широкий спектр услуг позволит вам навсегда забыть о проблемах с печатью</p>
-                            <img src="img/printers.png" alt="" />
-                        </div>
-                        <div class="slide">
-                            <h3>Решим задачу любой сложности 5</h3>
-                            <p>А широкий спектр услуг позволит вам навсегда забыть о проблемах с печатью</p>
-                            <img src="img/printers.png" alt="" />
-                        </div>
+                        @foreach($slider as $slide)
+                            <div class="slide">
+                                <h3>{{ $slide->title }}</h3>
+                                <p>{{ $slide->description }}</p>
+                                <img src="{{ $slide->image }}" alt="{{ $slide->title }}" />
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="right clearfix">
@@ -238,14 +220,14 @@
             <div class="tabs">
                 <div class="tabs-links offset-ziro">
                     @foreach($pricesTabs as $tab)
-                        <label class="tab-link" for="tab_{{ $tab->id }}">$tab->title</label>
+                        <label class="tab-link" for="tab_{{ $tab->id }}">{{ $tab->title }}</label>
                     @endforeach
                 </div>
                 <div class="tabs-content">
                     @foreach($pricesTabs as $tab)
                         <input type="radio" name="tabs" data-title="{{ $tab->title }}" class="radio-tab" id="tab_{{ $tab->id }}">
                         <div class="tab">
-                            {{ $tab->body }}
+                            {!! $tab->body !!}
                         </div>
                     @endforeach
                 </div>
