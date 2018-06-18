@@ -38,6 +38,8 @@ class AdminSectionsServiceProvider extends ServiceProvider {
      */
     public function boot(\SleepingOwl\Admin\Admin $admin) {
 
+        if (\App::runningInConsole())
+            return;
 
         $this->loadViewsFrom(base_path("admin/resources/views"), 'admin');
         $this->registerPolicies('Admin\\Policies\\');
