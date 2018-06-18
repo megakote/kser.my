@@ -11,10 +11,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Client;
+use App\Models\MainPageClient;
 
 
-class Clients extends Section implements Initializable
+class MainPageClients extends Section implements Initializable
 {
     /**
      * @var bool
@@ -40,10 +40,10 @@ class Clients extends Section implements Initializable
         app()->booted(function() {
             $page = \AdminNavigation::getPages()->findById('main_page');
             $page->setPages(function (PageInterface $subpage) {
-                $subpage->addPage(new Page(Client::class))
+                $subpage->addPage(new Page(MainPageClient::class))
                     ->setIcon('fa fa-building')
                     ->setTitle('Клиенты')
-                    ->addBadge(Client::count());
+                    ->addBadge(MainPageClient::count());
             });
         });
     }

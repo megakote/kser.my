@@ -27,7 +27,7 @@ class AdminSectionsServiceProvider extends ServiceProvider {
        'App\Models\MainPagePricesTabs' => 'Admin\Http\Sections\MainPagePricesTabs',
        'App\Models\Page' => 'Admin\Http\Sections\Pages',
        'App\Models\Menu' => 'Admin\Http\Sections\Menus',
-       'App\Models\Client' => 'Admin\Http\Sections\Clients',
+       'App\Models\MainPageClient' => 'Admin\Http\Sections\MainPageClients',
        'App\Models\Slider' => 'Admin\Http\Sections\Sliders',
     ];
 
