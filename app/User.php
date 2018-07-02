@@ -48,4 +48,9 @@ class User extends Authenticatable
             $this->attributes['remember_token'] = null;
         }
     }
+
+    public function client()
+    {
+        return $this->belongsTo(Models\Client::class, '1c_id', 'id');
+    }
 }

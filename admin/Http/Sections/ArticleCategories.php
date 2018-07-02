@@ -11,10 +11,11 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Feedback as FeedbackModel;
+
+use App\Models\ArticleCategory;
 
 
-class Feedback extends Section implements Initializable
+class ArticleCategories extends Section implements Initializable
 {
     /**
      * @var bool
@@ -37,11 +38,19 @@ class Feedback extends Section implements Initializable
      */
     public function initialize()
     {
+        app()->booted(function() {
+            $page = \AdminNavigation::getPages()->findById('articles');
+            $page->setPages(function (PageInterface $subpage) {
+                $subpage->addPage(new Page(ArticleCategory::class))
+                    ->setIcon('fa fa-building')
+                    ->setTitle('Категории');
+            });
+        });
 
-        $this->addToNavigation($priority = 500, function() {
-            return FeedbackModel::count();
-        })->setIcon('fa fa-building');
-        $this->title = 'Отзывы о нас';
+//        $this->addToNavigation($priority = 500, function() {
+//            return ArticleCategory::count();
+//        })->setIcon('fa fa-building');
+//        $this->title = 'Статьи';
     }
 
 
@@ -54,13 +63,9 @@ class Feedback extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::text('name', 'Имя'),
-            AdminColumn::custom('Рейтинг', function ($model){
-                // TODO: добавить вывод в виде звездочек
-                return $model->stars;
-            }),
-            AdminColumn::text('city', 'Из города')
+            AdminColumn::link('title', 'Заголовок')
         );
+
         return $display;
 
     }
@@ -74,10 +79,8 @@ class Feedback extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::image('logo', 'Логотип'),
-            AdminFormElement::text('name', 'Имя')->required(),
-            AdminFormElement::text('city', 'Город')->required(),
-            AdminFormElement::wysiwyg('body', 'Текст')->required()
+            AdminFormElement::text('title', 'Заголовок')->required()->unique(),
+            ($id) ? AdminFormElement::text('slug', 'Короткий URL')->unique() : ''
         ]);
 
         return $display;

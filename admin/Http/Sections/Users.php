@@ -2,6 +2,7 @@
 
 namespace Admin\Http\Sections;
 
+use App\Models\Client;
 use SleepingOwl\Admin\Section;
 use AdminDisplay;
 use AdminColumn;
@@ -11,10 +12,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Feedback as FeedbackModel;
+use App\User;
 
 
-class Feedback extends Section implements Initializable
+class Users extends Section implements Initializable
 {
     /**
      * @var bool
@@ -39,9 +40,9 @@ class Feedback extends Section implements Initializable
     {
 
         $this->addToNavigation($priority = 500, function() {
-            return FeedbackModel::count();
+            return User::count();
         })->setIcon('fa fa-building');
-        $this->title = 'Отзывы о нас';
+        $this->title = 'Юзеры';
     }
 
 
@@ -55,11 +56,12 @@ class Feedback extends Section implements Initializable
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('name', 'Имя'),
-            AdminColumn::custom('Рейтинг', function ($model){
-                // TODO: добавить вывод в виде звездочек
-                return $model->stars;
-            }),
-            AdminColumn::text('city', 'Из города')
+            AdminColumn::text('client.1c_id', 'ИД в 1С'),
+            AdminColumn::text('email', 'Логин'),
+            AdminColumn::text('is_admin', 'админ ?'),
+            AdminColumn::custom('Заявок', function ($model){
+                return $model->client->orders->count();
+            })
         );
         return $display;
 
@@ -74,10 +76,11 @@ class Feedback extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::image('logo', 'Логотип'),
-            AdminFormElement::text('name', 'Имя')->required(),
-            AdminFormElement::text('city', 'Город')->required(),
-            AdminFormElement::wysiwyg('body', 'Текст')->required()
+            AdminFormElement::text('name', 'Имя'),
+            AdminFormElement::text('email', 'Логин')->required(),
+            AdminFormElement::select('1c_id', 'Пользователь 1С')->setModelForOptions(new Client())
+                ->setDisplay('1c_id')->required(),
+            AdminFormElement::checkbox('is_admin', 'админ ?')
         ]);
 
         return $display;

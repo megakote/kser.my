@@ -69,8 +69,8 @@
             <div class="col-2 left">
                 <div class="append-elem" data-append-desktop-elem="2" data-min-screen="768">
                     <div class="search_wrapp">
-                        <form>
-                            <input type="text" placeholder="Поиск по модели, артикулу, производителю и др."/>
+                        <form action="/search">
+                            <input type="text" name="q" placeholder="Поиск по модели, артикулу, производителю и др."/>
                             <button type="button" class="search-btn"></button>
                         </form>
                     </div>

@@ -11,10 +11,11 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Feedback as FeedbackModel;
+use App\Models\Article;
+use App\Models\ArticleCategory;
 
 
-class Feedback extends Section implements Initializable
+class Articles extends Section implements Initializable
 {
     /**
      * @var bool
@@ -37,11 +38,19 @@ class Feedback extends Section implements Initializable
      */
     public function initialize()
     {
+        app()->booted(function() {
+            $page = \AdminNavigation::getPages()->findById('articles');
+            $page->setPages(function (PageInterface $subpage) {
+                $subpage->addPage(new Page(Article::class))
+                    ->setIcon('fa fa-building')
+                    ->setTitle('Статьи');
+            });
+        });
 
-        $this->addToNavigation($priority = 500, function() {
-            return FeedbackModel::count();
-        })->setIcon('fa fa-building');
-        $this->title = 'Отзывы о нас';
+//        $this->addToNavigation($priority = 500, function() {
+//            return Article::count();
+//        })->setIcon('fa fa-building');
+//        $this->title = 'Статьи';
     }
 
 
@@ -54,13 +63,11 @@ class Feedback extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::text('name', 'Имя'),
-            AdminColumn::custom('Рейтинг', function ($model){
-                // TODO: добавить вывод в виде звездочек
-                return $model->stars;
-            }),
-            AdminColumn::text('city', 'Из города')
+            AdminColumn::link('title', 'Заголовок'),
+            AdminColumn::text('category.title', 'Категория'),
+            AdminColumn::datetime('updated_at', 'Обновлено')->setFormat('Y-m-d')
         );
+
         return $display;
 
     }
@@ -74,9 +81,10 @@ class Feedback extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::image('logo', 'Логотип'),
-            AdminFormElement::text('name', 'Имя')->required(),
-            AdminFormElement::text('city', 'Город')->required(),
+            AdminFormElement::text('title', 'Заголовок')->required()->unique(),
+            ($id) ? AdminFormElement::text('slug', 'Короткий URL')->unique() : '',
+            AdminFormElement::select('category_id', 'Категория')->setModelForOptions(new ArticleCategory)
+                ->setDisplay('title')->required(),
             AdminFormElement::wysiwyg('body', 'Текст')->required()
         ]);
 

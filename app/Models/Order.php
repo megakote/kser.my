@@ -3,10 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Order extends Model
 {
-    protected $fillable = ['*'];
+    protected $guarded = [];
+
+    public function setTimeCrAttribute($value)
+    {
+        $this->attributes['time_cr'] = Carbon::parse($value)->format('Y-m-d');
+    }
+
+    public function setExecTimeAttribute($value)
+    {
+        $this->attributes['exec_time'] = Carbon::parse($value)->format('Y-m-d');
+    }
+
+    public function setExecActAttribute($value)
+    {
+        $this->attributes['exec_act'] = Carbon::parse($value)->format('Y-m-d');
+    }
 
     public function setPayAttribute($value)
     {
@@ -20,11 +36,11 @@ class Order extends Model
 
     public function client()
     {
-        $this->belongsTo(Client::class);
+        return $this->belongsTo(Client::class, 'id_client', '1c_id');
     }
 
     public function works()
     {
-        $this->hasMany(RepairWorks::class);
+        return $this->hasMany(RepairWorks::class);
     }
 }

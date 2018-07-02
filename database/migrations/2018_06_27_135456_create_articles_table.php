@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormsTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('forms', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type');
-            $table->string('name')->nullable();
-            $table->string('contact')->nullable();
-            $table->text('comment')->nullable();
-            $table->boolean('exported')->default(false);
+            $table->integer('category_id');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('articles');
     }
 }

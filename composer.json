@@ -15,6 +15,7 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelrus/sleepingowl": "4.*@dev",
+        "nicolaslopezj/searchable": "1.*",
         "league/flysystem-sftp": "^1.0"
     },
     "require-dev": {
@@ -32,7 +33,10 @@
         "psr-4": {
             "App\\": "app/",
             "Admin\\": "admin/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

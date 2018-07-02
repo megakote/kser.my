@@ -7,6 +7,7 @@ $factory->define(App\Models\Feedback::class, function (Faker $faker) {
     return [
         'logo' => 'img/lagis.png',
         'name' => $faker->name,
+        'stars' => rand(1,5),
         'city' => $faker->city,
         'body' => $faker->text,
     ];

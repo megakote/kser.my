@@ -17,6 +17,7 @@ class CreateFeedbackTable extends Migration
             $table->increments('id');
             $table->string('logo')->nullable();
             $table->string('name');
+            $table->enum('stars', [1,2,3,4,5]);
             $table->string('city');
             $table->text('body');
             $table->timestamps();

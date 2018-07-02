@@ -23,6 +23,11 @@ class MenuSeeder extends Seeder
             'url' => '/'
         ]);
         Menu::create([
+            'parent_id' => '1',
+            'title' => 'Статьи',
+            'url' => '/articles'
+        ]);
+        Menu::create([
             'place' => 'footer1',
             'title' => 'Нижнее1',
             'url' => ''

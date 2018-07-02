@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-class News extends Model
+class Article extends Model
 {
     use Sluggable, SearchableTrait;
 
@@ -19,8 +19,8 @@ class News extends Model
          * @var array
          */
         'columns' => [
-            'news.title' => 20,
-            'news.body' => 10,
+            'articles.title' => 20,
+            'articles.body' => 10,
         ]
     ];
 
@@ -31,5 +31,9 @@ class News extends Model
                 'source' => 'title',
             ],
         ];
+    }
+    public function category()
+    {
+        return $this->belongsTo(ArticleCategory::class, 'category_id');
     }
 }

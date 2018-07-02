@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('client_id');
+            $table->string('id_client'); // НОМЕР КЛИЕНТА ИЗ 1С
             $table->string('nomer'); // НОМЕР ЗАЯВКИ В 1С И В Л.К.
             $table->date('time_cr'); // ДАТА СОЗД.ЗАЯВКИ
             $table->integer('id_dop'); // НОМЕР.ДОП.ОФИСА УКАЗАННЫЙ В ЗАЯВКЕ
@@ -31,6 +31,7 @@ class CreateOrdersTable extends Migration
             $table->tinyInteger('ke'); // КПИ (КОЭФФИЦИЕНТ ЭФФЕКТИВНОСТИ ОТ 0 ДО 5)
             $table->string('fio_file'); // КОНТАКТНОЕ ЛИЦО
             $table->string('id_file'); // НОМЕР КЛИЕНТА (В БАЗЕ 1С И В Л.К.) - НЕ ЗНАЮ ЗАЧЕМ ПОВТОРНО ДАЕТСЯ ID КЛИЕНТА
+            $table->boolean('docs_delivery'); //
             $table->boolean('docs_back'); // ПОДПИСАННЫЕ ДОКУМЕНТЫ ВОЗВРАЩЕНЫ НАМ
             $table->string('name_delivery'); // ИМЯ ДОСТАВЩИКА
             $table->string('name_ref'); // ИМЯ ЗАПРАВЩИКА

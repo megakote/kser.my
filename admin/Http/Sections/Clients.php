@@ -11,10 +11,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Form;
+use App\Models\Client;
 
 
-class Forms extends Section implements Initializable
+class Clients extends Section implements Initializable
 {
     /**
      * @var bool
@@ -37,19 +37,11 @@ class Forms extends Section implements Initializable
      */
     public function initialize()
     {
-//        app()->booted(function() {
-//            $page = \AdminNavigation::getPages()->findById('supplier');
-//            $page->setPages(function (PageInterface $subpage) {
-//                $subpage->addPage(new Page(NewsModel::class))
-//                    ->setIcon('fa fa-building')
-//                    ->setTitle('Города');
-//            });
-//        });
 
         $this->addToNavigation($priority = 500, function() {
-            return Form::count();
+            return Client::count();
         })->setIcon('fa fa-building');
-        $this->title = 'Заявки';
+        $this->title = 'Клиенты';
     }
 
 
@@ -62,14 +54,12 @@ class Forms extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::custom('Откуда', function ($model) {
-                return $this->model::TYPE[$model->type];
-            }),
             AdminColumn::text('name', 'Имя'),
-            AdminColumn::text('contact', 'Контакты'),
-            AdminColumn::text('comment', 'Комментарий')
+            AdminColumn::text('1c_id', 'ИД в 1С'),
+            AdminColumn::text('tel', 'Телефон'),
+            AdminColumn::text('manager', 'Менеджер'),
+            AdminColumn::text('user.email', 'Логин на сайте')
         );
-
         return $display;
 
     }

@@ -29,6 +29,11 @@ class AdminSectionsServiceProvider extends ServiceProvider {
        'App\Models\Menu' => 'Admin\Http\Sections\Menus',
        'App\Models\MainPageClient' => 'Admin\Http\Sections\MainPageClients',
        'App\Models\Slider' => 'Admin\Http\Sections\Sliders',
+       'App\Models\Article' => 'Admin\Http\Sections\Articles',
+       'App\Models\ArticleCategory' => 'Admin\Http\Sections\ArticleCategories',
+       'App\Models\Order' => 'Admin\Http\Sections\Orders',
+       'App\Models\Client' => 'Admin\Http\Sections\Clients',
+       'App\User' => 'Admin\Http\Sections\Users',
     ];
 
     /**

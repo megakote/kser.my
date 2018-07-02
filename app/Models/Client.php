@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    protected $guarded = [];
+
     public function orders(){
-        $this->hasMany(Order::class);
+        return $this->hasMany(Order::class, 'id_client');
     }
+
+    public function user(){
+        return $this->hasOne(\App\User::class, '1c_id', 'id');
+    }
+
+
 }

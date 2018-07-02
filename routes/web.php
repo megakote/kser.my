@@ -10,14 +10,26 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 
+
+
+
+Route::get('/get', function () {
+//    dispatch(new App\Jobs\Parsers\GetUsers());
+    dispatch(new App\Jobs\Export\PutForms());
+return;
+});
+Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/articles', 'ArticlesController@index')->name('articles');
 Route::get('/feedback', 'FeedbackController@index')->name('feedback');
 
 
 Route::get('/lk', 'NewsController@index')->name('lk');
+
+
+Route::get('/search', 'SearchController@index')->name('search');
 
 Route::get('/page/{slug}', function($slug){
 

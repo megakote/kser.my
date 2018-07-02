@@ -29,16 +29,17 @@ $navigation->setFromArray([
     ],
 
     [
-        'title' => 'Information',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => route('admin.information'),
-    ],
-
-    [
         'title' => 'Главная',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => '#',
         'id'    => 'main_page',
+    ],
+
+    [
+        'title' => 'Статьи',
+        'icon'  => 'fa fa-exclamation-circle',
+        'url'   => '#',
+        'id'    => 'articles',
     ],
 
     // Examples
