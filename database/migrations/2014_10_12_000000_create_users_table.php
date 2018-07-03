@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('1c_id')->nullable(); //  НОМЕР КЛИЕНТА (В БАЗЕ 1С)
+            $table->string('id_1c')->nullable(); //  НОМЕР КЛИЕНТА (В БАЗЕ 1С)
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();

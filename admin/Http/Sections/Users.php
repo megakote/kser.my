@@ -56,7 +56,10 @@ class Users extends Section implements Initializable
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('name', 'Имя'),
-            AdminColumn::text('client.1c_id', 'ИД в 1С'),
+            AdminColumn::custom('ИД в 1С', function ($model) {
+                return ($model->client) ? $model->id_1c : '';
+            }),
+            AdminColumn::text('client.id_1c', 'ИД в 1С'),
             AdminColumn::text('email', 'Логин'),
             AdminColumn::text('is_admin', 'админ ?'),
             AdminColumn::custom('Заявок', function ($model){
@@ -78,8 +81,8 @@ class Users extends Section implements Initializable
         $display->addBody([
             AdminFormElement::text('name', 'Имя'),
             AdminFormElement::text('email', 'Логин')->required(),
-            AdminFormElement::select('1c_id', 'Пользователь 1С')->setModelForOptions(new Client())
-                ->setDisplay('1c_id')->required(),
+            AdminFormElement::select('id_1c', 'Пользователь 1С')->setModelForOptions(new Client())
+                ->setDisplay('id_1c')->required(),
             AdminFormElement::checkbox('is_admin', 'админ ?')
         ]);
 

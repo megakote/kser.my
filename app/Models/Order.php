@@ -36,7 +36,7 @@ class Order extends Model
 
     public function client()
     {
-        return $this->belongsTo(Client::class, 'id_client', '1c_id');
+        return $this->belongsTo(Client::class, 'id_client', 'id_1c');
     }
 
     public function works()

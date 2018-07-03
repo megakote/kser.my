@@ -18,9 +18,6 @@ class GetUsers implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $files;
-    private $lastParse;
-
     /**
      * Create a new job instance.
      *
@@ -28,9 +25,7 @@ class GetUsers implements ShouldQueue
      */
     public function __construct()
     {
-        $directory = env('FILES_EXCHANGE') . 'users';
-        $this->files = Storage::files($directory);
-        $this->lastParse = Config::firstorNew(['name' => 'lastParseUsers']);
+
     }
 
     /**
@@ -40,13 +35,19 @@ class GetUsers implements ShouldQueue
      */
     public function handle()
     {
-        foreach ($this->files as $file) {
-            if (Storage::lastModified($file) > $this->lastParse->value)
+        $directory = env('FILES_EXCHANGE') . 'users';
+        $files = Storage::files($directory);
+        $lastParse = Config::firstOrNew(['name' => 'lastParseUsers']);
+
+        foreach ($files as $file) {
+            if (Storage::lastModified($file) > $lastParse->value){
+
                 $this->parse($file);
+            }
         }
 
-        $this->lastParse->value = time();
-        $this->lastParse->save();
+        $lastParse->value = time();
+        $lastParse->save();
     }
 
     private function parse($file)
@@ -54,7 +55,7 @@ class GetUsers implements ShouldQueue
         $xml = Storage::get($file);
         $user = new SimpleXMLElement($xml);
 
-        $client = Client::firstOrNew(['1c_id' => $user->clent->id_clent]);
+        $client = Client::firstOrNew(['id_1c' => $user->clent->id_clent]);
 
         $arr = [
             'name'=> $user->clent->name_clent,

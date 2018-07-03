@@ -19,9 +19,6 @@ class GetOrders implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $files;
-    private $lastParse;
-
     /**
      * Create a new job instance.
      *
@@ -29,9 +26,7 @@ class GetOrders implements ShouldQueue
      */
     public function __construct()
     {
-        $directory = env('FILES_EXCHANGE') . 'orders';
-        $this->files = Storage::files($directory);
-        $this->lastParse = Config::firstorNew(['name' => 'lastParseOrders']);
+
     }
 
     /**
@@ -41,13 +36,17 @@ class GetOrders implements ShouldQueue
      */
     public function handle()
     {
-        foreach ($this->files as $file) {
-            if (Storage::lastModified($file) > $this->lastParse->value)
+        $directory = env('FILES_EXCHANGE') . 'orders';
+        $files = Storage::files($directory);
+        $lastParse = Config::firstOrNew(['name' => 'lastParseOrders']);
+
+        foreach ($files as $file) {
+            if (Storage::lastModified($file) > $lastParse->value)
                 $this->parse($file);
         }
 
-        $this->lastParse->value = time();
-        $this->lastParse->save();
+        $lastParse->value = time();
+        $lastParse->save();
 
     }
 

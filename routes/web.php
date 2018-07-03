@@ -15,15 +15,17 @@
 
 
 Route::get('/get', function () {
-//    dispatch(new App\Jobs\Parsers\GetUsers());
-    dispatch(new App\Jobs\Export\PutForms());
-return;
+    dispatch(new App\Jobs\Parsers\GetUsers());
+    dispatch(new App\Jobs\Parsers\GetOrders());
+//    dispatch(new App\Jobs\Export\PutForms());
+    return;
 });
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/news', 'NewsController@index')->name('news');
-Route::get('/articles', 'ArticlesController@index')->name('articles');
+Route::get('/articles/{slug?}', 'ArticlesController@index')->name('articles');
 Route::get('/feedback', 'FeedbackController@index')->name('feedback');
+Route::post('/feedback/add', 'FeedbackController@store')->name('feedback.add');
 
 
 Route::get('/lk', 'NewsController@index')->name('lk');

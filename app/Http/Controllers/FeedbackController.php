@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+use App\Models\Form;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -16,18 +17,16 @@ class FeedbackController extends Controller
     {
         $data = [];
         $data['feedback'] = Feedback::paginate(15);
+        $data['all'] = Feedback::all()->count();
+        $data['arithmetic'] = Feedback::all()->avg('stars');
+        $stars = [];
+        foreach (Feedback::all()->groupBy('stars') as $star => $collection) {
+            $stars[$star] = ['count' => $collection->count(), 'percent' => ($collection->count() * 100) / $data['all'] ];
 
+        }
+        krsort($stars);
+        $data['stars'] = $stars;
         return view('feedback', $data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -38,51 +37,14 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Form::create([
+            'type' => 7,
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'comment' => $request->body,
+
+        ]);
+        return redirect()->back()->with('status', 'Отзыв добавлен');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Feedback  $feedback
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Feedback $feedback)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Feedback  $feedback
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Feedback $feedback)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Feedback  $feedback
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Feedback $feedback)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Feedback  $feedback
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Feedback $feedback)
-    {
-        //
-    }
 }

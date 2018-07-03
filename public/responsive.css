@@ -209,6 +209,14 @@
 
 	/*-- /Section 5 - Main Page --*/
 
+	/*-- Section 1 Blog --*/
+
+	.thumb-6 {
+	    width: calc(50% - 30px);
+	}
+
+	/*-- /Section 1 Blog --*/
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -256,6 +264,34 @@
 	}
 
 	/*-- /Section 5 - Main Page --*/
+
+	/*-- Section 1 Blog --*/
+
+	.filters_templ .col-1 {
+	    width: 50%;
+	}
+
+	.filters_templ .col-2 {
+	    width: 100%;
+	}
+
+	/*-- /Section 1 Blog --*/
+
+	/*-- Section 1 Reviews --*/
+
+	.two-cols_templ > .left {
+	    width: 37%;
+	}
+
+	.two-cols_templ > .right {
+	    width: 63%;
+	}
+
+	.testimonials .testimonial {
+	    width: 48%;
+	}
+
+	/*-- /Section 1 Reviews --*/
 
 	/*-- Footer --*/
 
@@ -346,6 +382,24 @@
 	}
 
 	/*-- /Section 7 - Main Page --*/
+
+	/*-- Section 1 Reviews --*/
+
+	.two-cols_templ {
+	    margin: 0;
+	}
+
+	.two-cols_templ > .left {
+	    width: 100%;
+	    padding: 10px 0;
+	}
+
+	.two-cols_templ > .right {
+	    width: 100%;
+	    padding: 10px 0;
+	}
+
+	/*-- /Section 1 Reviews --*/
 
 	/*-- Footer --*/
 
@@ -599,6 +653,33 @@
 
 	/*-- /Section 9 - Main Page --*/
 
+	/*-- Section 1 Blog --*/
+
+	.filters_templ .col-1 {
+	    width: 100%;
+	}
+
+	/*-- /Section 1 Blog --*/
+
+	/*-- Section 1 Reviews --*/
+
+	.testimonial-thumbs_wrapp {
+	    padding: 36px 0 0 0;
+	}
+
+	.testimonials {
+	    margin: 14px 0 6px 0;
+	}
+
+	.testimonials .testimonial {
+	    width: 100%;
+	    min-height: auto;
+	    margin: 15px 0;
+	}
+
+	/*-- /Section 1 Reviews --*/
+
+
 	/*-- Popups --*/
 
 	.sliding-header .cell-1 {
@@ -618,6 +699,41 @@
 	}
 
 	/*-- /Popups --*/
+
+}
+
+@media only screen and (max-width: 700px) {
+
+	/*-- Section 1 Blog --*/
+
+	.thumbnails_6 {
+	    margin: 0;
+	}
+
+	.thumb-6 {
+	    width: 100%;
+	    margin: 5px 0;
+	}
+
+	/*-- /Section 1 Blog --*/
+
+	/*-- Section 1 Reviews --*/
+
+	.review_form > .left {
+	    width: 100%;
+	    padding: 1px 0;
+	}
+
+	.review_form > .right {
+	    width: 100%;
+	    padding: 1px 0;
+	}
+
+	.review_form > .right .input_wrapp:nth-child(1) {
+	    margin-top: 0;
+	}
+
+	/*-- /Section 1 Reviews --*/
 
 }
 
@@ -837,6 +953,51 @@
 	}
 
 	/*-- /Section 7 - Main Page --*/
+
+	/*-- Section 1 Blog --*/
+
+	.filters_wrapp {
+		margin-top: 26px;
+	    padding: 21px 4% 17px 4%;
+	}
+
+	.filters_wrapp .input_wrapp {
+	    margin: 10px 0;
+	}
+
+	.thumb-6 .description h3 {
+	    min-height: auto;
+	    padding: 2px 0;
+	    font-size: 15px;
+	    line-height: 17px;
+	}
+
+	.thumb-6 .description p {
+	    padding: 2px 0;
+	}
+
+	.pagination li a.arrow {
+	    margin: 0;
+	}
+
+	.pagination li a {
+	    min-width: 19px;
+	    padding: 1px 1%;
+	}
+
+	/*-- /Section 1 Blog --*/
+
+	/*-- Section 1 Reviews --*/
+
+	.rat .add-rating {
+	    width: 100%;
+	}
+
+	.rat_line {
+	    width: 80%;
+	}
+
+	/*-- /Section 1 Reviews --*/
 
 	/*-- Footer --*/
 

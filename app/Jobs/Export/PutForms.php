@@ -16,7 +16,6 @@ class PutForms implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $forms = [];
     private $text = <<<XML
 <?xml version="1.0" encoding="WINDOWS-1251"?>
 <data>
@@ -35,7 +34,7 @@ XML;
      */
     public function __construct()
     {
-        $this->forms =  Form::where('exported', false)->all()->take(5);
+
     }
 
     /**
@@ -45,7 +44,9 @@ XML;
      */
     public function handle()
     {
-        foreach ($this->forms as $form) {
+        $forms =  Form::where('exported', false)->get();
+
+        foreach ($forms as $form) {
             $this->export($form);
 
             $form->exported = true;

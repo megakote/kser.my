@@ -36,4 +36,10 @@ class Article extends Model
     {
         return $this->belongsTo(ArticleCategory::class, 'category_id');
     }
+
+    public function getUrlAttribute()
+    {
+        return '/articles/' . $this->category->slug . '/' . $this->slug;
+//        return '/articles/' . $this->category->slug . '/' . $this->slug;
+    }
 }

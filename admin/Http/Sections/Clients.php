@@ -55,7 +55,7 @@ class Clients extends Section implements Initializable
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('name', 'Имя'),
-            AdminColumn::text('1c_id', 'ИД в 1С'),
+            AdminColumn::text('id_1c', 'ИД в 1С'),
             AdminColumn::text('tel', 'Телефон'),
             AdminColumn::text('manager', 'Менеджер'),
             AdminColumn::text('user.email', 'Логин на сайте')

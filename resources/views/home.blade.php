@@ -399,41 +399,4 @@
     </section>
 
     <!-- /Section 8 - Main Page -->
-
-    <!-- Section 9 - Main Page -->
-
-    <section class="sect-9 grad-bg_2">
-        <div class="row">
-            <h2 class="white">Нужна консультация?<br /> Мы перезвоним в течение 5 минут</h2>
-            <div class="callback-form_wrapp">
-                <form class="form">
-                    <input type="hidden" name="type" value="4">
-                    <div class="callback-form clearfix">
-                        <div class="left">
-                            <div class="input_wrapp">
-                                <i class="user-3"></i>
-                                <input type="text" name="name" placeholder="Имя*">
-                            </div>
-                            <div class="input_wrapp">
-                                <i class="phone-2"></i>
-                                <input type="text" name="contact" placeholder="Номер телефона или e-mail*">
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="input_wrapp">
-                                <i class="doc-3"></i>
-                                <textarea name="comment" placeholder="Текст вопроса "></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="submit_wrapp align-center">
-                        <button type="submit" class="yellow-pill">Отправить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- /Section 9 - Main Page -->
-
 @endsection

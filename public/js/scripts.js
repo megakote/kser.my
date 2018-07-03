@@ -46,6 +46,8 @@ $(window).load(function() {
     //     }
     // });
 
+    getSelectWidth();
+
 });
 
 $(window).resize(function() {
@@ -64,6 +66,8 @@ $(window).resize(function() {
     //         $( this ).find(".tooltip").attr("style", "left: "+ leftCoord +"px");
     //     }
     // });
+
+    getSelectWidth();
 
 });
 
@@ -359,5 +363,19 @@ function getTooltipPosition() {
     //         $( this ).find(".tooltip").attr("style", "left: "+ leftCoord +"px");
     //     }
     // });
+
+}
+
+function getSelectWidth() {
+
+    $("select").each(function() {
+
+        parentBlock = $(this).closest(".select_wrapp");
+
+        parentBlock.find(".select2-container").css({
+            "width" : parentBlock.width() + "px"
+        });
+
+    });
 
 }

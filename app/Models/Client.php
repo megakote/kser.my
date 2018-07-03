@@ -13,7 +13,7 @@ class Client extends Model
     }
 
     public function user(){
-        return $this->hasOne(\App\User::class, '1c_id', 'id');
+        return $this->hasOne(\App\User::class, 'id_1c', 'id');
     }
 
 
