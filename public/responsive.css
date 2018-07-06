@@ -456,6 +456,10 @@
 		display: none !important;
 	}
 
+	.desk-novisible {
+	    display: block;
+	}
+
 	/*-- Header --*/
 
 	.header-row.row-1 .left {
@@ -679,6 +683,33 @@
 
 	/*-- /Section 1 Reviews --*/
 
+	/*-- Section 1 Cabinet --*/
+
+	.input_wrapp_2 .col-1 {
+	    width: 178px;
+	}
+
+	.input_wrapp_4 .col-1 {
+	    width: 89px;
+	}
+
+	.table-4 .cell-1 {
+	    width: 64%;
+	}
+
+	.table-4 .cell-2 {
+	    width: 12%;
+	}
+
+	.table-4 .cell-3 {
+	    width: 12%;
+	}
+
+	.table-4 .cell-4 {
+	    width: 12%;
+	}
+
+	/*-- /Section 1 Cabinet --*/
 
 	/*-- Popups --*/
 
@@ -699,6 +730,129 @@
 	}
 
 	/*-- /Popups --*/
+
+}
+
+@media only screen and (max-width: 730px) {
+
+	.novisible-730 {
+		display: none !important;
+	}
+
+	/*-- Section 1 Cabinet --*/
+
+	.two-cols-templ_2 .left {
+	    width: 100%;
+	    float: none;
+	    padding: 15px 0;
+	}
+
+	.two-cols-templ_2 .right {
+	    width: 100%;
+	    float: none;
+	    text-align: center;
+	    padding: 15px 0;
+	}
+
+	.search2_wrapp {
+	    max-width: 100%;
+	}
+
+	.sort_wrapp {
+		margin: 23px 0;
+	    padding: 6px 5px;
+	}
+
+	.sort_wrapp .inner .left {
+	    width: 100%;
+	    float: none;
+	    padding: 0;
+	    text-align: left;
+	}
+
+	.sort_wrapp .inner .right {
+	    width: 100%;
+	    float: none;
+	    padding: 0;
+	    text-align: left;
+	} 
+
+	.two-cols-templ_2 .right .orange_link {
+		margin: 0;
+	}
+
+	.input_wrapp_2,
+	.input_wrapp_3,
+	.input_wrapp_4 {
+		display: block;
+		max-width: 100%;
+	}
+
+	.input_wrapp_2 .col-1 {
+	    width: 100%;
+	    display: block;
+	    padding-top: 0;
+	    padding-bottom: 5px;
+	}
+
+	.input_wrapp_2 .col-2 {
+	    width: 100%;
+	    display: block;
+	}
+
+	.input_wrapp_3 .col-1 {
+	    width: 100%;
+	    display: block;
+	    padding-top: 0;
+	    padding-bottom: 5px;
+	}
+
+	.input_wrapp_3 .col-2 {
+	    width: 100%;
+	    display: block;
+	}
+
+	.input_wrapp_4 .col-1 {
+	    width: 100%;
+	    display: block;
+	    padding-top: 0;
+	    padding-bottom: 5px;
+	}
+
+	.input_wrapp_4 .col-2 {
+	    width: 100%;
+	    display: block;
+	}
+
+	.table_2 {
+		display: none;
+	}
+
+	.orders_wrapp {
+	    display: block;
+	}
+
+	.order_wrapp:last-child {
+	    margin: 0;
+	}
+
+	.orders_active {
+	    display: block;
+	}
+
+	.two-cols-templ_3 .left {
+	    width: 100%;
+	    float: none;
+	    padding: 6px 0;
+	}
+
+	.two-cols-templ_3 .right {
+	    width: 100%;
+	    float: none;
+	    padding: 6px 0;
+	}	
+
+	/*-- /Section 1 Cabinet --*/
 
 }
 
@@ -998,6 +1152,61 @@
 	}
 
 	/*-- /Section 1 Reviews --*/
+
+	/*-- Section 1 Cabinet --*/
+
+	.search2_wrapp input {
+	    padding: 0 113px 0 18px;
+	}
+
+	.submit_2 {
+	    min-width: 102px;
+	}
+
+	.submit_2 i {
+	    margin-right: 11px;
+	}
+
+	.wrapp_2 {
+	    padding: 15px 5px 17px 5px;
+	}
+
+	.table-3 {
+	    display: block;
+	    margin: 0 0 5px 0;
+	}
+
+	.table-3 .cell-1 {
+		display: inline-block;
+		vertical-align: top;
+	    width: auto;
+	    padding-bottom: 0;
+	}
+
+	.table-3 .cell-2 {
+		display: inline-block;
+		vertical-align: top;
+	    width: auto;
+	}
+
+	.table-3 .cell-1 p {
+	    padding: 0;
+	}
+
+	.table-3_3 {
+	    margin: 20px 0 16px 0;
+	}
+
+	.table-3_3 .cell-1 {
+		width: 100%;
+		padding-bottom: 5px;
+	}
+
+	.table-3_3 .cell-2 {
+		width: 100%;
+	}
+
+	/*-- /Section 1 Cabinet --*/
 
 	/*-- Footer --*/
 

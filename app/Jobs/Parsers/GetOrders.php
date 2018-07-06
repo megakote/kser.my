@@ -55,9 +55,16 @@ class GetOrders implements ShouldQueue
         $xml = Storage::get($file);
         $order_xml = new SimpleXMLElement($xml);
         foreach ($order_xml->order as $order) {
+            $works = $order->items_zz;
+            if ($order->items_zz) {
+                $this->addJobs($order->items_zz);
+            }
             $arr = $this->makeArray($order);
             $order = Order::firstOrNew(["nomer" => $arr['nomer']]);
             $order->fill($arr)->save();
+
+            if ($works)
+                $this->addJobs($works, $order);
         }
     }
 
@@ -70,5 +77,10 @@ class GetOrders implements ShouldQueue
 
         $arr = array_diff_key($arr, ['models' =>'', 'summ_z'  =>'', 'dost_z'  =>'', 'items_z'  =>'', 'items_zz'  =>'', 'items_zapravka' => '', 'model_z' => '']);
         return $arr;
+    }
+
+    private function addJobs($works, $order)
+    {
+
     }
 }

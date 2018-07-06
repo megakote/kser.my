@@ -34,17 +34,6 @@ var rightCoord;
 $(window).load(function() {
 
     getAdaptivePositionElements();
-    // getTooltipPosition();
-    // $(".thumbnails_1 .thumb-1").each(function() {
-    //     thumbCenterCoord = $(this).outerWidth() / 2;
-    //     tootipCenterCoord = $( this ).find(".tooltip").outerWidth() / 2;
-    //     leftCoord = -(tootipCenterCoord - thumbCenterCoord);
-    //     if($( this ).find(".tooltip").offset().left + $( this ).find(".tooltip").outerWidth() > $(window).width() ) {
-    //         $( this ).find(".tooltip").attr("style", "left: unset; right: 0;");
-    //     } else {
-    //         $( this ).find(".tooltip").attr("style", "left: "+ leftCoord +"px");
-    //     }
-    // });
 
     getSelectWidth();
 
@@ -55,17 +44,6 @@ $(window).resize(function() {
     bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
     
     getAdaptivePositionElements();
-    // getTooltipPosition();
-    // $(".thumbnails_1 .thumb-1").each(function() {
-    //     thumbCenterCoord = $(this).outerWidth() / 2;
-    //     tootipCenterCoord = $( this ).find(".tooltip").outerWidth() / 2;
-    //     leftCoord = -(tootipCenterCoord - thumbCenterCoord);
-    //     if($( this ).find(".tooltip").offset().left + $( this ).find(".tooltip").outerWidth() > $(window).width() ) {
-    //         $( this ).find(".tooltip").attr("style", "left: unset; right: 0;");
-    //     } else {
-    //         $( this ).find(".tooltip").attr("style", "left: "+ leftCoord +"px");
-    //     }
-    // });
 
     getSelectWidth();
 
@@ -131,6 +109,7 @@ $(document).ready(function() {
     // -------------------------
 
     $("input[type='tel']").mask("+7 (999) 999-99-99");
+    $(".date_input").mask("99.99.9999");
 
     // -------------------------------
 
@@ -344,25 +323,6 @@ function getAdaptivePositionElements() {
         }
 
     });
-
-}
-
-function getTooltipPosition() {
-
-    // var thumbCenterCoord;
-    // var tootipCenterCoord;
-    // var leftCoord;
-
-    // $(".thumbnails_1 .thumb-1").each(function() {
-    //     thumbCenterCoord = $(this).outerWidth() / 2;
-    //     tootipCenterCoord = $( this ).find(".tooltip").outerWidth() / 2;
-    //     leftCoord = -(tootipCenterCoord - thumbCenterCoord);
-    //     if($( this ).find(".tooltip").offset().left + $( this ).find(".tooltip").outerWidth() > $(window).width() ) {
-    //         $( this ).find(".tooltip").attr("style", "left: unset; right: 0;");
-    //     } else {
-    //         $( this ).find(".tooltip").attr("style", "left: "+ leftCoord +"px");
-    //     }
-    // });
 
 }
 

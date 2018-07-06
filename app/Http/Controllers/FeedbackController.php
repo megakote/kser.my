@@ -38,7 +38,7 @@ class FeedbackController extends Controller
     public function store(Request $request)
     {
         Form::create([
-            'type' => 7,
+            'type' => 9,
             'name' => $request->name,
             'contact' => $request->contact,
             'comment' => $request->body,

@@ -28,7 +28,7 @@ Route::get('/feedback', 'FeedbackController@index')->name('feedback');
 Route::post('/feedback/add', 'FeedbackController@store')->name('feedback.add');
 
 
-Route::get('/lk', 'NewsController@index')->name('lk');
+Route::get('/lk', 'LkController@index')->name('lk');
 
 
 Route::get('/search', 'SearchController@index')->name('search');

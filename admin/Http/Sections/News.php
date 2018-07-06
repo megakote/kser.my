@@ -78,8 +78,9 @@ class News extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-
+            AdminColumn::image('img', 'Изображение'),
             AdminFormElement::text('title', 'Заголовок')->required()->unique(),
+            AdminFormElement::text('description', 'Описание')->required(),
             AdminFormElement::wysiwyg('body', 'Тело новости')->required()
         ]);
 

@@ -32,4 +32,9 @@ class News extends Model
             ],
         ];
     }
+
+    public function getUrlAttribute()
+    {
+        return '/news/' . $this->slug;
+    }
 }
