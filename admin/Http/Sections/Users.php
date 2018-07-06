@@ -3,6 +3,7 @@
 namespace Admin\Http\Sections;
 
 use App\Models\Client;
+use phpDocumentor\Reflection\Types\Null_;
 use SleepingOwl\Admin\Section;
 use AdminDisplay;
 use AdminColumn;
@@ -56,14 +57,11 @@ class Users extends Section implements Initializable
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('name', 'Имя'),
-            AdminColumn::custom('ИД в 1С', function ($model) {
-                return ($model->client) ? $model->id_1c : '';
-            }),
             AdminColumn::text('client.id_1c', 'ИД в 1С'),
             AdminColumn::text('email', 'Логин'),
             AdminColumn::text('is_admin', 'админ ?'),
             AdminColumn::custom('Заявок', function ($model){
-                return $model->client->orders->count();
+                return ($model->client) ? $model->client->orders->count() : '-';
             })
         );
         return $display;

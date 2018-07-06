@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/form', 'FormController@post');
+Route::post('/form', 'FormController@addForm');
+Route::post('/work-status', 'FormController@workStatus');

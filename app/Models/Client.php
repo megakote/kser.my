@@ -9,7 +9,7 @@ class Client extends Model
     protected $guarded = [];
 
     public function orders(){
-        return $this->hasMany(Order::class, 'id_client');
+        return $this->hasMany(Order::class, 'id_client', 'id_1c');
     }
 
     public function user(){

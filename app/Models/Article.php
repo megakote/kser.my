@@ -39,7 +39,7 @@ class Article extends Model
 
     public function getUrlAttribute()
     {
-        return '/articles/' . $this->category->slug . '/' . $this->slug;
+        return '/articles/' . $this->slug;
 //        return '/articles/' . $this->category->slug . '/' . $this->slug;
     }
 }

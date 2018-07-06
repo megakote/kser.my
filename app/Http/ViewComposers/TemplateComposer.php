@@ -3,8 +3,10 @@
 namespace App\Http\ViewComposers;
 
 use App\Models\Menu;
+use App\Models\Order;
 use Cache;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class TemplateComposer
 {
@@ -41,5 +43,11 @@ class TemplateComposer
             return Menu::where('place', 'footer2')->first()->descendants()->defaultOrder()->where('active', true)->get();
         });
         $view->with('menu_footer2', $menu_footer2);
+
+//        Законсервировано до лучших времен
+//        if (request()->order_id) {
+//            $order = Order::where('nomer', request()->order_id)->first();
+//            $view->with('order', $order);
+//        }
     }
 }

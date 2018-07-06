@@ -8,6 +8,7 @@ use App\Models\MainPagePricesTabs;
 use App\Models\MainPageClient;
 use App\Models\Feedback;
 use App\Models\Slider;
+use App\Models\Order;
 
 class HomeController extends Controller
 {

@@ -293,104 +293,57 @@
                 <h3>Узнать статус<br/> заказа</h3>
                 <p>Узнайте, на каком этапе находится ремонт вашей техники! Просто введите серийный номер, который
                     указано в сервисной квитанции</p>
+                <p id="WorkStatusError"></p>
             </div>
             <div class="popup-form">
                 <div class="input_wrapp input_wrapp_2">
-                    <input type="text" placeholder="Серийный номер"/>
+                    <input type="text" id="WorkStatusId" placeholder="Серийный номер"/>
                 </div>
                 <div class="submit_wrapp">
-                    <button type="button" class="blue-pill">Проверить</button>
+                    <button type="button" id="WorkStatusBtn" class="blue-pill">Проверить</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="popup_wrapp scroll" data-popup="popup_2">
+    @if(isset($order))
+    <div class="popup_wrapp scroll" style="display:block;" data-popup="popup_2" id="WorkStatusPopup">
         <div class="popup popup_2">
             <button type="button" class="close-popup"></button>
             <div class="popup-header">
                 <h3>Статус заказа</h3>
             </div>
             <div class="slidings-boxes">
-                <div class="sliding_wrapp">
-                    <div class="sliding-header">
-                        <div class="cell cell-1">
-                            <p>Заказ</p>
+                @foreach($order->works as $work)
+                    <div class="sliding_wrapp">
+                        <div class="sliding-header">
+                            <div class="cell cell-1">
+                                <p>Заказ</p>
+                            </div>
+                            <div class="cell cell-2">
+                                <p>№ 04978406-0081</p>
+                            </div>
+                            <div class="cell cell-3">
+                                <p>08 марта 2012</p>
+                            </div>
+                            <div class="cell cell-4">
+                                <p>открытый</p>
+                            </div>
+                            <button type="button" class="slide-btn"></button>
                         </div>
-                        <div class="cell cell-2">
-                            <p>№ 04978406-0081</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <p>08 марта 2012</p>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>открытый</p>
-                        </div>
-                        <button type="button" class="slide-btn"></button>
-                    </div>
-                    <div class="sliding-box">
-                        <div class="cell cell-1">
-                            <p>Установка и настройка Windows Server</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>346 р</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sliding_wrapp">
-                    <div class="sliding-header">
-                        <div class="cell cell-1">
-                            <p>Заказ</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>№ 04978406-0081</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <p>08 марта 2012</p>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>открытый</p>
-                        </div>
-                        <button type="button" class="slide-btn"></button>
-                    </div>
-                    <div class="sliding-box">
-                        <div class="cell cell-1">
-                            <p>Установка и настройка Windows Server</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>346 р</p>
+                        <div class="sliding-box">
+                            <div class="cell cell-1">
+                                <p>Установка и настройка Windows Server</p>
+                            </div>
+                            <div class="cell cell-2">
+                                <p>346 р</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="sliding_wrapp">
-                    <div class="sliding-header">
-                        <div class="cell cell-1">
-                            <p>Заказ</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>№ 04978406-0081</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <p>08 марта 2012</p>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>открытый</p>
-                        </div>
-                        <button type="button" class="slide-btn"></button>
-                    </div>
-                    <div class="sliding-box">
-                        <div class="cell cell-1">
-                            <p>Установка и настройка Windows Server</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>346 р</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-
+    @endif
     <div class="popup_wrapp scroll" data-popup="popup_3">
         <div class="popup popup_3">
             <button type="button" class="close-popup"></button>

@@ -41,7 +41,6 @@ class GetUsers implements ShouldQueue
 
         foreach ($files as $file) {
             if (Storage::lastModified($file) > $lastParse->value){
-
                 $this->parse($file);
             }
         }

@@ -13,8 +13,11 @@ class LkController extends Controller
     {
         $data = [];
 
-        dd(Auth::user());
+        $data['orders'] = Auth::user()->client->orders;
 
+        if($request->order_id) {
+            $data['orders'] = $data['orders']->where('nomer', $request->order_id);
+        }
         return view('lk', $data);
     }
 }

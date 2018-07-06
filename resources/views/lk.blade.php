@@ -26,15 +26,17 @@
                 <div class="two-cols-templ_2 clearfix">
                     <div class="left">
                         <div class="search2_wrapp">
-                            <input type="text" placeholder="Номер заказа или документа"/>
-                            <button type="submit" class="submit_2"><i class="search-icon2"></i>Найти</button>
+                            <form action="">
+                                <input type="text" name="order_id" placeholder="Номер заказа или документа"/>
+                                <button type="submit" class="submit_2"><i class="search-icon2"></i>Найти</button>
+                            </form>
                         </div>
                     </div>
                     <div class="right">
-                        <a href="#" class="orange_link"><i class="settings"></i>Расширенный поиск</a>
+                        {{--<a href="#" class="orange_link"><i class="settings"></i>Расширенный поиск</a>--}}
                     </div>
                 </div>
-
+                {{--
                 <div class="sort_wrapp">
                     <div class="inner clearfix">
                         <div class="left">
@@ -110,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="table_2">
                     <div class="table-row table-header">
@@ -142,138 +144,41 @@
                             <p class="tab-novisible">Подробнее</p>
                         </div>
                     </div>
-                    <div class="table-row">
-                        <div class="cell cell-1">
-                            <p>С00697</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>05.08.2011</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <div class="checkbox-3">
-                                <input type="checkbox" id="ch_11">
-                                <label for="ch_11"></label>
+                    @foreach($orders as $order)
+                        <div class="table-row">
+                            <div class="cell cell-1">
+                                <p>{{ $order->nomer }}</p>
+                            </div>
+                            <div class="cell cell-2">
+                                <p>{{ $order->time_cr }}</p>
+                            </div>
+                            <div class="cell cell-3">
+                                <div class="checkbox-3">
+                                    <label for="ch_{{ $order->id }}"></label>
+                                    <input type="checkbox" disabled id="ch_{{ $order->id }}" {{ ($order->pay) ? 'checked' : '' }}>
+                                </div>
+                            </div>
+                            <div class="cell cell-4">
+                                <p>Заявка</p>
+                            </div>
+                            <div class="cell cell-5">
+                                <p>{{ $order->status }}</p>
+                            </div>
+                            <div class="cell cell-6">
+                                <p>{{ $order->prise }}</p>
+                            </div>
+                            <div class="cell cell-7">
+                                <p>{{ $order->exec_time }}</p>
+                            </div>
+                            <div class="cell cell-8">
+                                <p>{{ $order->name_delivery }}</p>
+                            </div>
+                            <div class="cell cell-9">
+                                <p class="tab-novisible"><a href="#" class="link-2">Подробнее</a></p>
+                                <p class="desk-novisible"><a href="#"><i class="more_arrow"></i></a></p>
                             </div>
                         </div>
-                        <div class="cell cell-4">
-                            <p>Заявка</p>
-                        </div>
-                        <div class="cell cell-5">
-                            <p>Выполнено</p>
-                        </div>
-                        <div class="cell cell-6">
-                            <p>15200</p>
-                        </div>
-                        <div class="cell cell-7">
-                            <p>10.08.2011</p>
-                        </div>
-                        <div class="cell cell-8">
-                            <p>Алексей Царев</p>
-                        </div>
-                        <div class="cell cell-9">
-                            <p class="tab-novisible"><a href="#" class="link-2">Подробнее</a></p>
-                            <p class="desk-novisible"><a href="#"><i class="more_arrow"></i></a></p>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell cell-1">
-                            <p>С00697</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>05.08.2011</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <div class="checkbox-3">
-                                <input type="checkbox" id="ch_12">
-                                <label for="ch_12"></label>
-                            </div>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>Заявка</p>
-                        </div>
-                        <div class="cell cell-5">
-                            <p>Выполнено</p>
-                        </div>
-                        <div class="cell cell-6">
-                            <p>15200</p>
-                        </div>
-                        <div class="cell cell-7">
-                            <p>10.08.2011</p>
-                        </div>
-                        <div class="cell cell-8">
-                            <p>Алексей Царев</p>
-                        </div>
-                        <div class="cell cell-9">
-                            <p class="tab-novisible"><a href="#" class="link-2">Подробнее</a></p>
-                            <p class="desk-novisible"><a href="#"><i class="more_arrow"></i></a></p>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell cell-1">
-                            <p>С00697</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>05.08.2011</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <div class="checkbox-3">
-                                <input type="checkbox" id="ch_13">
-                                <label for="ch_13"></label>
-                            </div>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>Заявка</p>
-                        </div>
-                        <div class="cell cell-5">
-                            <p>Выполнено</p>
-                        </div>
-                        <div class="cell cell-6">
-                            <p>15200</p>
-                        </div>
-                        <div class="cell cell-7">
-                            <p>10.08.2011</p>
-                        </div>
-                        <div class="cell cell-8">
-                            <p>Алексей Царев</p>
-                        </div>
-                        <div class="cell cell-9">
-                            <p class="tab-novisible"><a href="#" class="link-2">Подробнее</a></p>
-                            <p class="desk-novisible"><a href="#"><i class="more_arrow"></i></a></p>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="cell cell-1">
-                            <p>С00697</p>
-                        </div>
-                        <div class="cell cell-2">
-                            <p>05.08.2011</p>
-                        </div>
-                        <div class="cell cell-3">
-                            <div class="checkbox-3">
-                                <input type="checkbox" id="ch_14">
-                                <label for="ch_14"></label>
-                            </div>
-                        </div>
-                        <div class="cell cell-4">
-                            <p>Заявка</p>
-                        </div>
-                        <div class="cell cell-5">
-                            <p>Идет работа</p>
-                        </div>
-                        <div class="cell cell-6">
-                            <p>15200</p>
-                        </div>
-                        <div class="cell cell-7">
-                            <p>10.08.2011</p>
-                        </div>
-                        <div class="cell cell-8">
-                            <p>Алексей Царев</p>
-                        </div>
-                        <div class="cell cell-9">
-                            <p class="tab-novisible"><a href="#" class="link-2">Подробнее</a></p>
-                            <p class="desk-novisible"><a href="#"><i class="more_arrow"></i></a></p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <div class="orders_wrapp">
@@ -500,8 +405,8 @@
                         <a href="#" class="orange-pill orange-pill_2"><i class="doc_2"></i>Скачать таблицу заказов</a>
                     </div>
                     <div class="right">
-                        <p><span>Итого:</span> 22222222222 р.</p>
-                        <p><span>Не оплачено:</span> 0 р.</p>
+                        <p><span>Итого:</span> {{ $orders->sum('prise') }} р.</p>
+                        <p><span>Не оплачено:</span> {{ $orders->where('pay', false)->sum('prise') }} р.</p>
                     </div>
                 </div>
 
