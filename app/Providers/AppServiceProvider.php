@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         setlocale(LC_TIME, 'ru_RU.utf8');
         Carbon::setLocale('ru');
         Schema::defaultStringLength(191);
+        require_once(app_path()."/helpers.php");
 
     }
 
