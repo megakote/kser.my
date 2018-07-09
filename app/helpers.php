@@ -1,4 +1,4 @@
-<?
+<?php
 use Illuminate\Support\Collection;
 
 function paginate($items, $perPage = 5)

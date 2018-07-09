@@ -8,7 +8,7 @@ use App\Models\News;
 
 class NewsController extends Controller
 {
-    public function index(Request $request, $slug)
+    public function index(Request $request, $slug = null)
     {
         if ($slug) {
             return $this->show($slug);
