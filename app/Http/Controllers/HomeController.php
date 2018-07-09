@@ -33,7 +33,7 @@ class HomeController extends Controller
         $data['pricesTabs'] = MainPagePricesTabs::all()->sortBy('order');
         $data['clients'] = MainPageClient::all();
         $data['feedback'] = Feedback::all();
-        $data['slider'] = Slider::all();
+        $data['slider'] = Slider::orderBy('order', 'asc')->get();
 
         return view('home', $data);
     }

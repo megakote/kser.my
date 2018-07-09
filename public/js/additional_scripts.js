@@ -202,10 +202,7 @@ $(document).ready(function() {
 
 	if( $("#review_rat").length > 0 )  {
     	var rat = document.querySelector('#review_rat');
-		rating(rat, 0, 5);
-        $("#review_rat li").on('click', function () {
-            $("input[name='stars']").val($(this).data('index') + 1);
-        })
+		rating(rat, 0, 5);		
     }
 
     if( $(".rate_2").length > 0 )  {

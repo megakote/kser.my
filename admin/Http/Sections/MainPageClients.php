@@ -75,7 +75,7 @@ class MainPageClients extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminColumn::image('logo', 'Логотип'),
+            AdminFormElement::image('logo', 'Логотип'),
             AdminFormElement::text('name', 'Название организации')->required(),
             AdminFormElement::text('link', 'Ссылка на сайт организации')
         ]);

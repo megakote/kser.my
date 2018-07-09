@@ -60,7 +60,7 @@ class Sliders extends Section implements Initializable
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('title', 'Заголовок'),
             AdminColumn::text('description', 'Описание'),
-            AdminColumn::order()->setLabel('Порядок')
+            AdminFormElement::order()->setLabel('Порядок')
         );
 
         return $display;
@@ -76,7 +76,7 @@ class Sliders extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::text('image', 'Картинка')->required(),
+            AdminFormElement::image('image', 'Картинка')->required(),
             AdminFormElement::text('title', 'Заголовок')->required(),
             AdminFormElement::text('description', 'Описание')
         ]);

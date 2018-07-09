@@ -76,7 +76,6 @@ $(document).ready(function() {
 
     });
 
-
     $(".tab-link").click(function (e) {
 
         if( $(this).hasClass("active") ) {
@@ -122,6 +121,8 @@ $(document).ready(function() {
 
         popupBlock.fadeIn(400);
 
+        getSelectWidth();
+
     });
 
     $(this).keydown(function(eventObject){
@@ -138,7 +139,7 @@ $(document).ready(function() {
 
     });
 
-    $(".close-popup").click(function() {
+    $(".close-popup, .popup_bg").click(function() {
 
         popupBlock = $(this).closest(".popup_wrapp");
 
@@ -151,10 +152,9 @@ $(document).ready(function() {
         var hide_element = $('.popup');
 
         if (!hide_element.is(e.target)
-
-            && hide_element.has(e.target).length === 0) {
-
-            hide_element.closest(".popup_wrapp").fadeOut(300);
+            && hide_element.has(e.target).length === 0
+            && hide_element.closest(".popup_7_wrapp").length == 0 ) {
+                hide_element.closest(".popup_wrapp").fadeOut(300);            
         }
 
     });
@@ -295,6 +295,50 @@ $(document).ready(function() {
       mouseleave: function() {
         $( this ).find(".tooltip").attr("style", "opacity: 0; right: 10000px;");
       }
+    });
+
+    // ------------------------
+
+    $(".sliding_block").each(function() {
+
+        $(this).css({"height" : 0});
+
+    });
+
+    $(".slide_btn").click(function(e) {
+
+        e.preventDefault();
+
+        var parentBlock = $(this).closest(".table_wrapp");
+
+        var slideBlock = parentBlock.find(".sliding_block");
+
+        var slideBlockHeight = slideBlock.find(".inner_wrapp").height();
+
+        if( slideBlock.height() > 0 ) {
+
+             slideBlock.animate({
+                "height" : 0
+            }, 700);
+
+            parentBlock.removeClass("active");
+
+        } else {
+
+            slideBlock.animate({
+                "height" : slideBlockHeight + "px"
+            }, 700);
+
+            parentBlock.addClass("active");
+
+            setTimeout(function() {
+
+                slideBlock.css({"height" : "auto"});
+
+            }, 900);
+
+        }
+
     });
 
 });

@@ -10,6 +10,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 
 use App\Config;
 use App\Models\Client;
+use App\Models\ClientOffice;
+use App\Models\ClientFace;
 
 use Storage;
 use SimpleXMLElement;
@@ -65,5 +67,18 @@ class GetUsers implements ShouldQueue
         ];
 
         $client->fill($arr)->save();
+
+        if ($user->clent->dop_ofice == 'истина') {
+            foreach ($user->clent->items as $office) {
+                $client_office = ClientOffice::firstOrNew(['id_dop' => $office->id_dop]);
+                $client_office->fill(['client_id' => $client->id]);
+                $client_office->fill( (array) $office->item)->save();
+            }
+            foreach ($user->clent->faces as $face) {
+                $client_office_face = ClientFace::firstOrNew(['office' => $face->office]);
+                $client_office_face->fill(['client_id' => $client->id]);
+                $client_office_face->fill( (array) $face->face)->save();
+            }
+        }
     }
 }

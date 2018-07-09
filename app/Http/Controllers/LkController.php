@@ -9,8 +9,20 @@ use Auth;
 
 class LkController extends Controller
 {
+
+    public function __construct()
+    {
+
+//        parent::__construct();
+
+    }
+
     public function index(Request $request)
     {
+        if (!(Auth::user() && Auth::user()->client)) {
+            return redirect()->route('home');
+        }
+dd(Auth::user()->client->faces);
         $data = [];
 
         $data['orders'] = Auth::user()->client->orders;

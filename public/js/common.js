@@ -6,7 +6,12 @@ $(document).ready(function () {
             type: "POST",
             url: "/api/form",
             data: form_data,
-            success: function() {
+            success: function(data) {
+                if (data.success) {
+
+                } else if (data.error) {
+
+                }
                 if ( $(".popup_wrapp").is(":visible") ) {
                     $(".popup_wrapp").fadeOut(300);
                 }
@@ -34,6 +39,11 @@ $(document).ready(function () {
         });
         e.preventDefault();
         return false;
+    })
+
+
+    $("#review_rat li").on('click', function () {
+        $("input[name='stars']").val($(this).data('index') + 1);
     })
 
 });

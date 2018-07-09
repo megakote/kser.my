@@ -47,7 +47,7 @@ class TemplateComposer
 //        Законсервировано до лучших времен
 //        if (request()->order_id) {
 //            $order = Order::where('nomer', request()->order_id)->first();
-//            $view->with('order', $order);
+//            $view->with('order_info', $order);
 //        }
     }
 }

@@ -22,7 +22,7 @@ Route::get('/get', function () {
 });
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{slug?}', 'NewsController@index')->name('news');
 Route::get('/articles/{slug?}', 'ArticlesController@index')->name('articles');
 Route::get('/feedback', 'FeedbackController@index')->name('feedback');
 Route::post('/feedback/add', 'FeedbackController@store')->name('feedback.add');

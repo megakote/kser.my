@@ -305,7 +305,7 @@
             </div>
         </div>
     </div>
-    @if(isset($order))
+    @if(isset($order_info))
     <div class="popup_wrapp scroll" style="display:block;" data-popup="popup_2" id="WorkStatusPopup">
         <div class="popup popup_2">
             <button type="button" class="close-popup"></button>
@@ -352,7 +352,7 @@
             </div>
             <div class="popup-form">
                 <form class="form">
-                    <input type="hidden" name="type" value="1">
+                    <input type="hidden" name="type" value="2">
                     <div class="input_wrapp">
                         <i class="user-2"></i>
                         <input type="text" name="name" placeholder="Имя*"/>
@@ -524,7 +524,99 @@
             </div>
         </div>
     </div>
-
+    @if(Auth::user() && Auth::user()->client)
+    <div class="popup_wrapp scroll popup_7_wrapp" data-popup ="popup_7">
+        <div class="popup_bg"></div>
+        <div class="popup popup_7">
+            <button type="button" class="close-popup"></button>
+            <div class="popup-header">
+                <h3>Подать заявку</h3>
+            </div>
+            <div class="popup-form">
+                <form id="addOrder">
+                    <div class="input_wrapp input_wrapp_5">
+                        <div class="select_wrapp">
+                            <select name="face" data-placeholder = "Контактное лицо *">
+                                @foreach(Auth::user()->client->faces as $face)
+                                    <option value="{{ $face->office }}">{{ $face->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <div class="select_wrapp">
+                            <select name="office" data-placeholder = "Доп. офис">
+                                @foreach(Auth::user()->client->offices as $office)
+                                    <option value="{{ $office->id_dop }}">{{ $office->adress }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <input type="tel" name="tel" placeholder="Моб. телефон">
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <input type="text" name="mob_tel" placeholder="Гор. телефон">
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <input type="email" name="email" placeholder="E mail*">
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <div class="select_wrapp">
+                            <select name="works" data-placeholder= "Виды работ *">
+                                <option value="Не выбрано">Не выбрано</option>
+                                <option value="Совместимые">Совместимые</option>
+                                <option value="Оригиналы">Оригиналы</option>
+                                <option value="Ремонт">Ремонт</option>
+                                <option value="Заправка(взятие)">Заправка(взятие)</option>
+                                <option value="Замена брака">Замена брака</option>
+                                <option value="Доставка документов">Доставка документов</option>
+                                <option value="Другая задача">Другая задача</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <input type="text" name="apparat" placeholder="Аппарат">
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <textarea class="textarea_2" name="comment" placeholder="Описание неисправности *"></textarea>
+                    </div>
+                    <div class="input_wrapp input_wrapp_5">
+                        <textarea name="address" placeholder="Адрес *"></textarea>
+                    </div>
+                    <div class="dates_input">
+                        <label>Желаемая дата:</label>
+                        <div class="dates_wrapp">
+                            <div class="date_wrapp">
+                                <p>с</p>
+                                <input class="date_input" name="date_from" type="text" placeholder="22.12.2015">
+                                <i class="calendar"></i>
+                            </div>
+                            <div class="date_wrapp">
+                                <p>до</p>
+                                <input class="date_input" name="date_to" type="text" placeholder="22.12.2016">
+                                <i class="calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Базовые сроки выполнения по условиям договора:<br />
+                        Выезд мастера: до 2-х суток с момента обращения;
+                        Поставка расходных материалов: 1-2 суток (при отсутствии независящих от поставщика причин);
+                        Взятие на заправку - на следующий день после обращения (полный цикл заправки составляет
+                        3-4 суток: на работы в цеху уходят сутки, отвоз заправленных происходит на
+                        следующий день после выполнения работ).</p>
+                    <div class="checkbox-4">
+                        <input type="checkbox" required id="ord_ch_1" checked />
+                        <label for="ord_ch_1">Согласен на обработку персональных данных</label>
+                    </div>
+                    <div class="submit_wrapp">
+                        <button type="submit" class="blue-pill">Подать заявку</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endif
     <!-- /Popups -->
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.js') }}"></script>

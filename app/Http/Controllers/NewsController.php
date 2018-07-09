@@ -8,11 +8,21 @@ use App\Models\News;
 
 class NewsController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $slug)
     {
+        if ($slug) {
+            return $this->show($slug);
+        }
+
         $data = [];
         $data['news'] = News::latest()->paginate(15);
 
         return view('news', $data);
+    }
+
+    public function show($slug)
+    {
+        $article = News::where('slug', $slug)->first();
+        return view('page', $article);
     }
 }

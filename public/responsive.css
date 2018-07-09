@@ -693,20 +693,88 @@
 	    width: 89px;
 	}
 
-	.table-4 .cell-1 {
-	    width: 64%;
+	.table_2 > .table-header > .cell-1 {
+	    width: 9%;
 	}
 
-	.table-4 .cell-2 {
-	    width: 12%;
+	.table_2 > .table-header > .cell-2 {
+	    width: 11%;
 	}
 
-	.table-4 .cell-3 {
-	    width: 12%;
+	.table_2 > .table-header > .cell-3 {
+	    width: 8%;
 	}
 
-	.table-4 .cell-4 {
-	    width: 12%;
+	.table_2 > .table-header > .cell-4 {
+	    width: 11%;
+	}
+
+	.table_2 > .table-header > .cell-5 {
+	    width: 13%;
+	}
+
+	.table_2 > .table-header > .cell-6 {
+	    width: 9%;
+	}
+
+	.table_2 > .table-header > .cell-7 {
+	    width: 11%;
+	}
+
+	.table_2 > .table-header > .cell-8 {
+	    width: 15%;
+	}
+
+	.table_2 > .table-header > .cell-9 {
+	    width: 5%;
+	}
+
+	.table_wrapp > .table-row > .cell-1 {
+	    width: 9%;
+	}
+
+	.table_wrapp > .table-row > .cell-2 {
+	    width: 11%;
+	}
+
+	.table_wrapp > .table-row > .cell-3 {
+	    width: 8%;
+	}
+
+	.table_wrapp > .table-row > .cell-4 {
+	    width: 11%;
+	}
+
+	.table_wrapp > .table-row > .cell-5 {
+	    width: 13%;
+	}
+
+	.table_wrapp > .table-row > .cell-6 {
+	    width: 9%;
+	}
+
+	.table_wrapp > .table-row > .cell-7 {
+	    width: 11%;
+	}
+
+	.table_wrapp > .table-row > .cell-8 {
+	    width: 15%;
+	}
+
+	.table_wrapp > .table-row > .cell-9 {
+	    width: 5%;
+	}
+
+	.table_2 .table-header p {
+	    font-size: 13px;
+	    line-height: 15px;
+	    font-weight: 600;
+	}
+
+	.table_2 p {
+	    font-size: 12px;
+	    line-height: 15px;
+	    font-weight: 600;
 	}
 
 	/*-- /Section 1 Cabinet --*/
@@ -824,22 +892,6 @@
 	    display: block;
 	}
 
-	.table_2 {
-		display: none;
-	}
-
-	.orders_wrapp {
-	    display: block;
-	}
-
-	.order_wrapp:last-child {
-	    margin: 0;
-	}
-
-	.orders_active {
-	    display: block;
-	}
-
 	.two-cols-templ_3 .left {
 	    width: 100%;
 	    float: none;
@@ -888,6 +940,15 @@
 	}
 
 	/*-- /Section 1 Reviews --*/
+
+	/*-- Popup --*/
+
+	.popup_7 {
+	    margin-left: 2%;
+	    margin-right: 2%;
+	}
+
+	/*-- /Popup --*/
 
 }
 
@@ -1176,14 +1237,14 @@
 	    margin: 0 0 5px 0;
 	}
 
-	.table-3 .cell-1 {
+	.table-3 > .cell-1 {
 		display: inline-block;
 		vertical-align: top;
 	    width: auto;
 	    padding-bottom: 0;
 	}
 
-	.table-3 .cell-2 {
+	.table-3 > .cell-2 {
 		display: inline-block;
 		vertical-align: top;
 	    width: auto;
@@ -1197,12 +1258,12 @@
 	    margin: 20px 0 16px 0;
 	}
 
-	.table-3_3 .cell-1 {
+	.table-3_3 > .cell-1 {
 		width: 100%;
 		padding-bottom: 5px;
 	}
 
-	.table-3_3 .cell-2 {
+	.table-3_3 > .cell-2 {
 		width: 100%;
 	}
 
