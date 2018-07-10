@@ -57,7 +57,7 @@ class FormController extends Controller
         if ($form->comment)
             $xml->text = $form->comment;
 
-        $path = env('FILES_EXCHANGE') . 'forms/' . time() . '_' . $form->type . '.xml';
+        $path = env('FILES_EXCHANGE') . 'new_order/' . time() . '_' . $form->type . '.xml';
 
 
         if (Storage::put($path, $xml->asXML())) {
@@ -67,9 +67,8 @@ class FormController extends Controller
                 $result = env('FILES_EXCHANGE') . 'order_res/' . $form->type . '.xml';
 
                 if (file_exists($result)) {
-                    $response = file_get_contents($result);
-                    $xml = @file_get_contents($result);
-                    $arr = @simplexml_load_string($xml);
+                    $xml = Storage::get($result);
+                    $arr = new SimpleXMLElement($xml);
                     $message = 'Сообдение №' . $arr->nomer . ' отправлено. Сотрудник компании свяжется с вами в течении 5-10 минут. Спасибо за Ваше обращение!';
                     return ['success' => 'Added new records.'];
                 }
