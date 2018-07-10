@@ -55,8 +55,15 @@ class GetUsers implements ShouldQueue
     private function parse($file)
     {
         $xml = Storage::get($file);
-        $user = new SimpleXMLElement($xml);
 
+        try {
+            new SimpleXMLElement($xml);
+        } catch (\Exception $e) {
+            \Log::alert('Недопустимый файл - ' . $file);
+            return false;
+        }
+
+        $user = new SimpleXMLElement($xml);
         $client = Client::firstOrNew(['id_1c' => $user->clent->id_clent]);
 
         $arr = [

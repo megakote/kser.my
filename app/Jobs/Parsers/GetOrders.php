@@ -55,9 +55,10 @@ class GetOrders implements ShouldQueue
     {
         $xml = Storage::get($file);
         try {
-            $order_xml = new SimpleXMLElement($xml);
+            new SimpleXMLElement($xml);
         } catch (\Exception $e) {
-            dd($xml);
+            \Log::alert('Недопустимый файл - ' . $file);
+            return false;
         }
         $order_xml = new SimpleXMLElement($xml);
         foreach ($order_xml->order as $order) {
