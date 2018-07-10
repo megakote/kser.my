@@ -54,6 +54,11 @@ class GetOrders implements ShouldQueue
     private function parse($file)
     {
         $xml = Storage::get($file);
+        try {
+            $order_xml = new SimpleXMLElement($xml);
+        } catch (\Exception $e) {
+            dd($xml);
+        }
         $order_xml = new SimpleXMLElement($xml);
         foreach ($order_xml->order as $order) {
             $works = $order->items_zz;
