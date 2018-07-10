@@ -60,7 +60,7 @@ class Sliders extends Section implements Initializable
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('title', 'Заголовок'),
             AdminColumn::text('description', 'Описание'),
-            AdminFormElement::order()->setLabel('Порядок')
+            AdminColumn::order()->setLabel('Порядок')
         );
 
         return $display;

@@ -6,15 +6,20 @@ $(document).ready(function () {
             type: "POST",
             url: "/api/form",
             data: form_data,
+            beforeSend: function(){
+
+            },
             success: function(data) {
                 if (data.success) {
-
+                    $('#responsePopup').show()
+                    $('#responseText').text(data.success)
                 } else if (data.error) {
-
+                    $('#responsePopup').show()
+                    $('#responseText').text(data.error)
                 }
-                if ( $(".popup_wrapp").is(":visible") ) {
-                    $(".popup_wrapp").fadeOut(300);
-                }
+                // if ( $(".popup_wrapp").is(":visible") ) {
+                //     $(".popup_wrapp").fadeOut(300);
+                // }
             }
         });
         e.preventDefault();

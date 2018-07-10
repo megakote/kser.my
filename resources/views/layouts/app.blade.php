@@ -617,6 +617,18 @@
         </div>
     </div>
     @endif
+
+    <div class="popup_wrapp scroll" id="responsePopup" data-popup="popup_8">
+        <div class="popup popup_5">
+            <button type="button" class="close-popup"></button>
+            <div class="popup-header">
+                <h3>Внимание!</h3>
+            </div>
+            <div class="popup-form">
+                <p id="responseText"></p>
+            </div>
+        </div>
+    </div>
     <!-- /Popups -->
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.js') }}"></script>
