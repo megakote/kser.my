@@ -54,58 +54,18 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-        'fs' => [
-
-            'driver'   => 'sftp',
-            'host'     => env('FS_HOST'),
-            'username' => env('FS_LOGIN'),
-            'password' => env('FS_PASSWORD'),
-            'timeout' => 10,
-            'root'     => 'CRM'
-        ],
 
         'custom' => [
             'driver' => 'local',
             'root'   => realpath($_SERVER['DOCUMENT_ROOT'] . '/../'),
         ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
-        ],
-        'pricelists' => [
-            'driver'   => 'sftp',
-            'host'     => env('FORGE_HOST'),
-            'username' => env('FORGE_LOGIN'),
-            'password' => env('FORGE_PASSWORD'),
-            'timeout' => 10,
-            'root'   => env('CDN_PATH') . '/Pricelists',
-        ],
-        'leads' => [
-            'driver'   => 'sftp',
-            'host'     => env('FS_HOST'),
-            'username' => env('FS_LOGIN'),
-            'password' => env('FS_PASSWORD'),
-            'timeout' => 10,
-            'root'     => 'CRM/Leads'
-        ],
-        'docs' => [
-            'driver'   => 'sftp',
-            'host'     => env('FS_HOST'),
-            'username' => env('FS_LOGIN'),
-            'password' => env('FS_PASSWORD'),
-            'timeout' => 10,
-            'root'     => 'CRM/Docs'
-        ],
-        'help' => [
-            'driver'   => 'sftp',
-            'host'     => env('FS_HOST'),
-            'username' => env('FS_LOGIN'),
-            'password' => env('FS_PASSWORD'),
-            'timeout' => 10,
-            'root'     => 'CRM/Help'
         ],
     ],
 

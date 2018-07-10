@@ -40,10 +40,10 @@ class GetUsers implements ShouldQueue
         $directory = env('FILES_EXCHANGE') . 'users';
         $files = Storage::files($directory);
         $lastParse = Config::firstOrNew(['name' => 'lastParseUsers']);
-dump($directory);
-dump($files);
+
+
         foreach ($files as $file) {
-            if (Storage::lastModified($file) > $lastParse->value){
+            if (!$lastParse->value || Storage::lastModified($file) > $lastParse->value){
                 $this->parse($file);
             }
         }
