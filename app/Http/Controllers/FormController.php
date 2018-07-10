@@ -64,7 +64,7 @@ class FormController extends Controller
             $sleepped = 0;
             sleep(1);
             while ($sleepped < 7) {
-                $result = '/home/bitrix/ext_www/printer123.ru/upl/order_res/' . $form->type . '.xml';
+                $result = env('FILES_EXCHANGE') . 'order_res/' . $form->type . '.xml';
 
                 if (file_exists($result)) {
                     $response = file_get_contents($result);
