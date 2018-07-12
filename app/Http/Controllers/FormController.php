@@ -46,11 +46,11 @@ class FormController extends Controller
         $sn = '00000' . time();
         $xml->sn = $sn;
         $xml->time = $form->created_at->format('h:m:s');
-        $xml->date = $form->created_at->format('Y.m.d');
+        $xml->date = $form->created_at->format('d.m.Y');
 
 
         if ($form->name)
-            $xml->date = $form->name;
+            $xml->face = $form->name;
         if ($form->contacts['email'])
             $xml->email = $form->contact;
         if ($form->contacts['tel'])
