@@ -244,7 +244,7 @@
                         <i class="map-mark_2"></i>
                     </div>
                     <div class="col-2">
-                        <p>123123 Российская Федерация, г. Москва, ул. Ленина, д. 121</p>
+                        <p>109518, Российская Федерация, г. Москва, ул. Грайвороновская, д.5, стр.1</p>
                     </div>
                 </div>
                 <div class="thumb-5">
@@ -252,7 +252,7 @@
                         <i class="phone_2"></i>
                     </div>
                     <div class="col-2">
-                        <p><a href="tel:88001231212" class="link-3">8 800 123 12 12 </a></p>
+                        <p><a href="tel:88001006550" class="link-3">8 800 100 65 50</a></p>
                         <p>круглосуточная бесплатная линия</p>
                     </div>
                 </div>
@@ -261,7 +261,7 @@
         <div class="row row-2 clearfix">
             <div class="left">
                 <div class="col col-1">
-                    <p class="copy">@2017, СЕРВИСПРИНТ</p>
+                    <p class="copy">@2018, СЕРВИСПРИНТ</p>
                 </div>
                 <div class="col overflow_hidden">
                     <ul class="soc-links">
@@ -274,8 +274,8 @@
                 </div>
             </div>
             <div class="right">
-                <p>ИНН 123123123</p>
-                <p>ЕГРЮЛ 123123123</p>
+                <p>ИНН: 7723752090</p>
+                <p>ОГРН: 1107746217699</p>
             </div>
         </div>
     </div>
@@ -534,6 +534,8 @@
             </div>
             <div class="popup-form">
                 <form id="addOrder">
+                    <input type="hidden" name="type" value="10">
+                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
                     <div class="input_wrapp input_wrapp_5">
                         <div class="select_wrapp">
                             <select name="face" data-placeholder = "Контактное лицо *">
@@ -547,19 +549,19 @@
                         <div class="select_wrapp">
                             <select name="office" data-placeholder = "Доп. офис">
                                 @foreach(Auth::user()->client->offices as $office)
-                                    <option value="{{ $office->id_dop }}">{{ $office->adress }}</option>
+                                    <option value="{{ $office->login }}">{{ $office->adress }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="input_wrapp input_wrapp_5">
-                        <input type="tel" name="tel" placeholder="Моб. телефон">
+                        <input type="tel" name="tel" placeholder="Моб. телефон" value="{{ Auth::user()->client->tel? Auth::user()->client->tel:'' }}">
                     </div>
                     <div class="input_wrapp input_wrapp_5">
                         <input type="text" name="mob_tel" placeholder="Гор. телефон">
                     </div>
                     <div class="input_wrapp input_wrapp_5">
-                        <input type="email" name="email" placeholder="E mail*">
+                        <input type="email" name="email" placeholder="E mail*" value="{{ Auth::user()->email }}">
                     </div>
                     <div class="input_wrapp input_wrapp_5">
                         <div class="select_wrapp">
@@ -582,7 +584,7 @@
                         <textarea class="textarea_2" name="comment" placeholder="Описание неисправности *"></textarea>
                     </div>
                     <div class="input_wrapp input_wrapp_5">
-                        <textarea name="address" placeholder="Адрес *"></textarea>
+                        <textarea name="address" placeholder="Адрес *" value="{{ Auth::user()->client->address? Auth::user()->client->address:'' }}"></textarea>
                     </div>
                     <div class="dates_input">
                         <label>Желаемая дата:</label>

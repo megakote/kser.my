@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Validator;
 use SimpleXMLElement;
@@ -19,8 +21,10 @@ class FormController extends Controller
         ]);
 
         if ($validator->passes()) {
+
             $form = Form::create($request->all());
-            return response()->json($this->sendTo1C($form));
+            return response()->json($this->convertForm($form));
+
         }
 
         return response()->json(['error' => $validator->errors()->all()]);
@@ -35,7 +39,48 @@ class FormController extends Controller
         return response()->json(['error' => 'Данный номер не зарегистрирован, попробуйте позже']);
     }
 
-    private function sendTo1C($form)
+    public function createOrder(Request $request)
+    {
+
+        $data = $request->all();
+        $user = User::find($data['id']);
+        $text = '<?xml version="1.0" encoding="UTF-8"?>
+                    <data>
+                      <site>ксер.рф</site>
+                    </data>';
+        $text = html_entity_decode($text, ENT_NOQUOTES, 'UTF-8');
+        $xml = new SimpleXMLElement($text);
+        $sn = '00000' . time();
+        $xml->sn = $sn;
+        $xml->time = Carbon::now()->format('H:m:s');
+        $xml->date = Carbon::now()->format('d.m.Y');
+        $xml->id_client = $user->client->id;
+        $xml->name_client = $user->client->faces()->find($data['face'])->name;
+        $xml->face = $user->client->faces()->find($data['face'])->name;
+        $xml->name_dop = '';
+        $xml->id_dop = '';
+        $xml->tele = $data['tel'];
+        $xml->tele2 = $data['mob_tel'];
+        $xml->email = $data['email'];
+        $xml->id_order = '';
+        $xml->messages = $data['comment'];
+        $xml->street = $data['address'];
+
+
+        $xml->order = "Создана завявка в ЛК. в Офис логин: $data[office] на работы: $data[works], аппарат(ы): $data[apparat] желаемая дата с $data[date_from] по $data[date_to]";;
+
+        Form::create([
+            'type' => $data['type'],
+            'name' => $xml->name_client,
+            'contact' => $data['email'] ? $data['email'] : $data['tel'],
+            'comment' =>  $data['comment']
+        ]);
+
+
+        return $this->sendTo1C($xml, $data['type']);
+    }
+
+    private function convertForm($form)
     {
         $text = '<?xml version="1.0" encoding="UTF-8"?>
                     <data>
@@ -45,7 +90,7 @@ class FormController extends Controller
         $xml = new SimpleXMLElement($text);
         $sn = '00000' . time();
         $xml->sn = $sn;
-        $xml->time = $form->created_at->format('h:m:s');
+        $xml->time = $form->created_at->format('H:m:s');
         $xml->date = $form->created_at->format('d.m.Y');
 
 
@@ -58,13 +103,18 @@ class FormController extends Controller
         if ($form->comment)
             $xml->order = $form->comment;
 
-        $path = 'new_order/' . substr($sn, -5) . '_' . $form->type . '.xml';
+        return $this->sendTo1C($xml, $form->type);
+    }
+
+    private function sendTo1C($xml, $type)
+    {
+        $path = 'new_order/' . substr($xml->sn, -5) . '_' . $type . '.xml';
 
         if (Storage::put($path, $xml->asXML())) {
             $sleepped = 0;
             sleep(1);
             while ($sleepped < 7) {
-                $result = 'order_res/' . substr($sn, -5) . '.xml';
+                $result = 'order_res/' . substr($xml->sn, -5) . '.xml';
 
                 if (file_exists($result)) {
                     $xml = Storage::get($result);

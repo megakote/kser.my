@@ -26,6 +26,32 @@ $(document).ready(function () {
         return false;
     });
 
+    $("form#addOrder").submit(function(e) {
+        let form_data = $(this).serialize(); //собераем все данные из формы
+        $.ajax({
+            type: "POST",
+            url: "/api/form/order",
+            data: form_data,
+            beforeSend: function(){
+
+            },
+            success: function(data) {
+                if (data.success) {
+                    $('#responsePopup').show()
+                    $('#responseText').text(data.success)
+                } else if (data.error) {
+                    $('#responsePopup').show()
+                    $('#responseText').text(data.error)
+                }
+                // if ( $(".popup_wrapp").is(":visible") ) {
+                //     $(".popup_wrapp").fadeOut(300);
+                // }
+            }
+        });
+        e.preventDefault();
+        return false;
+    });
+
     $('#WorkStatusBtn').on('click', function () {
         let id = $('#WorkStatusId').val()
         $.ajax({
