@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'custom',
+    'default' => 'upl',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,6 +46,11 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+        ],
+
+        'upl' => [
+            'driver' => 'local',
+            'root' =>  base_path(env('FILES_EXCHANGE')),
         ],
 
         'public' => [

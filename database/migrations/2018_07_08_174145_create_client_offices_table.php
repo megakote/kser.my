@@ -19,7 +19,7 @@ class CreateClientOfficesTable extends Migration
             $table->string('id_dop');
             $table->string('name_dop');
             $table->string('login');
-            $table->integer('pass');
+            $table->string('pass');
             $table->string('adress');
             $table->string('tele');
             $table->string('manager');

@@ -37,10 +37,8 @@ class GetUsers implements ShouldQueue
      */
     public function handle()
     {
-        $directory = env('FILES_EXCHANGE') . 'users';
-        $files = Storage::files($directory);
+        $files = Storage::files('users');
         $lastParse = Config::firstOrNew(['name' => 'lastParseUsers']);
-
 
         foreach ($files as $file) {
             if (!$lastParse->value || Storage::lastModified($file) > $lastParse->value){
@@ -54,6 +52,7 @@ class GetUsers implements ShouldQueue
 
     private function parse($file)
     {
+
         $xml = Storage::get($file);
 
         try {
@@ -77,16 +76,59 @@ class GetUsers implements ShouldQueue
         $client->fill($arr)->save();
 
         if ($user->clent->dop_ofice == 'истина') {
-            foreach ($user->clent->items as $office) {
-                $client_office = ClientOffice::firstOrNew(['id_dop' => $office->id_dop]);
-                $client_office->fill(['client_id' => $client->id]);
-                $client_office->fill( (array) $office->item)->save();
-            }
-            foreach ($user->clent->faces as $face) {
-                $client_office_face = ClientFace::firstOrNew(['office' => $face->office]);
-                $client_office_face->fill(['client_id' => $client->id]);
-                $client_office_face->fill( (array) $face->face)->save();
-            }
+            $this->addOffices($user->clent, $client->id);
         }
+    }
+
+    private function addOffices($client, $client_id)
+    {
+        // Ахалай махалай
+        $json = json_encode($client->items);
+        $array = json_decode($json,TRUE);
+
+        $offices = [];
+        if(!isset($array['item'][0])){
+            $offices[0] = $array['item'];
+        } else {
+            $offices = $array['item'];
+        }
+        foreach ($offices as $office) {
+            $office = $this->clearArray($office);
+            $client_office = ClientOffice::firstOrNew(['login' => $office['login']]);
+            $client_office->fill(['client_id' => $client_id]);
+            $client_office->fill($office)->save();
+        }
+
+        // Ахалай махалай
+        $json = json_encode($client->faces);
+        $array = json_decode($json,TRUE);
+
+        if (!$array) {
+            return;
+        }
+
+        $faces = [];
+        if(!isset($array['face'][0])){
+            $faces[0] = $array['face'];
+        } else {
+            $faces = $array['face'];
+        }
+        foreach ($faces as $face) {
+            $face = $this->clearArray($face);
+            $client_office_face = New ClientFace();
+            $client_office_face->fill(['client_id' => $client_id]);
+            $client_office_face->fill($face)->save();
+        }
+    }
+
+
+    private function clearArray($array)
+    {
+        $arr = [];
+        foreach ($array as $key => $value)
+        {
+            $arr[$key] = (is_array($value)) ? '' : trim($value);
+        }
+        return $arr;
     }
 }

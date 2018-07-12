@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\Article::class, 66)->create();
         factory(App\Models\Form::class, 30)->create();
 
-//        dispatch(new App\Jobs\Parsers\GetUsers());
-//        dispatch(new App\Jobs\Parsers\GetOrders());
+        dispatch(new App\Jobs\Parsers\GetUsers());
+        dispatch(new App\Jobs\Parsers\GetOrders());
     }
 }

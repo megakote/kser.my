@@ -37,40 +37,40 @@ class FormController extends Controller
 
     private function sendTo1C($form)
     {
-
-        $text = '<?xml version="1.0" encoding="WINDOWS-1251"?>
+        $text = '<?xml version="1.0" encoding="UTF-8"?>
                     <data>
                       <site>ксер.рф</site>
                     </data>';
-
+        $text = html_entity_decode($text, ENT_NOQUOTES, 'UTF-8');
         $xml = new SimpleXMLElement($text);
-
-        $xml->sn = substr('00000' . time(), -5);
+        $sn = '00000' . time();
+        $xml->sn = $sn;
         $xml->time = $form->created_at->format('h:m:s');
         $xml->date = $form->created_at->format('Y.m.d');
 
 
         if ($form->name)
             $xml->date = $form->name;
-        if ($form->contact)
+        if ($form->contacts['email'])
             $xml->email = $form->contact;
+        if ($form->contacts['tel'])
+            $xml->tele = $form->contact;
         if ($form->comment)
             $xml->text = $form->comment;
 
-        $path = env('FILES_EXCHANGE') . 'new_order/' . time() . '_' . $form->type . '.xml';
-
+        $path = 'new_order/' . substr($sn, -5) . '_' . $form->type . '.xml';
 
         if (Storage::put($path, $xml->asXML())) {
             $sleepped = 0;
             sleep(1);
             while ($sleepped < 7) {
-                $result = env('FILES_EXCHANGE') . 'order_res/' . $form->type . '.xml';
+                $result = 'order_res/' . substr($sn, -5) . '.xml';
 
                 if (file_exists($result)) {
                     $xml = Storage::get($result);
                     $arr = new SimpleXMLElement($xml);
                     $message = 'Сообдение №' . $arr->nomer . ' отправлено. Сотрудник компании свяжется с вами в течении 5-10 минут. Спасибо за Ваше обращение!';
-                    return ['success' => 'Added new records.'];
+                    return ['success' => $message];
                 }
                 sleep(1);
                 $sleepped++;

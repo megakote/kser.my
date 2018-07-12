@@ -24,5 +24,4 @@ class Client extends Model
         return $this->hasOne(\App\User::class, 'id_1c', 'id');
     }
 
-
 }

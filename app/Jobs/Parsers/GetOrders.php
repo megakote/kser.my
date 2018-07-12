@@ -37,8 +37,7 @@ class GetOrders implements ShouldQueue
      */
     public function handle()
     {
-        $directory = env('FILES_EXCHANGE') . 'orders';
-        $files = Storage::files($directory);
+        $files = Storage::files('orders');
         $lastParse = Config::firstOrNew(['name' => 'lastParseOrders']);
 
         foreach ($files as $file) {

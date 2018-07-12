@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
-    protected $fillable = ['name', 'contact', 'comment'];
+    protected $fillable = ['name', 'contact', 'comment', 'type'];
 
     // TODO: обозначить какая форма откуда
     const TYPE = [
@@ -21,4 +21,22 @@ class Form extends Model
         8 => "Напишите руководителю",
         9 => "Отзыв магазину"
     ];
+
+    public function getContactsAttribute()
+    {
+        $contact = $this->attributes['contact'];
+        $data = [
+            'email' => '',
+            'tel' => ''
+        ];
+        if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $contact))
+        {
+            $data['email'] = $contact;
+        }
+        else {
+            $data['tel'] = $contact;
+        }
+
+        return $data;
+    }
 }
