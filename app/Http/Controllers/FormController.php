@@ -56,7 +56,7 @@ class FormController extends Controller
         if ($form->contacts['tel'])
             $xml->tele = $form->contact;
         if ($form->comment)
-            $xml->text = $form->comment;
+            $xml->order = $form->comment;
 
         $path = 'new_order/' . substr($sn, -5) . '_' . $form->type . '.xml';
 
