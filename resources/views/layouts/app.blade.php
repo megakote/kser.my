@@ -538,7 +538,7 @@
                         <div class="select_wrapp">
                             <select name="face" data-placeholder = "Контактное лицо *">
                                 @foreach(Auth::user()->client->faces as $face)
-                                    <option value="{{ $face->office }}">{{ $face->name }}</option>
+                                    <option value="{{ $face->id }}">{{ $face->name }}</option>
                                 @endforeach
                             </select>
                         </div>
