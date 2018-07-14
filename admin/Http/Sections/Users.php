@@ -58,7 +58,7 @@ class Users extends Section implements Initializable
             AdminColumn::text('id', '#')->setWidth('30px'),
             AdminColumn::text('name', 'Имя'),
             AdminColumn::text('client.id_1c', 'ИД в 1С'),
-            AdminColumn::text('email', 'Логин'),
+            AdminColumn::text('login', 'Логин'),
             AdminColumn::text('is_admin', 'админ ?'),
             AdminColumn::custom('Заявок', function ($model){
                 return ($model->client) ? $model->client->orders->count() : '-';
@@ -78,7 +78,7 @@ class Users extends Section implements Initializable
         $display = AdminForm::panel();
         $display->addBody([
             AdminFormElement::text('name', 'Имя'),
-            AdminFormElement::text('email', 'Логин')->required(),
+            AdminFormElement::text('login', 'Логин')->required(),
             AdminFormElement::select('id_1c', 'Пользователь 1С')->setModelForOptions(new Client())
                 ->setDisplay('id_1c')->required(),
             AdminFormElement::checkbox('is_admin', 'админ ?')

@@ -102,6 +102,8 @@ class FormController extends Controller
             $xml->tele = $form->contact;
         if ($form->comment)
             $xml->order = $form->comment;
+        if ($form->description)
+            $xml->type = $form->description;
 
         return $this->sendTo1C($xml, $form->type);
     }

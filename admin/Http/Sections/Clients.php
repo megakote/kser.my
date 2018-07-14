@@ -58,7 +58,7 @@ class Clients extends Section implements Initializable
             AdminColumn::text('id_1c', 'ИД в 1С'),
             AdminColumn::text('tel', 'Телефон'),
             AdminColumn::text('manager', 'Менеджер'),
-            AdminColumn::text('user.email', 'Логин на сайте')
+            AdminColumn::text('user.login', 'Логин на сайте')
         );
         return $display;
 

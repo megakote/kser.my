@@ -18,6 +18,7 @@ class CreateFormsTable extends Migration
             $table->integer('type');
             $table->string('name')->nullable();
             $table->string('contact')->nullable();
+            $table->string('description')->nullable();
             $table->text('comment')->nullable();
             $table->boolean('exported')->default(false);
             $table->timestamps();

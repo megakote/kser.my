@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
-    protected $fillable = ['name', 'contact', 'comment', 'type'];
+    protected $fillable = ['name', 'contact', 'comment', 'type', 'description'];
 
     // TODO: обозначить какая форма откуда
     const TYPE = [

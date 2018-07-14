@@ -99,7 +99,7 @@
             <div class="nav-2_wrapp">
                 <ul class="nav-2">
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[0]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_01.png" alt=""/>
                             </div>
@@ -107,7 +107,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[1]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_02.png" alt=""/>
                             </div>
@@ -115,7 +115,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[2]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_03.png" alt=""/>
                             </div>
@@ -123,7 +123,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[3]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_04.png" alt=""/>
                             </div>
@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[4]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_07.png" alt=""/>
                             </div>
@@ -139,7 +139,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[5]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_05.png" alt=""/>
                             </div>
@@ -147,7 +147,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/page/{{ $main_menu[6]->slug }}">
                             <div class="icon-box">
                                 <img src="/img/icon_06.png" alt=""/>
                             </div>
@@ -155,17 +155,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" onclick="return false">
                             <div class="icon-box">
                                 <img src="/img/icon_08.png" alt=""/>
                             </div>
                             <p>Еще</p>
                         </a>
                         <ul class="inner-nav">
-                            <li><a href="#">Ремонт счетчиков блокнот</a></li>
-                            <li><a href="#">Обслуживание по договору</a></li>
-                            <li><a href="#">Продажа картриджей</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="/page/{{ $main_menu[7]->slug }}">Ремонт счетчиков блокнот</a></li>
+                            <li><a href="/page/{{ $main_menu[8]->slug }}">Обслуживание по договору</a></li>
+                            <li><a href="/page/{{ $main_menu[9]->slug }}">Продажа картриджей</a></li>
+                            <li><a href="/page/{{ $main_menu[10]->slug }}">Контакты</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -189,7 +189,8 @@
             <h2 class="white">Нужна консультация?<br /> Мы перезвоним в течение 5 минут</h2>
             <div class="callback-form_wrapp">
                 <form class="form">
-                    <input type="hidden" name="type" value="4">
+                    <input type="hidden" name="type" value="2">
+                    <input type="hidden" name="description" value="Consultation">
                     <div class="callback-form clearfix">
                         <div class="left">
                             <div class="input_wrapp">
@@ -353,6 +354,7 @@
             <div class="popup-form">
                 <form class="form">
                     <input type="hidden" name="type" value="2">
+                    <input type="hidden" name="description" value="Callback">
                     <div class="input_wrapp">
                         <i class="user-2"></i>
                         <input type="text" name="name" placeholder="Имя*"/>
@@ -385,7 +387,7 @@
                     <div class="inputs_wrapp">
                         <div class="input_wrapp">
                             <i class="envelop-3"></i>
-                            <input type="email" name="email" placeholder="Email*" required/>
+                            <input type="text" name="login" placeholder="Логин*" required/>
                         </div>
                         <div class="input_wrapp">
                             <i class="lock"></i>
@@ -395,7 +397,7 @@
                     <div class="align-center">
                         <a href="{{ route('password.request') }}" class="link-2">Забыли пароль?</a>
                     </div>
-                    <div class="soc-links_wrapp">
+                    {{--<div class="soc-links_wrapp">
                         <div class="col">
                             <p>Войти через:</p>
                         </div>
@@ -406,7 +408,7 @@
                                 <li><a href=""><img src="/img/facebook.png" alt=""/></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div>--}}
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Войти</button>
                         <a href="{{ route('register') }}" class="transparent-pill_2">Зарегистрироваться</a>

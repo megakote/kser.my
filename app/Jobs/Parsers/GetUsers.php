@@ -2,6 +2,7 @@
 
 namespace App\Jobs\Parsers;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -97,6 +98,11 @@ class GetUsers implements ShouldQueue
             $client_office = ClientOffice::firstOrNew(['login' => $office['login']]);
             $client_office->fill(['client_id' => $client_id]);
             $client_office->fill($office)->save();
+            User::create([
+                'login' => $office['login'],
+                'password' => $office['pass'],
+                'id_1c' => Client::find($client_id)->id_1c
+            ]);
         }
 
         // Ахалай махалай

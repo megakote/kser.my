@@ -22,6 +22,16 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected $username = 'login';
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return $this->username;
+    }
     /**
      * Where to redirect users after login.
      *

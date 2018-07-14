@@ -20,7 +20,8 @@
                 <div class="right clearfix">
                     <div class="form_wrapp">
                         <form class="form">
-                            <input type="hidden" name="type" value="5">
+                            <input type="hidden" name="type" value="1">
+                            <input type="hidden" name="description" value="Consultation">
                             <h3>Оформите заявку онлайн и получите скидку 5% на работу мастера</h3>
                             <div class="input_wrapp">
                                 <i class="user-2"></i>
@@ -186,7 +187,8 @@
                         <p>Оставьте свои контакты и мы вышлем вам выгодное индивидуаульное предложение</p>
                         <div class="form-2">
                             <form class="form">
-                                <input type="hidden" name="type" value="6">
+                                <input type="hidden" name="type" value="2">
+                                <input type="hidden" name="description" value="Offer">
                                 <div class="input_wrapp">
                                     <i class="envelop-2"></i>
                                     <input type="email" name="contact" placeholder="Ваш e-mail" />

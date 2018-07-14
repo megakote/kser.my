@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         //$this->call(NewsTableSeeder::class);
         $this->call(MenuSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(PagesSeeder::class);
 
         factory(App\Models\News::class, 50)->create();
         factory(App\Models\MainPageClient::class, 20)->create();
