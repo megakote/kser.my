@@ -15,8 +15,8 @@
 
 
 Route::get('/get', function () {
-    dispatch(new App\Jobs\Parsers\GetUsers());
-    dispatch(new App\Jobs\Parsers\GetOrders());
+//    dispatch(new App\Jobs\Parsers\GetUsers());
+//    dispatch(new App\Jobs\Parsers\GetOrders());
 //    dispatch(new App\Jobs\Export\PutForms());
     return;
 });

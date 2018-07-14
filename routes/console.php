@@ -17,6 +17,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
 
-Artisan::command('users', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+Artisan::command('pars', function () {
+    dispatch(new App\Jobs\Parsers\GetUsers());
+    dispatch(new App\Jobs\Parsers\GetOrders());
+});
