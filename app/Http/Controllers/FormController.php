@@ -117,7 +117,7 @@ class FormController extends Controller
             $sleepped = 0;
             sleep(1);
             while ($sleepped < 7) {
-                $result = 'order_res/' . substr($xml->sn, -5) . '.xml';
+                $result = 'order_res/' . $xml->sn . '.xml';
 
                 if (file_exists($result)) {
                     $xml = Storage::get($result);
