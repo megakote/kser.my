@@ -52,8 +52,8 @@ class FormController extends Controller
         $xml = new SimpleXMLElement($text);
         $sn = '00000' . time();
         $xml->sn = $sn;
-        $xml->time = Carbon::now()->format('H:m:s');
         $xml->date = Carbon::now()->format('d.m.Y');
+        $xml->time = Carbon::now()->format('H:m:s');
         $xml->id_client = $user->client->id;
         $xml->name_client = $user->client->faces()->find($data['face'])->name;
         $xml->face = $user->client->faces()->find($data['face'])->name;
@@ -90,8 +90,9 @@ class FormController extends Controller
         $xml = new SimpleXMLElement($text);
         $sn = '00000' . time();
         $xml->sn = $sn;
-        $xml->time = $form->created_at->format('H:m:s');
+
         $xml->date = $form->created_at->format('d.m.Y');
+        $xml->time = $form->created_at->format('H:m:s');
 
 
         if ($form->name)

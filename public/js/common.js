@@ -11,6 +11,7 @@ $(document).ready(function () {
             },
             success: function(data) {
                 if (data.success) {
+                    $("form").reset();
                     $('#responsePopup').show()
                     $('#responseText').text(data.success)
                 } else if (data.error) {
@@ -37,6 +38,7 @@ $(document).ready(function () {
             },
             success: function(data) {
                 if (data.success) {
+                    $("form").reset();
                     $('#responsePopup').show()
                     $('#responseText').text(data.success)
                 } else if (data.error) {
