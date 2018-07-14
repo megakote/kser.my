@@ -76,6 +76,13 @@ class GetUsers implements ShouldQueue
 
         $client->fill($arr)->save();
 
+        User::firstOrNew([
+            'login' => $user->clent->login,
+        ])->fill([
+            'password' =>  $user->clent->pass,
+            'id_1c' => $client->id_1c
+        ])->save();
+
         if ($user->clent->dop_ofice == 'истина') {
             $this->addOffices($user->clent, $client->id);
         }
