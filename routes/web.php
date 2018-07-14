@@ -32,6 +32,8 @@ Route::get('/lk', 'LkController@index')->name('lk');
 
 
 Route::get('/search', 'SearchController@index')->name('search');
+Route::get('/contacts', 'PagesController@contacts')->name('contacts');
+Route::get('/about', 'PagesController@about')->name('about');
 
 Route::get('/page/{slug}', function($slug){
 

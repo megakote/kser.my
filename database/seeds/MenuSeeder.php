@@ -33,9 +33,39 @@ class MenuSeeder extends Seeder
             'url' => '/news'
         ]);
         Menu::create([
+            'parent_id' => '1',
+            'title' => 'Отзывы',
+            'url' => '/feedback'
+        ]);
+        Menu::create([
+            'parent_id' => 1,
+            'title' => 'Адреса сервисных центров',
+            'url' => '/contacts'
+        ]);
+        Menu::create([
+            'parent_id' => 1,
+            'title' => 'О нас',
+            'url' => '/about'
+        ]);
+        $footer1 = Menu::create([
             'place' => 'footer1',
             'title' => 'Нижнее1',
             'url' => ''
+        ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'Отзывы',
+            'url' => '/feedback'
+        ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'Адреса сервисных центров',
+            'url' => '/contacts'
+        ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'О нас',
+            'url' => '/about'
         ]);
         Menu::create([
             'place' => 'footer2',
