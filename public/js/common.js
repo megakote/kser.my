@@ -11,7 +11,7 @@ $(document).ready(function () {
             },
             success: function(data) {
                 if (data.success) {
-                    $("form").reset();
+                    $("form input").val('')
                     $('#responsePopup').show()
                     $('#responseText').text(data.success)
                 } else if (data.error) {
