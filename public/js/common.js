@@ -10,17 +10,18 @@ $(document).ready(function () {
 
             },
             success: function(data) {
+                if ( $(".popup_wrapp").is(":visible") ) {
+                    $(".popup_wrapp").fadeOut(300);
+                }
                 if (data.success) {
                     $("form input").val('')
                     $('#responsePopup').show()
-                    $('#responseText').text(data.success)
+                    $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                 } else if (data.error) {
                     $('#responsePopup').show()
-                    $('#responseText').text(data.error)
+                    $('#responseText').html(data.error)
                 }
-                // if ( $(".popup_wrapp").is(":visible") ) {
-                //     $(".popup_wrapp").fadeOut(300);
-                // }
+
             }
         });
         e.preventDefault();
@@ -37,17 +38,44 @@ $(document).ready(function () {
 
             },
             success: function(data) {
+                if ( $(".popup_wrapp").is(":visible") ) {
+                    $(".popup_wrapp").fadeOut(300);
+                }
                 if (data.success) {
                     $("form input").val('')
                     $('#responsePopup').show()
-                    $('#responseText').text(data.success)
+                    $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                 } else if (data.error) {
                     $('#responsePopup').show()
-                    $('#responseText').text(data.error)
+                    $('#responseText').html(data.error)
                 }
-                // if ( $(".popup_wrapp").is(":visible") ) {
-                //     $(".popup_wrapp").fadeOut(300);
-                // }
+            }
+        });
+        e.preventDefault();
+        return false;
+    });
+
+    $("form#addFeedback").submit(function(e) {
+        let form_data = $(this).serialize(); //собераем все данные из формы
+        $.ajax({
+            type: "POST",
+            url: "/api/form/feedback",
+            data: form_data,
+            beforeSend: function(){
+
+            },
+            success: function(data) {
+                if ( $(".popup_wrapp").is(":visible") ) {
+                    $(".popup_wrapp").fadeOut(300);
+                }
+                if (data.success) {
+                    $("form input").val('')
+                    $('#responsePopup').show()
+                    $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
+                } else if (data.error) {
+                    $('#responsePopup').show()
+                    $('#responseText').html(data.error)
+                }
             }
         });
         e.preventDefault();

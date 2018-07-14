@@ -629,7 +629,7 @@
                 <h3>Внимание!</h3>
             </div>
             <div class="popup-form">
-                <p id="responseText"></p>
+                <p id="responseText" style="font-size: 18px;"></p>
             </div>
         </div>
     </div>
@@ -643,6 +643,8 @@
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.maskedinput.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/select2.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/rating.min.js') }}"></script>
+    <script src="{{ asset('js/map.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoGWEyUlxHOSfMgm2TliQLggP3mej7d_I&callback=initMap"></script>
 
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/additional_scripts.js') }}"></script>

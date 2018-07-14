@@ -29,22 +29,21 @@ class FeedbackController extends Controller
         return view('feedback', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        Form::create([
-            'type' => 9,
-            'name' => $request->name,
-            'contact' => $request->contact,
-            'comment' => $request->body,
-
-        ]);
-        return redirect()->back()->with('status', 'Отзыв добавлен');
-    }
+//    /**
+//     * Store a newly created resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function store(Request $request)
+//    {
+//        Form::create([
+//            'type' => 9,
+//            'name' => $request->name,
+//            'contact' => $request->contact,
+//            'comment' => $request->body,
+//        ]);
+//        return redirect()->back()->with('status', 'Отзыв добавлен');
+//    }
 
 }

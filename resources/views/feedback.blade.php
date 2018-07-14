@@ -46,7 +46,7 @@
                             @if(session('status'))
                                 {{ session('status') }}
                             @else
-                                <form method="POST" action="{{ route('feedback.add') }}">
+                                <form method="POST" id="addFeedback">
                                 <div class="rates_wrapp_2">
                                     <p>Поставьте оценку магазину</p>
                                     <input type="hidden" name="stars">

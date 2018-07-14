@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feedback;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,18 +17,35 @@ class FormController extends Controller
 {
     public function addForm(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'type' => 'required',
+//        $validator = Validator::make($request->all(), [
+//            'type' => 'required',
+//        ]);
+//
+//        if ($validator->passes()) {
+
+        $form = Form::create($request->all());
+        return response()->json($this->convertForm($form));
+
+//        }
+
+//        return response()->json(['error' => $validator->errors()->all()]);
+    }
+
+    public function addFeedback(Request $request)
+    {
+
+        $form = Feedback::create([
+            'name' => $request->name,
+            'body' => $request->body . ' ' .$request->contact,
+            'stars' => $request->stars
         ]);
-
-        if ($validator->passes()) {
-
-            $form = Form::create($request->all());
-            return response()->json($this->convertForm($form));
-
-        }
-
-        return response()->json(['error' => $validator->errors()->all()]);
+        Form::create([
+            'type' => 9,
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'comment' => $request->body,
+        ]);
+        return response()->json($this->convertFeedback($form));
     }
 
     public function workStatus(Request $request)
@@ -70,10 +88,10 @@ class FormController extends Controller
         $xml->order = "Создана завявка в ЛК. в Офис логин: $data[office] на работы: $data[works], аппарат(ы): $data[apparat] желаемая дата с $data[date_from] по $data[date_to]";;
 
         Form::create([
-            'type' => $data['type'],
-            'name' => $xml->name_client,
+            'type'    => $data['type'],
+            'name'    => $xml->name_client,
             'contact' => $data['email'] ? $data['email'] : $data['tel'],
-            'comment' =>  $data['comment']
+            'comment' => $data['comment']
         ]);
 
 
@@ -108,21 +126,42 @@ class FormController extends Controller
 
         return $this->sendTo1C($xml, $form->type);
     }
+    private function convertFeedback($form)
+    {
+        $text = '<?xml version="1.0" encoding="UTF-8"?>
+                    <data>
+                      <site>ксер.рф</site>
+                    </data>';
+        $text = html_entity_decode($text, ENT_NOQUOTES, 'UTF-8');
+        $xml = new SimpleXMLElement($text);
+        $sn = '00000' . time();
+        $xml->sn = $sn;
+
+        $xml->date = $form->created_at->format('d.m.Y');
+        $xml->time = $form->created_at->format('H:m:s');
+
+
+        $xml->order = " Имя: $form->name \n Звезд: $form->stars \n Текст отзыва: $form->body \n Ссылка на отзыв: http://www.xn----ctbinb4ameeder.xn--p1ai/admin/feedback/$form->id/edit";
+
+        return $this->sendTo1C($xml, 9);
+    }
 
     private function sendTo1C($xml, $type)
     {
+        Storage::delete(Storage::files('new_order'));
+
         $path = 'new_order/' . substr($xml->sn, -5) . '_' . $type . '.xml';
 
         if (Storage::put($path, $xml->asXML())) {
             $sleepped = 0;
             sleep(1);
-            while ($sleepped < 7) {
+            while ($sleepped < 15) {
                 $result = 'order_res/' . $xml->sn . '.xml';
 
                 if (Storage::exists($result)) {
                     $xml = Storage::get($result);
                     $arr = new SimpleXMLElement($xml);
-                    $message = 'Сообдение №' . $arr->nomer . ' отправлено. Сотрудник компании свяжется с вами в течении 5-10 минут. Спасибо за Ваше обращение!';
+                    $message = str_replace(" ", "", $arr->nomer);
                     return ['success' => $message];
                 }
                 sleep(1);

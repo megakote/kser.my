@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="buttons_wrapp_2">
-                        <a href="#" class="transparent-pill_2 blue-pill_2"><i class="doc-2"></i>Смотреть презентацию</a>
+                        <a href="/Servis_print_presentation_4.pdf" class="transparent-pill_2 blue-pill_2"><i class="doc-2"></i>Смотреть презентацию</a>
                     </div>
                 </div>
                 <div class="col-2">

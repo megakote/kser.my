@@ -401,6 +401,29 @@
 
 	/*-- /Section 1 Reviews --*/
 
+	/*-- Section 1 Contacts --*/
+
+	.tabs_2 .tabs-links {
+	    display: block;
+	}
+
+	.tabs_2 .tabs-links {
+	    margin: 0 -1%;
+	}
+
+	.contacts_thumb_wrapp {
+		display: inline-block;
+		vertical-align: top;
+	    margin: 15px 1%;
+	    width: 48%;
+	}
+
+	.contact_map_wrapp .col-2 {
+	    width: 300px;
+	}
+
+	/*-- /Section 1 Contacts --*/
+
 	/*-- Footer --*/
 
 	.footer {
@@ -779,6 +802,58 @@
 
 	/*-- /Section 1 Cabinet --*/
 
+	/*-- Section 1 Contacts --*/
+
+	.tabs_2 .tabs-links {
+	    display: block;
+	}
+
+	.tabs_2 .tabs-links {
+	    margin: 0 -1%;
+	}
+
+	.contacts_thumb h3 {
+	    padding: 5px 0;
+	    font-size: 22px;
+	    line-height: 23px;
+	}
+
+	.contacts_thumb .info li {
+	    margin: 7px 0;
+	}
+
+	.contacts_thumb_wrapp {
+		display: inline-block;
+		vertical-align: top;
+	    margin: 15px 1%;
+	    width: 48%;
+	}
+
+	.contact_map_wrapp {
+	    display: block;
+	}
+
+	.contact_map_wrapp .col-1 {
+		display: block;
+	    width: 100%;
+	}
+
+	.contact_map_wrapp .col-2 {
+		display: block;
+	    width: 100%;
+	}
+
+	.contact_map {
+	    height: 420px;
+	    position: relative;
+	}
+
+	.contact_info .inner {
+	    margin: 13px 0;
+	}
+
+	/*-- /Section 1 Contacts --*/
+
 	/*-- Popups --*/
 
 	.sliding-header .cell-1 {
@@ -941,6 +1016,27 @@
 
 	/*-- /Section 1 Reviews --*/
 
+	/*-- Section 1 Contacts --*/
+
+	.tabs_2 {
+	    margin: 20px 0 15px 0;
+	}
+
+	.tabs_2 .tabs-links {
+	    margin: 0;
+	}
+
+	.contacts_thumb_wrapp {
+	    margin: 15px 0;
+	    width: 100%;
+	}
+
+	.contacts_thumb {
+	    padding: 19px 16px 25px 16px;
+	}
+
+	/*-- /Section 1 Contacts --*/
+
 	/*-- Popup --*/
 
 	.popup_7 {
@@ -1019,6 +1115,26 @@
 	}
 
 	/*-- /Section 5 - Main Page --*/
+
+	/*-- Section 1 Contacts --*/
+
+	.map_tooltip .inner {
+	    width: 270px !important;
+	    padding: 15px;
+	}
+
+	.map_tooltip h3 {
+	    padding-bottom: 0;
+	    font-size: 18px;
+	    line-height: 21px;
+	}
+
+	.map_tooltip .info li {
+		font-size: 14px;
+	    line-height: 20px;
+	}
+
+	/*-- /Section 1 Contacts --*/
 
 	/*-- Popups --*/
 
