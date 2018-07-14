@@ -119,7 +119,7 @@ class FormController extends Controller
             while ($sleepped < 7) {
                 $result = 'order_res/' . $xml->sn . '.xml';
 
-                if (file_exists($result)) {
+                if (Storage::exists($result)) {
                     $xml = Storage::get($result);
                     $arr = new SimpleXMLElement($xml);
                     $message = 'Сообдение №' . $arr->nomer . ' отправлено. Сотрудник компании свяжется с вами в течении 5-10 минут. Спасибо за Ваше обращение!';
