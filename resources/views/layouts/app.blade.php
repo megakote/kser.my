@@ -383,7 +383,7 @@
             </div>
             <div class="popup-form">
                 <form id="auth" method="POST" action="{{ route('login') }}">
-                    {{ csrf_field() }}
+                    @csrf
                     <div class="inputs_wrapp">
                         <div class="input_wrapp">
                             <i class="envelop-3"></i>
@@ -426,6 +426,7 @@
             </div>
             <div class="popup-form">
                 <form class="form">
+                    @csrf
                     <input type="hidden" name="type" value="3">
                     <div class="inputs_wrapp">
                         <div class="input_wrapp">

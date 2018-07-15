@@ -131,4 +131,6 @@
     </section>
 
     <!-- /Section 1 Contacts -->
+
+    <script type="text/javascript" src="{{ asset('vendors/js/infobox.js') }}"></script>
 @endsection

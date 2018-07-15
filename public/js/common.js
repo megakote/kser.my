@@ -14,7 +14,7 @@ $(document).ready(function () {
                     $(".popup_wrapp").fadeOut(300);
                 }
                 if (data.success) {
-                    $("form input").val('')
+                    clearForms()
                     $('#responsePopup').show()
                     $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                 } else if (data.error) {
@@ -42,7 +42,7 @@ $(document).ready(function () {
                     $(".popup_wrapp").fadeOut(300);
                 }
                 if (data.success) {
-                    $("form input").val('')
+                    clearForms()
                     $('#responsePopup').show()
                     $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                 } else if (data.error) {
@@ -69,7 +69,7 @@ $(document).ready(function () {
                     $(".popup_wrapp").fadeOut(300);
                 }
                 if (data.success) {
-                    $("form input").val('')
+                    clearForms()
                     $('#responsePopup').show()
                     $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
                 } else if (data.error) {
@@ -108,3 +108,8 @@ $(document).ready(function () {
     })
 
 });
+
+function clearForms() {
+    $("form input").not('[name="type"]').val('')
+    $("form textarea").val('')
+}
