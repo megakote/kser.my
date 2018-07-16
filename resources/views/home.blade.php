@@ -191,7 +191,7 @@
                                 <input type="hidden" name="description" value="Offer">
                                 <div class="input_wrapp">
                                     <i class="envelop-2"></i>
-                                    <input type="email" name="contact" placeholder="Ваш e-mail" />
+                                    <input type="email" required name="contact" placeholder="Ваш e-mail" />
                                 </div>
                                 <div class="submit_wrapp">
                                     <button type="submit" class="yellow-pill">Заказать</button>
