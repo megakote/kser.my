@@ -25,11 +25,11 @@
                             <h3>Оформите заявку онлайн и получите скидку 5% на работу мастера</h3>
                             <div class="input_wrapp">
                                 <i class="user-2"></i>
-                                <input type="text" name="name" placeholder="Имя*" />
+                                <input type="text" name="name" required placeholder="Имя*" />
                             </div>
                             <div class="input_wrapp">
                                 <i class="tel"></i>
-                                <input type="tel" name="contact" placeholder="Номер телефона или e-mail*" />
+                                <input type="tel" name="contact" required placeholder="Номер телефона или e-mail*" />
                             </div>
                             <div class="input_wrapp">
                                 <i class="doc"></i>

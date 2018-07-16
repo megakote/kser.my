@@ -195,17 +195,17 @@
                         <div class="left">
                             <div class="input_wrapp">
                                 <i class="user-3"></i>
-                                <input type="text" name="name" placeholder="Имя*">
+                                <input type="text" name="name" required placeholder="Имя*">
                             </div>
                             <div class="input_wrapp">
                                 <i class="phone-2"></i>
-                                <input type="text" name="contact" placeholder="Номер телефона или e-mail*">
+                                <input type="text" name="contact" required placeholder="Номер телефона или e-mail*">
                             </div>
                         </div>
                         <div class="right">
                             <div class="input_wrapp">
                                 <i class="doc-3"></i>
-                                <textarea name="comment" placeholder="Текст вопроса "></textarea>
+                                <textarea name="comment"  placeholder="Текст вопроса "></textarea>
                             </div>
                         </div>
                     </div>
@@ -357,11 +357,11 @@
                     <input type="hidden" name="description" value="Callback">
                     <div class="input_wrapp">
                         <i class="user-2"></i>
-                        <input type="text" name="name" placeholder="Имя*"/>
+                        <input type="text" name="name" required placeholder="Имя*"/>
                     </div>
                     <div class="input_wrapp">
                         <i class="tel"></i>
-                        <input type="tel" name="contact" placeholder="Номер телефона или e-mail*"/>
+                        <input type="tel" name="contact" required placeholder="Номер телефона или e-mail*"/>
                     </div>
                     <div class="input_wrapp">
                         <i class="doc"></i>
