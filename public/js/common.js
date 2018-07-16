@@ -114,6 +114,19 @@ $(document).ready(function () {
     })
 });
 
+$(window).on('load', function () {
+    if (!$.cookie('city')){
+        $.ajax({
+            type: "POST",
+            url: "/api/whoiam",
+            success: function(data) {
+                $.cookie('city', data.city);
+            }
+        });
+    }
+});
+
+
 function clearForms() {
     $("form input").not('[name="type"]').val('')
     $("form textarea").val('')

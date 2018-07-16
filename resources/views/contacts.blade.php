@@ -73,10 +73,10 @@
                                 <div class="contact_info">
                                     <div class="inner">
                                         <p>Можно позвонить нам по телефону круглосуточно:</p>
-                                        <a class="tel-link_2" href="tel:88001231212">8 800 123 12 12</a>
+                                        <a class="tel-link_2" href="tel:88001006550">8(800) 100-65-50</a>
                                     </div>
                                     <div class="inner">
-                                        <p>А может, вам удобнее написать нам на почту <a class="link-3" href="mailto:info@info.ru">info@info.ru</a> ?</p>
+                                        <p>А может, вам удобнее написать нам на почту <a class="link-3" href="mailto:abc@print.ru">abc@print.ru</a> ?</p>
                                     </div>
                                 </div>
                             </div>

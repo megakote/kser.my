@@ -21,3 +21,7 @@ Route::post('/form/feedback', 'FormController@addFeedback');
 Route::post('/form/order', 'FormController@createOrder');
 Route::post('/form', 'FormController@addForm');
 Route::post('/work-status', 'FormController@workStatus');
+
+Route::post('/whoiam', function(){
+    return ip_info();
+});

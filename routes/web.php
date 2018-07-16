@@ -18,7 +18,7 @@ Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
 //    dispatch(new App\Jobs\Parsers\GetOrders());
 //    dispatch(new App\Jobs\Export\PutForms());
-    return;
+    return ip_info('88.201.235.252');
 });
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
