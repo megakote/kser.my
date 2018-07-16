@@ -132,6 +132,7 @@ $(document).ready(function() {
             if ( $(".popup_wrapp").is(":visible") ) {
                 $("form input").not('[name="type"]').val('')
                 $("form textarea").val('')
+                console.log('123')
                 $(".popup_wrapp").fadeOut(300);
 
             }
