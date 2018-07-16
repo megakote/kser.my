@@ -26,7 +26,8 @@
                         <div class="thumb-6">
                             <a href="{{ $article->url }}" class="inner">
                                 <div class="info-box">
-                                    <p>{{ $article->created_at->diffForHumans() }}</p>
+{{--                                    <p>{{ $article->created_at->diffForHumans() }}</p>--}}
+                                    <p>Новость</p>
                                 </div>
                                 <div class="img-box">
                                     <img src="{{ $article->img }}" alt="" />

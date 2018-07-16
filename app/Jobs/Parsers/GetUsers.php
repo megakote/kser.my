@@ -105,8 +105,10 @@ class GetUsers implements ShouldQueue
             $client_office = ClientOffice::firstOrNew(['login' => $office['login']]);
             $client_office->fill(['client_id' => $client_id]);
             $client_office->fill($office)->save();
+
+            $office_login = (strlen(trim($office['login'])) == 4) ? $office['login'].$office['id_dop'] : $office['login'];
             User::firstOrNew([
-                'login' => $office['login'],
+                'login' => $office_login,
             ])->fill([
                 'password' => $office['pass'],
                 'id_1c' => Client::find($client_id)->id_1c

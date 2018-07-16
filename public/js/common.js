@@ -107,6 +107,10 @@ $(document).ready(function () {
         $("input[name='stars']").val($(this).data('index') + 1);
     })
 
+    $("body").on('click', '.mCSB_container', function () {
+        clearForms()
+    })
+
 });
 
 function clearForms() {

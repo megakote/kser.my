@@ -156,8 +156,8 @@ $(document).ready(function() {
         if (!hide_element.is(e.target)
             && hide_element.has(e.target).length === 0
             && hide_element.closest(".popup_7_wrapp").length == 0 ) {
-                $("form input").not('[name="type"]').val('')
-                $("form textarea").val('')
+                // $("form input").not('[name="type"]').val('')
+                // $("form textarea").val('')
                 hide_element.closest(".popup_wrapp").fadeOut(300);            
         }
 
