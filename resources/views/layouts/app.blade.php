@@ -552,7 +552,7 @@
                         <div class="select_wrapp">
                             <select name="office" data-placeholder = "Доп. офис">
                                 @foreach(Auth::user()->client->offices as $office)
-                                    <option value="{{ $office->login }}">{{ $office->adress }}</option>
+                                    <option data-adress="{{ $office->adress }}" value="{{ $office->login }}">{{ $office->name_dop }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -587,7 +587,7 @@
                         <textarea class="textarea_2" name="comment" placeholder="Описание неисправности *"></textarea>
                     </div>
                     <div class="input_wrapp input_wrapp_5">
-                        <textarea name="address" placeholder="Адрес *" value="{{ Auth::user()->client->address? Auth::user()->client->address:'' }}"></textarea>
+                        <textarea name="address" placeholder="Адрес *" value="{{ Auth::user()->client->offices[0]? Auth::user()->client->offices[0]->adress : '' }}"></textarea>
                     </div>
                     <div class="dates_input">
                         <label>Желаемая дата:</label>

@@ -112,6 +112,11 @@ $(document).ready(function () {
             clearForms()
         }
     })
+
+    $('select[name="office"]').on('change', function () {
+        var addr = $(this).data('adress')
+        $('textarea[name="address"]').val(addr)
+    })
 });
 
 $(window).on('load', function () {
