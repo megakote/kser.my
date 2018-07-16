@@ -612,7 +612,7 @@
                         следующий день после выполнения работ).</p>
                     <div class="checkbox-4">
                         <input type="checkbox" required id="ord_ch_1" checked />
-                        <label for="ord_ch_1">Cогласен на обработку моих персональных данных*</label>
+                        <label for="ord_ch_1">Я согласен на обработку моих персональных данных*</label>
                     </div>
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Подать заявку</button>
