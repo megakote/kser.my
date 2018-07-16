@@ -20,6 +20,10 @@ Route::get('/get', function () {
 //    dispatch(new App\Jobs\Export\PutForms());
     return ip_info('88.201.235.252');
 });
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('home');
+});
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/news/{slug?}', 'NewsController@index')->name('news');
