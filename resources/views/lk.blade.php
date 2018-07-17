@@ -33,86 +33,94 @@
                         </div>
                     </div>
                     <div class="right">
-                        {{--<a href="#" class="orange_link"><i class="settings"></i>Расширенный поиск</a>--}}
+                        <a href="#" class="orange_link"><i class="settings"></i>Расширенный поиск</a>
                     </div>
                 </div>
-                {{--
                 <div class="sort_wrapp">
-                    <div class="inner clearfix">
-                        <div class="left">
-                            <div class="input_wrapp_2">
-                                <div class="col-1">
-                                    <p>Дополнительный офис</p>
-                                </div>
-                                <div class="col-2">
-                                    <div class="select_wrapp select-wrapp_2">
-                                        <select data-placeholder="Все">
-                                            <option></option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
+                    <form id="AdvancedSearch" action="">
+                        <div class="inner clearfix">
+                            <div class="left">
+                                <div class="input_wrapp_2">
+                                    <div class="col-1">
+                                        <p>Дополнительный офис</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="input_wrapp_4">
-                                <div class="col-1">
-                                    <p>Тип заявки</p>
-                                </div>
-                                <div class="col-2">
-                                    <div class="select_wrapp select-wrapp_2">
-                                        <select data-placeholder="Все">
-                                            <option></option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inner clearfix">
-                        <div class="left">
-                            <div class="input_wrapp_3">
-                                <div class="col-1">
-                                    <p>Дата</p>
-                                </div>
-                                <div class="col-2">
-                                    <div class="dates_wrapp">
-                                        <div class="date_wrapp">
-                                            <input class="date_input" type="text" name="" placeholder="22.12.2015">
-                                            <i class="calendar"></i>
+                                    <div class="col-2">
+                                        <div class="select_wrapp select-wrapp_2">
+                                            <select name="name_dop" data-placeholder="Все">
+                                                @foreach(Auth::user()->client->offices as $office)
+                                                    <option {{ (request()->name_dop == $office->name_dop ? 'selected' : '') }} value="{{ $office->name_dop }}">{{ $office->name_dop }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="date_wrapp">
-                                            <input class="date_input" type="text" name="" placeholder="22.12.2016">
-                                            <i class="calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="input_wrapp_4">
+                                    <div class="col-1">
+                                        <p>Тип заявки</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="select_wrapp select-wrapp_2">
+                                            <select name="type" data-placeholder="Все">
+                                                <option value="">Все</option>
+                                                <option {{ (request()->type == "Ремонт" ? 'selected' : '') }} value="Ремонт">Ремонт</option>
+                                                <option {{ (request()->type == "Отвоз документов с возвратом в офис" ? 'selected' : '') }} value="Отвоз документов с возвратом в офис">Отвоз документов с возвратом в офис</option>
+                                                <option {{ (request()->type == "Оригиналы" ? 'selected' : '') }} value="Оригиналы">Оригиналы</option>
+                                                <option {{ (request()->type == "Отвоз документов" ? 'selected' : '') }} value="Отвоз документов">Отвоз документов</option>
+                                                <option {{ (request()->type == "Совместимые" ? 'selected' : '') }} value="Совместимые">Совместимые</option>
+                                                <option {{ (request()->type == "Довоз по бланку" ? 'selected' : '') }} value="Довоз по бланку">Довоз по бланку</option>
+                                                <option {{ (request()->type == "Гарантийный ремонт" ? 'selected' : '') }} value="Гарантийный ремонт">Гарантийный ремонт</option>
+                                                <option {{ (request()->type == "Устранение брака заправки" ? 'selected' : '') }} value="Устранение брака заправки">Устранение брака заправки</option>
+                                                <option {{ (request()->type == "Заправка > (взятие)" ? 'selected' : '') }} value="Заправка > (взятие)">Заправка &gt; (взятие)</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="right">
-                            <div class="input_wrapp_4">
-                                <div class="col-1">
-                                    <p>Статус</p>
+                        <div class="inner clearfix">
+                            <div class="left">
+                                <div class="input_wrapp_3">
+                                    <div class="col-1">
+                                        <p>Дата</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="dates_wrapp">
+                                            <div class="date_wrapp">
+                                                <input class="date_input" type="text" name="date_from" value="{{ (request()->date_from  ? request()->date_from : '') }}" placeholder="22.12.2015">
+                                                <i class="calendar"></i>
+                                            </div>
+                                            <div class="date_wrapp">
+                                                <input class="date_input" type="text" name="date_to" value="{{ (request()->date_to ? request()->date_to : '') }}" placeholder="22.12.2016">
+                                                <i class="calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-2">
-                                    <div class="select_wrapp select-wrapp_2">
-                                        <select data-placeholder="Все">
-                                            <option></option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
+                            </div>
+                            <div class="right">
+                                <div class="input_wrapp_4">
+                                    <div class="col-1">
+                                        <p>Статус</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="select_wrapp select-wrapp_2">
+                                            <select name="status" data-placeholder="Все">
+                                                <option value="Все">Все</option>
+                                                <option {{ (request()->status == "Зарегистрировано" ? 'selected' : '') }} value="Зарегистрировано">Зарегистрировано</option>
+                                                <option {{ (request()->status == "Принято в обработку" ? 'selected' : '') }} value="Принято в обработку">Принято в обработку</option>
+                                                <option {{ (request()->status == "Отправлено" ? 'selected' : '') }} value="Отправлено">Отправлено</option>
+                                                <option {{ (request()->status == "Выполнено" ? 'selected' : '') }} value="Выполнено">Выполнено</option>
+                                                <option {{ (request()->status == "Завершено" ? 'selected' : '') }} value="Завершено">Завершено</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div> --}}
+                    </form>
+                </div>
                 <div class="scroll_x">
 
                     <div class="table_2">

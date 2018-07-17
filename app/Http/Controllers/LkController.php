@@ -10,13 +10,6 @@ use Auth;
 class LkController extends Controller
 {
 
-    public function __construct()
-    {
-
-//        parent::__construct();
-
-    }
-
     public function index(Request $request)
     {
         if (!(Auth::user() && Auth::user()->client)) {
@@ -27,9 +20,24 @@ class LkController extends Controller
 
         $data['orders'] = Auth::user()->client->orders;
 
-        if($request->order_id) {
+        if ($request->name_dop)
+            $data['orders'] = $data['orders']->where('name_dop', $request->name_dop);
+
+        if ($request->status)
+            $data['orders'] = $data['orders']->where('status', 'like', $request->status);
+
+        if ($request->type)
+            $data['orders'] = $data['orders']->where('type', $request->type);
+
+        if($request->order_id)
             $data['orders'] = $data['orders']->where('nomer', $request->order_id);
-        }
+
+        if($request->date_from)
+            $data['orders'] = $data['orders']->whereDate('time_cr', '>', $request->date_from);
+
+        if($request->date_to)
+            $data['orders'] = $data['orders']->whereDate('time_cr', '<', $request->date_to);
+
         return view('lk', $data);
     }
 }

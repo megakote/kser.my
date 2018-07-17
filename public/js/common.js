@@ -117,6 +117,10 @@ $(document).ready(function () {
         var addr = $(this).data('adress')
         $('textarea[name="address"]').val(addr)
     })
+
+    $('#AdvancedSearch select').on('change', function () {
+        $('#AdvancedSearch').submit();
+    })
 });
 
 $(window).on('load', function () {
