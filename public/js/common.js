@@ -62,14 +62,14 @@ $(document).ready(function () {
             url: "/api/form/feedback",
             data: form_data,
             beforeSend: function(){
-
             },
             success: function(data) {
                 if ( $(".popup_wrapp").is(":visible") ) {
                     $(".popup_wrapp").fadeOut(300);
                 }
-                if (data.success) {
+                if (data.success) {0
                     clearForms()
+                    $("input[name='stars']").val('');
                     $('#responsePopup').show()
                     $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
                 } else if (data.error) {
