@@ -132,7 +132,6 @@ $(document).ready(function() {
             if ( $(".popup_wrapp").is(":visible") ) {
                 $("form input").not('[name="type"]').val('')
                 $("form textarea").val('')
-                console.log('123')
                 $(".popup_wrapp").fadeOut(300);
 
             }
@@ -144,8 +143,7 @@ $(document).ready(function() {
     $(".close-popup, .popup_bg").click(function() {
 
         popupBlock = $(this).closest(".popup_wrapp");
-        $("form input").not('[name="type"]').val('')
-        $("form textarea").val('')
+
         popupBlock.fadeOut(300);
 
     });
@@ -157,8 +155,6 @@ $(document).ready(function() {
         if (!hide_element.is(e.target)
             && hide_element.has(e.target).length === 0
             && hide_element.closest(".popup_7_wrapp").length == 0 ) {
-                // $("form input").not('[name="type"]').val('')
-                // $("form textarea").val('')
                 hide_element.closest(".popup_wrapp").fadeOut(300);            
         }
 
@@ -280,25 +276,32 @@ $(document).ready(function() {
 
     $( ".thumb-1" ).bind({
       mouseenter: function() {
-        thumbCenterCoord = $(this).outerWidth() / 2;
-        tooltipCenterCoord = $( this ).find(".tooltip").outerWidth() / 2;
-        rightCoord = tooltipCenterCoord - thumbCenterCoord;
 
-        $( this ).find(".tooltip").attr("style", "opacity: 1; right: -"+ rightCoord +"px");
+        if( !$(this).closest(".thumbnails_1").hasClass("no-tooltip") ) {
 
-        if($( this ).find(".tooltip").offset().left < 0 ) {
+            thumbCenterCoord = $(this).outerWidth() / 2;
+            tooltipCenterCoord = $( this ).find(".tooltip").outerWidth() / 2;
+            rightCoord = tooltipCenterCoord - thumbCenterCoord;
 
-            $( this ).find(".tooltip").attr("style", "opacity: 1; right: unset; left: 0;");
+            $( this ).find(".tooltip").attr("style", "opacity: 1; right: -"+ rightCoord +"px");
 
-        } else if($( this ).find(".tooltip").offset().left + $( this ).find(".tooltip").outerWidth() > $(window).width() ) {
+            if($( this ).find(".tooltip").offset().left < 0 ) {
 
-            $( this ).find(".tooltip").attr("style", "opacity: 1; right: 0;");
+                $( this ).find(".tooltip").attr("style", "opacity: 1; right: unset; left: 0;");
+
+            } else if($( this ).find(".tooltip").offset().left + $( this ).find(".tooltip").outerWidth() > $(window).width() ) {
+
+                $( this ).find(".tooltip").attr("style", "opacity: 1; right: 0;");
+
+            }
 
         }
 
       },
       mouseleave: function() {
-        $( this ).find(".tooltip").attr("style", "opacity: 0; right: 10000px;");
+        if( !$(this).closest(".thumbnails_1").hasClass("no-tooltip") ) {
+            $( this ).find(".tooltip").attr("style", "opacity: 0; right: 10000px;");
+        }
       }
     });
 
@@ -345,6 +348,68 @@ $(document).ready(function() {
         }
 
     });
+
+    // --------------
+
+    $("#user_links").click(function(e) {
+
+        e.preventDefault();
+
+        parentBlock = $(this).closest(".user-menu_wrapp");
+        var usersMenu = parentBlock.find(".users-menu");
+
+        if( usersMenu.is(":hidden") ) {
+            usersMenu.slideDown(300);
+            $(this).addClass("active");
+        } else {
+            usersMenu.slideUp(300);
+            $(this).removeClass("active");
+        }
+
+    });
+
+    $(this).keydown(function(eventObject){
+
+        if (eventObject.which == 27 &&
+            $(".users-menu").is(":visible") ) {
+                $(".users-menu").slideUp(300);
+                $(".users-menu").closest(".user-menu_wrapp").find(".grey-pill").removeClass("active");
+        }
+
+    });
+
+    $(document).mouseup(function (e){
+
+        var hide_element = $('.users-menu');
+
+        if (!hide_element.is(e.target)
+            && hide_element.has(e.target).length === 0 ) {
+                $(".users-menu").slideUp(300);
+                hide_element.closest(".user-menu_wrapp").find(".grey-pill").removeClass("active");           
+        }
+
+    });
+
+    $(".sertificate").click(function(e) {
+        e.preventDefault();
+        var imgPath = $(this).attr("href");
+        popupName = $(this).attr("data-popup-name");
+        popupBlock = $(".sertificate_popup").filter("[data-popup = '"+ popupName +"']");
+        popupBlock.fadeIn(300);
+        popupBlock.find(".popup_image").attr('src', imgPath);
+    });
+
+    $(document).mouseup(function (e){
+
+        var hide_element = $('.popup_image');
+
+        if (!hide_element.is(e.target)
+            && hide_element.has(e.target).length === 0 ) {
+                hide_element.closest(".popup_wrapp").fadeOut(300);;         
+        }
+
+    });
+
 
 });
 

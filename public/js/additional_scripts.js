@@ -154,6 +154,41 @@ $(document).ready(function() {
 	      ]
 	});
 
+	$(".slider_3").not(".slick-initialized").slick({
+        dots: false,
+        arrows: true,
+        // autoplay: true,
+        swipeToSlide: true,
+		infinite: true,
+        // autoplaySpeed: 5000,
+        speed: 1200,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+	        {
+	          breakpoint: 1240,
+	          settings: {
+	            slidesToShow: 3,
+	            slidesToScroll: 1
+	          }
+	        },
+	        {
+	          breakpoint: 900,
+	          settings: {
+	            slidesToShow: 2,
+	            slidesToScroll: 1
+	          }
+	        },
+	        {
+	          breakpoint: 630,
+	          settings: {
+	            slidesToShow: 1,
+	            slidesToScroll: 1
+	          }
+	        }
+	      ]
+	});
+
 	$("#respsidebar").swipe({
 
         swipe:function(event, direction) {

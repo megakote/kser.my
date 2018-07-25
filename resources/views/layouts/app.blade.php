@@ -253,7 +253,7 @@
                         <i class="phone_2"></i>
                     </div>
                     <div class="col-2">
-                        <p><a href="tel:88001006550" class="link-3">8 800 100 65 50</a></p>
+                        <p><a href="tel:88001006550" class="link-3_2">8 800 100 65 50</a></p>
                         <p>круглосуточная бесплатная линия</p>
                     </div>
                 </div>
@@ -466,7 +466,7 @@
         </div>
     </div>
 
-    <div class="popup_wrapp scroll" data-popup="popup_6">
+    <div class="popup_wrapp scroll" data-popup ="popup_6">
         <div class="popup popup_5">
             <button type="button" class="close-popup"></button>
             <div class="popup-header">
@@ -475,58 +475,59 @@
             <div class="popup-form">
                 <form>
                     <div class="cities-box scroll">
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_01">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_01">
                             <label for="city_01">Москва</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_02">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_02">
                             <label for="city_02">Нижний Новгород</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_03">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_03">
                             <label for="city_03">Новосибирск</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_04">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_04">
                             <label for="city_04">Красноярск</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_05">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_05">
                             <label for="city_05">Ростов-на-Дону</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_06">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_06">
                             <label for="city_06">Тюмень</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_07">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_07">
                             <label for="city_07">Самара</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_08">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_08">
                             <label for="city_08">Хабаровск</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_09">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_09">
                             <label for="city_09">Город</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_10">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_10">
                             <label for="city_10">Город</label>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="cicty" id="city_11">
+                        <div class="radiobutton">
+                            <input type="radio" name="cicty" id="city_11">
                             <label for="city_11">Город</label>
                         </div>
                     </div>
                     <div class="submit_wrapp">
-                        <button type="submit" class="blue-pill">Выбрать</button>
+                        <button type="submit" class="blue-pill" id="city_btn">Выбрать</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
     @if(Auth::user() && Auth::user()->client)
     <div class="popup_wrapp scroll popup_7_wrapp" data-popup ="popup_7">
         <div class="popup_bg"></div>
@@ -645,13 +646,64 @@
     <script type="text/javascript" src="{{ asset('vendors/js/select2.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/rating.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.cookie.js') }}"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoGWEyUlxHOSfMgm2TliQLggP3mej7d_I&callback=initMap"></script>
 
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/additional_scripts.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
+    <!-- Скрипт выбора города -->
 
+    <script type="text/javascript">
+
+        jQuery(document).ready(function(){
+
+            var parentBlock;
+            var checkedInput;
+            var checkedInputId;
+            var parentRadioWrapp;
+            var cityVal;
+            var cityName;
+
+            $("#city_btn").click(function(e) {
+
+                e.preventDefault();
+
+                parentBlock = $(this).closest("form");
+
+                checkedInput = parentBlock.find("input").filter(":checked");
+
+                checkedInputId = checkedInput.attr("id");
+
+                parentRadioWrapp = checkedInput.closest(".radiobutton");
+
+                cityVal = parentRadioWrapp.find("label[for = '"+ checkedInputId +"']").text();
+
+                $.cookie('city', cityVal, {
+                    expires: 7,
+                    path: '/'
+                });
+
+                cityName = $.cookie('city');
+
+                $("#city_val").text(cityName);
+
+                $(this).closest(".popup_wrapp").fadeOut(300);
+
+            });
+
+
+            if(cityName != false) {
+
+                $("#city_val").text($.cookie('city'));
+
+            }
+
+        });
+
+    </script>
+
+    <!-- ------------------------------ -->
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
         (function(){ var widget_id = 'VfrbmQCNUN';var d=document;var w=window;function l(){
