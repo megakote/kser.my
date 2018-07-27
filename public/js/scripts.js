@@ -33,6 +33,8 @@ var rightCoord;
 
 $(window).load(function() {
 
+    $("body, html").scrollTop(0);
+
     getAdaptivePositionElements();
 
     getSelectWidth();
@@ -107,7 +109,7 @@ $(document).ready(function() {
 
     // -------------------------
 
-    $("input[type='tel']").mask("+7 (999) 999-99-99");
+    // $("input[type='tel']").mask("+7 (999) 999-99-99");
     $(".date_input").mask("99.99.9999");
 
     // -------------------------------
@@ -452,4 +454,315 @@ function getSelectWidth() {
 
     });
 
+}
+
+
+$(document).ready(function() {
+
+    // ------------------------------
+    // ------ Email Validator -------
+    // ------------------------------
+
+    var form_id;
+
+    $(".error-block").slideUp(30);
+
+    setTimeout(function() {
+        $(".error-block").css({"opacity" : 1});
+    }, 300);
+
+    $("form").submit(function(e) {
+
+        e.preventDefault();
+
+        form_id = $(this).attr("id");
+
+        $(this).addClass("tested");
+
+        //   processform.php   -   это название PHP файла с обработчиком отправки формы (может быть любой)
+
+        ajaxFormRequest(form_id, 'processform.php');
+
+    });
+
+    $("input").keyup(function(e) {
+
+        parentBlock = $(this).closest("form");
+
+        form_id = parentBlock.attr("id");
+
+        if(parentBlock.hasClass('tested')) {
+
+            if($(this).attr('type') == 'text') {
+
+                validateName(form_id);
+
+            } else if($(this).attr('type') == 'email') {
+
+                validateEmail(form_id);
+
+            } else if($(this).attr('type') == 'tel') {
+
+                validateTel(form_id);
+
+            } else if( $(this).attr('type') == '' && $(this).hasClass("contact_input") ) {
+
+                validateContactInp(form_id);
+
+            }
+
+        }
+
+    });
+
+    $("textarea").keyup(function(e) {
+
+        parentBlock = $(this).closest("form");
+
+        form_id = parentBlock.attr("id");
+
+        if(parentBlock.hasClass('tested')) {
+            validateMsg(form_id)
+        }
+
+    });
+
+});
+
+function validateName(form_id) {
+    var activeInput = $("#" + form_id + " input[type='text']");
+    var name = activeInput.val(),
+        patt =  /^[а-яА-Яa-zA-Z\s\.]{2,30}$/;
+    if (patt.test(name)  || 
+        ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+        activeInput.removeClass('error_input');
+
+        if(activeInput.next(".error-block").is(":visible")) {
+
+            activeInput.next(".error-block").slideUp(300);
+
+        }
+
+        activeInput.removeClass('error_input');
+        return true;
+    }
+
+    if( activeInput.hasClass("important")  || activeInput.val().length == 0 ) {
+
+        activeInput.addClass('error_input');
+
+        activeInput.next(".error-block").slideDown(300);
+
+    }
+
+    return false;
+}
+
+function validateEmail(form_id) {
+    var activeInput = $("#" + form_id + " input[type='email']");
+    var email = activeInput.val(),
+        emailPattern = /^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/;
+    if (emailPattern.test(email) || 
+        ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+        activeInput.removeClass('error_input');
+
+        if(activeInput.next(".error-block").is(":visible")) {
+
+            activeInput.next(".error-block").slideUp(300);
+
+        }
+
+        activeInput.removeClass('error_input');
+
+        return true;
+    }
+
+    if( activeInput.hasClass("important") || activeInput.val().length > 0 ) {
+
+        activeInput.addClass('error_input');
+
+        activeInput.next(".error-block").slideDown(300);
+
+    }
+
+    return false;
+}
+
+function validateTel(form_id) {
+    var activeInput = $("#" + form_id + " input[type='tel']");
+    var tel = activeInput.val(),
+        telpatt = /^[а-яА-Яa-zA-Z0-9- _()+.]{10,99}$/;
+    if (telpatt.test(tel) || 
+        ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+        activeInput.removeClass('error_input');
+
+        if(activeInput.next(".error-block").is(":visible")) {
+
+            activeInput.next(".error-block").slideUp(300);
+
+        }
+
+        return true;
+
+    }
+
+    if( activeInput.hasClass("important") || activeInput.val().length > 0 ) {
+
+        activeInput.addClass('error_input');
+
+        activeInput.next(".error-block").slideDown(300);
+
+    }
+
+    return false;
+}
+
+function validateMsg(form_id) {
+
+    var activeInput = $("#" + form_id + " textarea[type='text']");
+    var msg = activeInput.val();
+
+    if (msg.length > 3 || 
+        ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+        activeInput.removeClass('error_input');
+
+        if(activeInput.next(".error-block").is(":visible")) {
+
+            activeInput.next(".error-block").slideUp(300);
+
+        }
+        return true;
+    }
+
+    if( activeInput.hasClass("important") || activeInput.val().length > 0 ) {
+
+        activeInput.addClass('error_input');
+
+        activeInput.next(".error-block").slideDown(300);
+
+    }
+
+    return false;
+}
+
+function validateContactInp(form_id) {
+
+    var activeInput = $("#" + form_id + " input.contact_input");
+    var email;
+    var tel;
+
+    if(activeInput.val().indexOf("@") != -1 ) {
+
+        email = activeInput.val(),
+        emailPattern = /^[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/;
+
+        if (emailPattern.test(email) || 
+            ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+
+            activeInput.removeClass('error_input');
+            activeInput.closest(".input_wrapp").find(".er_1").slideUp(300);
+            activeInput.closest(".input_wrapp").find(".er_2").slideUp(300);
+
+            activeInput.removeClass('error_input');
+
+            return true;
+        }
+
+        if( activeInput.hasClass("important") || activeInput.val().length > 0 ) {
+
+            activeInput.addClass('error_input');
+            activeInput.closest(".input_wrapp").find(".er_2").slideDown(300);
+            activeInput.closest(".input_wrapp").find(".er_1").slideUp(300);
+
+        }
+
+        return false;
+
+    } else {        
+
+        tel = activeInput.val(),
+        telpatt = /^\D*(?:\d\D*){10,}$/;
+
+        if (telpatt.test(tel) || 
+            ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
+
+            activeInput.removeClass('error_input');
+            activeInput.closest(".input_wrapp").find(".er_1").slideUp(300);
+            activeInput.closest(".input_wrapp").find(".er_2").slideUp(300);
+
+            return true;
+
+        }
+
+        if( activeInput.hasClass("important") || activeInput.val().length > 0 ) {
+
+            activeInput.addClass('error_input');
+            activeInput.closest(".input_wrapp").find(".er_1").slideDown(300);
+            activeInput.closest(".input_wrapp").find(".er_2").slideUp(300);
+
+        }
+
+        return false;
+
+    }
+
+}
+
+function validateForm(form_id) {
+    var a, c, d, e, y;
+
+    if( $("#" + form_id).find("input[type='email']").length > 0 ) {
+        a = validateEmail(form_id);
+    } else {
+        a = true;
+    }
+
+    if( $("#" + form_id).find("input[type='text']").length > 0 ) {
+        c = validateName(form_id);
+    } else {
+        c = true;
+    }
+
+    if( $("#" + form_id).find("input[type='tel']").length > 0 ) {
+        d = validateTel(form_id);
+    } else {
+        d = true;
+    }
+
+    if( $("#" + form_id).find("textarea[type='text']").length > 0 ) {
+        e = validateMsg(form_id);
+    } else {
+        e = true;
+    }
+
+    if( $("#" + form_id).find("input.contact_input").length > 0 ) {
+        e = validateContactInp(form_id);
+    } else {
+        e = true;
+    }
+
+    return a && c && d && e && y;
+}
+
+function ajaxFormRequest(form_id, url) {
+
+    if (validateForm(form_id)) {
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "html",
+            data: $("#" + form_id).serialize(),
+            beforeSend: function () {
+
+            },
+            success: function (response) {
+                $("#" + form_id).trigger("reset");
+                $("#" + form_id).find(".error-block").slideUp(300);
+
+            },
+            error: function () {
+                
+            }
+        });
+    } else { return false; }
 }

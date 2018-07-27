@@ -735,6 +735,26 @@ textarea:focus {
     background-repeat: no-repeat;
 }
 
+.contact_i {
+    display: inline-block;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    background-image: url(img/contact.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact2_i {
+    display: inline-block;
+    vertical-align: top;
+    width: 16px;
+    height: 16px;
+    background-image: url(img/contact_2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /*-- /Icons --*/
 
 /*-- Pills --*/
@@ -5928,3 +5948,25 @@ label.active + .contacts_thumb {
 }
 
 /*-- /Popup --*/
+
+input.error_input,
+textarea.error_input {
+    border: 2px solid #ff0000 !important;
+}
+
+.error-block {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0;
+}
+
+.error-block p {
+    text-align: left;
+    padding: 5px 0;   
+    font-family: "Roboto", Arial, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #ff0000;
+}

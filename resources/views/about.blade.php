@@ -5,13 +5,13 @@
 
     <section class="sect-1_2">
 
-        <img class="bg_shape bg_shape_35" src="img/shape_2.png" alt="" />
-        <img class="bg_shape bg_shape_36" src="img/shape_16.png" alt="" />
-        <img class="bg_shape bg_shape_37" src="img/shape_17.png" alt="" />
-        <img class="bg_shape bg_shape_38" src="img/shape_18.png" alt="" />
-        <img class="bg_shape bg_shape_39" src="img/shape_19.png" alt="" />
-        <img class="bg_shape bg_shape_40" src="img/shape_20.png" alt="" />
-        <img class="bg_shape bg_shape_41" src="img/shape_21.png" alt="" />
+        <img class="bg_shape bg_shape_35" src="/img/shape_2.png" alt="" />
+        <img class="bg_shape bg_shape_36" src="/img/shape_16.png" alt="" />
+        <img class="bg_shape bg_shape_37" src="/img/shape_17.png" alt="" />
+        <img class="bg_shape bg_shape_38" src="/img/shape_18.png" alt="" />
+        <img class="bg_shape bg_shape_39" src="/img/shape_19.png" alt="" />
+        <img class="bg_shape bg_shape_40" src="/img/shape_20.png" alt="" />
+        <img class="bg_shape bg_shape_41" src="/img/shape_21.png" alt="" />
 
         <div class="row">
 
@@ -27,7 +27,7 @@
             <div class="article-3 clearfix">
                 <div class="left">
                     <div class="img-box">
-                        <img src="img/about.jpg" alt="">
+                        <img src="/img/about.jpg" alt="">
                     </div>
                 </div>
                 <div class="right">
@@ -118,7 +118,7 @@
             </div>
 
             <div class="blue-pill_3_wrapp align-center">
-                <a href="/" class="blue-pill blue-pill_3"><i class="doc-3"></i>Смотреть презентацию</a>
+                <a href="/Servis_print_presentation_4.pdf" download class="blue-pill blue-pill_3"><i class="doc-3"></i>Смотреть презентацию</a>
             </div>
 
             <h2>В своей работе мы используем</h2>
@@ -128,7 +128,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_26.png" alt="" />
+                                <img src="/img/icon_26.png" alt="" />
                             </div>
                             <p>Корпоративную информационную систему</p>
                         </div>
@@ -136,7 +136,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_25.png" alt="" />
+                                <img src="/img/icon_25.png" alt="" />
                             </div>
                             <p>Слаженную<br /> работу коллектива</p>
                         </div>
@@ -144,7 +144,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_24.png" alt="" />
+                                <img src="/img/icon_24.png" alt="" />
                             </div>
                             <p>Многоуровневый контроль</p>
                         </div>
@@ -152,7 +152,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_23.png" alt="" />
+                                <img src="/img/icon_23.png" alt="" />
                             </div>
                             <p>Специалисты<br /> высокого уровня</p>
                         </div>
@@ -160,7 +160,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_22.png" alt="" />
+                                <img src="/img/icon_22.png" alt="" />
                             </div>
                             <p>Накопленные<br /> знания и опыт</p>
                         </div>
@@ -168,7 +168,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_20.png" alt="" />
+                                <img src="/img/icon_20.png" alt="" />
                             </div>
                             <p>Интерактивный сайт<br /> интегрированный с B2B</p>
                         </div>
@@ -176,7 +176,7 @@
                     <div class="thumb-1">
                         <div class="inner">
                             <div class="icon-box">
-                                <img src="img/icon_21.png" alt="" />
+                                <img src="/img/icon_21.png" alt="" />
                             </div>
                             <p>Оригинальные<br /> запчасти</p>
                         </div>
@@ -205,8 +205,8 @@
 
     <section class="sect-2_2 grey-bg">
 
-        <img class="bg_shape bg_shape_42" src="img/shape_22.png" alt="" />
-        <img class="bg_shape bg_shape_43" src="img/shape_23.png" alt="" />
+        <img class="bg_shape bg_shape_42" src="/img/shape_22.png" alt="" />
+        <img class="bg_shape bg_shape_43" src="/img/shape_23.png" alt="" />
 
         <div class="row">
 
@@ -217,7 +217,7 @@
                     <a href="img/362_25.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_25.jpg" alt="" />
+                            <img src="/img/362_25.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -226,7 +226,7 @@
                     <a href="img/362_26.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_26.jpg" alt="" />
+                            <img src="/img/362_26.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -235,7 +235,7 @@
                     <a href="img/362_27.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_27.jpg" alt="" />
+                            <img src="/img/362_27.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -244,7 +244,7 @@
                     <a href="img/362_24.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_24.jpg" alt="" />
+                            <img src="/img/362_24.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -253,7 +253,7 @@
                     <a href="img/362_25.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_25.jpg" alt="" />
+                            <img src="/img/362_25.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -262,7 +262,7 @@
                     <a href="img/362_26.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_26.jpg" alt="" />
+                            <img src="/img/362_26.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -271,7 +271,7 @@
                     <a href="img/362_27.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_27.jpg" alt="" />
+                            <img src="/img/362_27.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -280,7 +280,7 @@
                     <a href="img/362_24.jpg" class="sertificate" data-popup-name = "popup_8">
                         <div class="green-icon"></div>
                         <div class="img-box">
-                            <img src="img/362_24.jpg" alt="" />
+                            <img src="/img/362_24.jpg" alt="" />
                         </div>
                         <p>Managment System Certificate</p>
                     </a>
@@ -304,7 +304,7 @@
                     <div class="thumb-9">
                         <div class="col-1">
                             <div class="img-box">
-                                <img src="img/team_01.jpg">
+                                <img src="/img/team_01.jpg">
                             </div>
                         </div>
                         <div class="col-2">
@@ -325,7 +325,7 @@
                     <div class="thumb-9">
                         <div class="col-1">
                             <div class="img-box">
-                                <img src="img/team_02.jpg">
+                                <img src="/img/team_02.jpg">
                             </div>
                         </div>
                         <div class="col-2">
@@ -347,7 +347,7 @@
                     <div class="thumb-9">
                         <div class="col-1">
                             <div class="img-box">
-                                <img src="img/team_03.jpg">
+                                <img src="/img/team_03.jpg">
                             </div>
                         </div>
                         <div class="col-2">
@@ -371,7 +371,7 @@
                     <div class="thumb-9">
                         <div class="col-1">
                             <div class="img-box">
-                                <img src="img/team_04.jpg">
+                                <img src="/img/team_04.jpg">
                             </div>
                         </div>
                         <div class="col-2">

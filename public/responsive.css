@@ -44,6 +44,26 @@
 
 	/*-- /Slick --*/
 
+	/*-- Section 3 - About Page --*/
+
+	.sect-3_2 {
+	    padding: 56px 0 18px 0;
+	}
+
+	.thumb-9 .col-1 {
+	    width: 190px;
+	}
+
+	.thumb-9 .col-2 {
+	    padding: 0 5px;
+	}
+
+	.thumb-9 .yellow-pill {
+	    min-width: 140px;
+	}
+
+	/*-- /Section 3 - About Page --*/
+
 	/*-- Header --*/
 
 	.header-row.row-1 .left {
@@ -293,6 +313,32 @@
 
 	/*-- /Section 1 Reviews --*/
 
+	/*-- Section 1 - About Page --*/
+
+	.thumbnails_1_2 .thumb-1 {
+	    width: 33.33%;
+	}
+
+	/*-- /Section 1 - About Page --*/
+
+	/*-- Section 3 - About Page --*/
+
+	.thumbnails-9 {
+	    margin: 36px 0;
+	}
+
+	.thumbnails-9 .thumb-9 {
+	    width: 100%;
+	    max-width: 100%;
+	    margin: 13px 0;
+	}
+
+	.thumb-9 .col-1 {
+	    width: 240px;
+	}
+
+	/*-- /Section 3 - About Page --*/
+
 	/*-- Footer --*/
 
 	.footer .row-1 .left {
@@ -424,6 +470,22 @@
 
 	/*-- /Section 1 Contacts --*/
 
+	/*-- Section 1 - About Page --*/
+
+	.article-3 .left,
+	.article-3 .right {
+	    width: 100%;
+	    float: none;
+	    padding: 15px 0;
+	}
+
+	.article-3 .img-box {
+	    max-width: 320px;
+	    margin: 0 auto;
+	}
+
+	/*-- /Section 1 - About Page --*/
+
 	/*-- Footer --*/
 
 	.footer {
@@ -491,6 +553,22 @@
 
 	.header-row.row-1 .right {
 	    width: 20%;
+	}
+
+	.user-menu_wrapp {
+		display: block;
+		width: 260px;
+		margin: 0 auto;
+	}
+
+	.user-menu_wrapp .grey-pill {
+	     display: inline-block;
+	     vertical-align: top;
+	}
+
+	.user-menu_wrapp .users-menu {
+	    position: relative;
+	    top: 0;
 	}
 
 	.resp-fixed {
@@ -854,6 +932,36 @@
 
 	/*-- /Section 1 Contacts --*/
 
+	/*-- Section 1 - About Page --*/
+
+	.article-3 {
+	    margin: 10px 0;
+	}
+
+	.list-2 {
+	    margin: 19px 0;
+	}
+
+	.list-2 li {
+	    float: none;
+	    width: 100%;
+	    padding: 9px 0 9px 30px;
+	}
+
+	/*-- /Section 1 - About Page --*/
+
+	/*-- Section 2 - About Page --*/
+
+	.sect-2_2 {
+	    padding: 50px 0 20px 0;
+	}
+
+	.slider_3 {
+	    margin: 20px 0;
+	}
+
+	/*-- /Section 2 - About Page --*/
+
 	/*-- Popups --*/
 
 	.sliding-header .cell-1 {
@@ -981,6 +1089,14 @@
 
 	/*-- /Section 1 Cabinet --*/
 
+	/*-- Section 1 - About Page --*/
+
+	.thumbnails_1_2 .thumb-1 {
+	    width: 50%;
+	}
+
+	/*-- /Section 1 - About Page --*/
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -1036,6 +1152,23 @@
 	}
 
 	/*-- /Section 1 Contacts --*/
+
+	/*-- Section 1 - About Page --*/
+
+	.thumbnails-8_wrapp {
+	    margin: 53px 0 19px 0;
+	}
+
+	.thumbnails-8 {
+	    margin: 20px 0;
+	}
+
+	.thumbnails-8 .thumb-8 {
+	    width: 100%;
+	    padding: 0;
+	}
+
+	/*-- /Section 1 - About Page --*/
 
 	/*-- Popup --*/
 
@@ -1135,6 +1268,37 @@
 	}
 
 	/*-- /Section 1 Contacts --*/
+
+	/*-- Section 3 - About Page --*/
+
+	.thumbnails-9 .thumb-9 {
+		display: block;
+	}
+
+	.thumb-9 .col-1 {
+		display: block;
+	    width: 240px;
+	}
+
+	.thumb-9 .col-2 {
+		display: block;
+	    width: 100%;
+	}
+
+	.thumb-9 .thumb_title {
+	    height: auto;
+	    padding: 12px 0 20px 0;
+	}
+
+	.thumb-9 .description {
+	    height: auto;
+	}
+
+	.thumb-9 .yellow-pill {
+	    margin: 20px 0 0 0;
+	}
+
+	/*-- /Section 3 - About Page --*/
 
 	/*-- Popups --*/
 
@@ -1385,6 +1549,23 @@
 
 	/*-- /Section 1 Cabinet --*/
 
+	/*-- Section 1 - About Page --*/
+
+	.yellow-pill_2 {
+	    min-width: 100%;
+	}
+
+	.blue-pill_3_wrapp {
+	    margin-bottom: 46px;
+	}
+
+	.blue-pill_3 {
+	    min-width: 100%;
+	    margin-bottom: 28px;
+	}
+	
+	/*-- /Section 1 - About Page --*/
+
 	/*-- Footer --*/
 
 	.seo-text {
@@ -1444,6 +1625,18 @@
 	}
 
 	/*-- Popup --*/
+
+}
+
+@media only screen and (max-width: 400px) {
+
+	/*-- Section 1 - About Page --*/
+
+	.thumbnails_1_2 .thumb-1 {
+	    width: 100%;
+	}
+
+	/*-- /Section 1 - About Page --*/
 
 }
 
