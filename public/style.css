@@ -3961,14 +3961,24 @@ textarea:focus {
     margin: 10px 0;
     padding: 8px 5px;
     border-width: 2px;
+    position: relative;
     border-color: rgb(199, 207, 221);
     border-style: solid;
     background-color: rgb(224, 228, 235);
 }
 
 .sort_wrapp .inner {
-    max-width: 820px;
+    max-width: 80%;
     margin: 0 auto;
+}
+
+.sort_wrapp .submit_btn {
+    width: 15%;
+    min-width: 130px;
+    padding: 7px 2%;
+    position: absolute;
+    top: 18px;
+    right: 2%;
 }
 
 .sort_wrapp .inner .left {
@@ -4100,6 +4110,10 @@ textarea:focus {
     font-size: 15px;
     line-height: 17px;
     color: #2f2e2d;
+}
+
+.orange-pill_wrapp {
+    padding: 20px 0 5px 0;
 }
 
 .table_2 {

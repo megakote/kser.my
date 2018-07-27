@@ -188,24 +188,36 @@
         <div class="row">
             <h2 class="white">Нужна консультация?<br /> Мы перезвоним в течение 5 минут</h2>
             <div class="callback-form_wrapp">
-                <form class="form">
+                <form class="form" id="form_4">
                     <input type="hidden" name="type" value="2">
                     <input type="hidden" name="description" value="Consultation">
                     <div class="callback-form clearfix">
                         <div class="left">
                             <div class="input_wrapp">
                                 <i class="user-3"></i>
-                                <input type="text" name="name" required placeholder="Имя*">
+                                <input type="text" name="name" class="important" placeholder="Имя*">
+                                <div class="error-block">
+                                    <p>Заполните это поле</p>
+                                </div>
                             </div>
                             <div class="input_wrapp">
                                 <i class="phone-2"></i>
-                                <input type="text" name="contact" required placeholder="Номер телефона или e-mail*">
+                                <input type="text" name="contact" class="important contact_input" placeholder="Номер телефона или e-mail*">
+                                <div class="error-block er_1">
+                                    <p>Укажите верный номер телефона</p>
+                                </div>
+                                <div class="error-block er_2">
+                                    <p>Укажите верный эл.адрес</p>
+                                </div>
                             </div>
                         </div>
                         <div class="right">
                             <div class="input_wrapp">
                                 <i class="doc-3"></i>
-                                <textarea name="comment"  placeholder="Текст вопроса "></textarea>
+                                <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
+                                <div class="error-block">
+                                    <p>Введите ваше сообщение</p>
+                                </div>
                             </div>
                         </div>
                     </div>

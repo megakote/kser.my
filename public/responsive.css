@@ -313,6 +313,19 @@
 
 	/*-- /Section 1 Reviews --*/
 
+	/*-- Section 1 Cabinet --*/
+
+	.sort_wrapp .submit_btn {		
+		display: block;		
+		width: 210px;
+		margin: 10px auto;
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+
+	/*-- /Section 1 Cabinet --*/
+
 	/*-- Section 1 - About Page --*/
 
 	.thumbnails_1_2 .thumb-1 {

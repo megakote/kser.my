@@ -19,7 +19,7 @@
                         <h1>Заказы</h1>
                     </div>
                     <div class="right">
-                        <a href="#" class="orange-pill show_popup" data-popup-name ="popup_7"><i class="envelop-4"></i>Подать заявку</a>
+                        <a href="#" class="orange-pill show_popup" data-popup-name="popup_7"><i class="envelop-4"></i>Подать заявку</a>
                     </div>
                 </div>
 
@@ -119,6 +119,7 @@
                                 </div>
                             </div>
                         </div>
+                        <button type="submit" class="orange-pill submit_btn">Применить</button>
                     </form>
                 </div>
                 <div class="scroll_x">

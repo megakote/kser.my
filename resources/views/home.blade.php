@@ -19,21 +19,33 @@
                 </div>
                 <div class="right clearfix">
                     <div class="form_wrapp">
-                        <form class="form">
+                        <form id="form2" method="post" action="" class="form">
                             <input type="hidden" name="type" value="1">
                             <input type="hidden" name="description" value="Consultation">
                             <h3>Оформите заявку онлайн и получите скидку 5% на работу мастера</h3>
                             <div class="input_wrapp">
                                 <i class="user-2"></i>
-                                <input type="text" name="name" required placeholder="Имя*" />
+                                <input type="text" class="important" name="name" placeholder="Имя*" />
+                                <div class="error-block">
+                                    <p>Введите ваше имя</p>
+                                </div>
                             </div>
                             <div class="input_wrapp">
                                 <i class="tel"></i>
-                                <input type="tel" name="contact" required placeholder="Номер телефона или e-mail*" />
+                                <input type="text" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
+                                <div class="error-block er_1">
+                                    <p>Укажите верный номер телефона</p>
+                                </div>
+                                <div class="error-block er_2">
+                                    <p>Укажите верный эл.адрес</p>
+                                </div>
                             </div>
                             <div class="input_wrapp">
                                 <i class="doc"></i>
-                                <textarea name="comment" placeholder="Текст вопроса "></textarea>
+                                <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
+                                <div class="error-block">
+                                    <p>Введите ваше сообщение</p>
+                                </div>
                             </div>
                             <p>Мы свяжемся с Вами в течение 5 минут</p>
                             <div class="submit_wrapp">
@@ -186,12 +198,18 @@
                         </div>
                         <p>Оставьте свои контакты и мы вышлем вам выгодное индивидуаульное предложение</p>
                         <div class="form-2">
-                            <form class="form">
+                            <form  id="form_3" method="post" action="" class="form">
                                 <input type="hidden" name="type" value="2">
                                 <input type="hidden" name="description" value="Offer">
                                 <div class="input_wrapp">
                                     <i class="envelop-2"></i>
-                                    <input type="email" required name="contact" placeholder="Ваш e-mail" />
+                                    <input type="text" class="contact_input important" name="contact" placeholder="Ваш e-mail" />
+                                    <div class="error-block er_1">
+                                        <p>Укажите верный номер телефона</p>
+                                    </div>
+                                    <div class="error-block er_2">
+                                        <p>Укажите верный эл.адрес</p>
+                                    </div>
                                 </div>
                                 <div class="submit_wrapp">
                                     <button type="submit" class="yellow-pill">Заказать</button>
