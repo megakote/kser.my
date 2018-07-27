@@ -354,7 +354,7 @@
     <!-- /Section 6 - Main Page -->
 
     <!-- Section 7 - Main Page -->
-
+{{--
     <section class="sect-7 grad-bg">
         <img class="bg_shape bg_shape_19" src="img/shape_4.png" alt="">
         <img class="bg_shape bg_shape_20" src="img/shape_3.png" alt="">
@@ -398,7 +398,7 @@
 
         </div>
     </section>
-
+--}}
     <!-- /Section 7 - Main Page -->
 
     <!-- Section 8 - Main Page -->
