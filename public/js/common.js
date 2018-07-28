@@ -1,85 +1,99 @@
 $(document).ready(function () {
 
     $("form.form").submit(function(e) {
-        let form_data = $(this).serialize(); //собераем все данные из формы
-        $.ajax({
-            type: "POST",
-            url: "/api/form",
-            data: form_data,
-            beforeSend: function(){
 
-            },
-            success: function(data) {
-                if ( $(".popup_wrapp").is(":visible") ) {
-                    $(".popup_wrapp").fadeOut(300);
-                }
-                if (data.success) {
-                    clearForms()
-                    $('#responsePopup').show()
-                    $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
-                } else if (data.error) {
-                    $('#responsePopup').show()
-                    $('#responseText').html(data.error)
-                }
-
-            }
-        });
         e.preventDefault();
-        return false;
+        $(this).addClass("tested");
+        if (validateForm($(this).attr("id"))) {
+
+            let form_data = $(this).serialize(); //собераем все данные из формы
+            $.ajax({
+                type: "POST",
+                url: "/api/form",
+                data: form_data,
+                beforeSend: function(){
+
+                },
+                success: function(data) {
+                    if ( $(".popup_wrapp").is(":visible") ) {
+                        $(".popup_wrapp").fadeOut(300);
+                    }
+                    if (data.success) {
+                        clearForms()
+                        $('#responsePopup').show()
+                        $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
+                    } else if (data.error) {
+                        $('#responsePopup').show()
+                        $('#responseText').html(data.error)
+                    }
+
+                }
+            });
+        } else {
+            return false;
+        }
     });
 
     $("form#addOrder").submit(function(e) {
-        let form_data = $(this).serialize(); //собераем все данные из формы
-        $.ajax({
-            type: "POST",
-            url: "/api/form/order",
-            data: form_data,
-            beforeSend: function(){
+        $(this).addClass("tested");
+        if (validateForm($(this).attr("id"))) {
 
-            },
-            success: function(data) {
-                if ( $(".popup_wrapp").is(":visible") ) {
-                    $(".popup_wrapp").fadeOut(300);
+            let form_data = $(this).serialize(); //собераем все данные из формы
+            $.ajax({
+                type: "POST",
+                url: "/api/form/order",
+                data: form_data,
+                beforeSend: function(){
+
+                },
+                success: function(data) {
+                    if ( $(".popup_wrapp").is(":visible") ) {
+                        $(".popup_wrapp").fadeOut(300);
+                    }
+                    if (data.success) {
+                        clearForms()
+                        $('#responsePopup').show()
+                        $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
+                    } else if (data.error) {
+                        $('#responsePopup').show()
+                        $('#responseText').html(data.error)
+                    }
                 }
-                if (data.success) {
-                    clearForms()
-                    $('#responsePopup').show()
-                    $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
-                } else if (data.error) {
-                    $('#responsePopup').show()
-                    $('#responseText').html(data.error)
-                }
-            }
-        });
-        e.preventDefault();
-        return false;
+            });
+            e.preventDefault();
+            return false;
+        }
     });
 
     $("form#addFeedback").submit(function(e) {
-        let form_data = $(this).serialize(); //собераем все данные из формы
-        $.ajax({
-            type: "POST",
-            url: "/api/form/feedback",
-            data: form_data,
-            beforeSend: function(){
-            },
-            success: function(data) {
-                if ( $(".popup_wrapp").is(":visible") ) {
-                    $(".popup_wrapp").fadeOut(300);
+        $(this).addClass("tested");
+        if (validateForm($(this).attr("id"))) {
+
+            let form_data = $(this).serialize(); //собераем все данные из формы
+            $.ajax({
+                type: "POST",
+                url: "/api/form/feedback",
+                data: form_data,
+                beforeSend: function(){
+                },
+                success: function(data) {
+                    if ( $(".popup_wrapp").is(":visible") ) {
+                        $(".popup_wrapp").fadeOut(300);
+                    }
+                    if (data.success) {0
+                        clearForms()
+                        $("input[name='stars']").val('');
+                        $('#responsePopup').show()
+                        $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
+                    } else if (data.error) {
+                        $('#responsePopup').show()
+                        $('#responseText').html(data.error)
+                    }
                 }
-                if (data.success) {0
-                    clearForms()
-                    $("input[name='stars']").val('');
-                    $('#responsePopup').show()
-                    $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
-                } else if (data.error) {
-                    $('#responsePopup').show()
-                    $('#responseText').html(data.error)
-                }
-            }
-        });
-        e.preventDefault();
-        return false;
+            });
+            e.preventDefault();
+            return false;
+        }
     });
 
     $('#WorkStatusBtn').on('click', function () {

@@ -471,19 +471,19 @@ $(document).ready(function() {
         $(".error-block").css({"opacity" : 1});
     }, 300);
 
-    $("form").submit(function(e) {
-
-        e.preventDefault();
-
-        form_id = $(this).attr("id");
-
-        $(this).addClass("tested");
-
-        //   processform.php   -   это название PHP файла с обработчиком отправки формы (может быть любой)
-
-        ajaxFormRequest(form_id, 'processform.php');
-
-    });
+    // $("form").submit(function(e) {
+    //
+    //     e.preventDefault();
+    //
+    //     form_id = $(this).attr("id");
+    //
+    //     $(this).addClass("tested");
+    //
+    //     //   processform.php   -   это название PHP файла с обработчиком отправки формы (может быть любой)
+    //
+    //     ajaxFormRequest(form_id, 'processform.php');
+    //
+    // });
 
     $("input").keyup(function(e) {
 
@@ -729,7 +729,7 @@ function validateForm(form_id) {
         d = true;
     }
 
-    if( $("#" + form_id).find("textarea[type='text']").length > 0 ) {
+    if( $("#" + form_id).find("textarea").length > 0 ) {
         e = validateMsg(form_id);
     } else {
         e = true;
