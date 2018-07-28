@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="sort_wrapp">
-                    <form id="AdvancedSearch" action="">
+                    <form id="AdvancedSearch" action="/lk">
                         <div class="inner clearfix">
                             <div class="left">
                                 <div class="input_wrapp_2">

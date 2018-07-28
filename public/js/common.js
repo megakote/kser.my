@@ -118,9 +118,9 @@ $(document).ready(function () {
         $('textarea[name="address"]').val(addr)
     })
 
-    $('#AdvancedSearch select').on('change', function () {
-        $('#AdvancedSearch').submit();
-    })
+    // $('#AdvancedSearch select').on('change', function () {
+    //     $('#AdvancedSearch').submit();
+    // })
 });
 
 $(window).on('load', function () {

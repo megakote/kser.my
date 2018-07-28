@@ -24,6 +24,17 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\Article::class, 66)->create();
         factory(App\Models\Form::class, 30)->create();
 
+        for ($i = 0; $i < 3; $i++) {
+            \App\Models\Contacts::create([
+                'name' => 'ООО «Сервис Принт» Филиал «На Ленина»',
+                'address' => '123123 Российская Федерация,<br> г. Москва, ул. Ленина, д. 121',
+                'tel' => '8 800 123 12 12',
+                'schedule' => 'Пн - Пт 8.00-20.00<br>Сб - Вс 9.00-17.00',
+                'mail' => 'info@print.ru',
+                'map' => '{"lat": 56.0070264, "lng": 37.4422701}',
+            ]);
+        }
+
 //        dispatch(new App\Jobs\Parsers\GetUsers());
 //        dispatch(new App\Jobs\Parsers\GetOrders());
     }

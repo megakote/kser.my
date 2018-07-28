@@ -33,6 +33,7 @@ class AdminSectionsServiceProvider extends ServiceProvider {
        'App\Models\ArticleCategory' => 'Admin\Http\Sections\ArticleCategories',
        'App\Models\Order' => 'Admin\Http\Sections\Orders',
        'App\Models\Client' => 'Admin\Http\Sections\Clients',
+       'App\Models\Contacts' => 'Admin\Http\Sections\Contacts',
        'App\User' => 'Admin\Http\Sections\Users',
     ];
 
