@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <a href="#" class="orange_link"><i class="settings"></i>Расширенный поиск</a>
+                        <a href="#" class="orange_link" id="advanced_filter_btn"><i class="settings"></i>Расширенный поиск</a>
                     </div>
                 </div>
                 <div class="sort_wrapp">

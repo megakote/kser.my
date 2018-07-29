@@ -121,6 +121,12 @@ $(document).ready(function () {
         $("input[name='stars']").val($(this).data('index') + 1);
     })
 
+
+    $("#advanced_filter_btn").on('click', function () {
+        $("#AdvancedSearch").toggle();
+        return false;
+    })
+
     $("body").on('click', '.mCSB_container', function (event) {
         if ( $(event.target).hasClass('mCSB_container') ) {
             clearForms()
@@ -193,7 +199,7 @@ $(window).on('load', function () {
         $("#city_val").text($.cookie('city'));
     }
 
-
+    $("#AdvancedSearch").hide();
 });
 
 
