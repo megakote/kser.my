@@ -619,7 +619,7 @@ function validateTel(form_id) {
 
 function validateMsg(form_id) {
 
-    var activeInput = $("#" + form_id + " textarea[type='text']");
+    var activeInput = $("#" + form_id + " textarea");
     var msg = activeInput.val();
 
     if (msg.length > 3 || 
