@@ -135,6 +135,48 @@ $(document).ready(function () {
     // $('#AdvancedSearch select').on('change', function () {
     //     $('#AdvancedSearch').submit();
     // })
+
+
+    var parentBlock;
+    var checkedInput;
+    var checkedInputId;
+    var parentRadioWrapp;
+    var cityVal;
+    var cityName;
+
+    $("#city_btn").click(function(e) {
+
+        e.preventDefault();
+
+        parentBlock = $(this).closest("form");
+
+        checkedInput = parentBlock.find("input").filter(":checked");
+
+        checkedInputId = checkedInput.attr("id");
+
+        parentRadioWrapp = checkedInput.closest(".radiobutton");
+
+        cityVal = parentRadioWrapp.find("label[for = '"+ checkedInputId +"']").text();
+
+        $.cookie('city', cityVal, {
+            expires: 7,
+            path: '/'
+        });
+
+        cityName = $.cookie('city');
+
+        $("#city_val").text(cityName);
+
+        $(this).closest(".popup_wrapp").fadeOut(300);
+
+    });
+
+
+    // if(cityName != false) {
+    //
+    //     $("#city_val").text($.cookie('city'));
+    //
+    // }
 });
 
 $(window).on('load', function () {
@@ -144,9 +186,14 @@ $(window).on('load', function () {
             url: "/api/whoiam",
             success: function(data) {
                 $.cookie('city', data.city);
+                $("#city_val").text($.cookie('city'));
             }
         });
+    } else {
+        $("#city_val").text($.cookie('city'));
     }
+
+
 });
 
 

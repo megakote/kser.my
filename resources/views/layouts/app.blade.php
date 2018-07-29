@@ -88,7 +88,7 @@
                         <li><i class="clock"></i>Пн-пт 8.00-18.00</li>
                         <li><i class="envelop"></i><a href="mailto:abc@print.ru">abc@print.ru</a></li>
                         <li><i class="map-mark"></i>Ваш город <a href="#" class="link-2 show_popup"
-                                                                 data-popup-name="popup_6">Москва</a></li>
+                                                                 data-popup-name="popup_6" id="city_val" data-city="">Москва</a></li>
                     </ul>
                 </div>
             </div>
@@ -547,18 +547,6 @@
                         <div class="radiobutton">
                             <input type="radio" name="cicty" id="city_08">
                             <label for="city_08">Хабаровск</label>
-                        </div>
-                        <div class="radiobutton">
-                            <input type="radio" name="cicty" id="city_09">
-                            <label for="city_09">Город</label>
-                        </div>
-                        <div class="radiobutton">
-                            <input type="radio" name="cicty" id="city_10">
-                            <label for="city_10">Город</label>
-                        </div>
-                        <div class="radiobutton">
-                            <input type="radio" name="cicty" id="city_11">
-                            <label for="city_11">Город</label>
                         </div>
                     </div>
                     <div class="submit_wrapp">
