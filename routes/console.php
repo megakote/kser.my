@@ -19,5 +19,5 @@ Artisan::command('inspire', function () {
 
 Artisan::command('pars', function () {
     dispatch(new App\Jobs\Parsers\GetUsers());
-//    dispatch(new App\Jobs\Parsers\GetOrders());
+    dispatch(new App\Jobs\Parsers\GetOrders());
 });
