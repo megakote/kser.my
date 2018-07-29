@@ -18,7 +18,7 @@ Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
 //    dispatch(new App\Jobs\Parsers\GetOrders());
 //    dispatch(new App\Jobs\Export\PutForms());
-    return ip_info('88.201.235.252');
+//    return ip_info('88.201.235.252');
 });
 Route::get('/logout', function () {
     Auth::logout();

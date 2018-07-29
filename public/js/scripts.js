@@ -709,7 +709,7 @@ function validateContactInp(form_id) {
 }
 
 function validateForm(form_id) {
-    var a, c, d, e, y;
+    var a, c, d, e;
 
     if( $("#" + form_id).find("input[type='email']").length > 0 ) {
         a = validateEmail(form_id);
@@ -740,8 +740,13 @@ function validateForm(form_id) {
     } else {
         e = true;
     }
-
-    return a && c && d && e && y;
+console.log(a)
+console.log(c)
+console.log(d)
+console.log(e)
+console.log(a && c && d && e)
+console.log('------------------')
+    return a && c && d && e;
 }
 
 function ajaxFormRequest(form_id, url) {

@@ -42,12 +42,19 @@
             <div class="right">
                 <div class="buttons_wrapp append-elem" data-append-desktop-elem="4" data-min-screen="768">
                     @auth
-                        <a href="{{ route('lk') }}" class="grey-pill"><i class="user"></i>Личный кабинет</a>
+                        <div class="user-menu_wrapp">
+                            <a href="#" class="grey-pill" id="user_links" data-popup-name ="popup_4"><i class="user"></i>Личный кабинет</a>
+                            <ul class="users-menu">
+                                <li><a href="{{ route('lk') }}">Заказы</a></li>
+                                <li><a href="{{ route('logout') }}">Выход</a></li>
+                            </ul>
+                        </div>
                     @else
+                        {{--<a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /--}}
                         <a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /
                             регистрация</a>
                     @endauth
-                    <a href="#" class="blue-pill show_popup" data-popup-name="popup_1">Узнать статус ремонта</a>
+                    <a href="#" class="blue-pill show_popup" data-popup-name="popup_13">Узнать статус ремонта</a>
                 </div>
                 <button class="respmenubtn">
                     <span></span>
@@ -72,7 +79,7 @@
                     <div class="search_wrapp">
                         <form action="/search">
                             <input type="text" name="q" placeholder="Поиск по модели, артикулу, производителю и др."/>
-                            <button type="button" class="search-btn"></button>
+                            <button class="search-btn"></button>
                         </form>
                     </div>
                 </div>
@@ -88,6 +95,7 @@
             <div class="col-3 left">
                 <div class="append-elem" data-append-desktop-elem="3" data-min-screen="768">
                     <a href="tel:88001006550" class="tel-link">8(800) 100-65-50</a><br/>
+                    <a href="tel:84997391515" class="tel-link">8(499) 739-15-15</a>
                     <a href="#" class="transparent-pill show_popup" data-popup-name="popup_3">Заказать звонок</a>
                 </div>
             </div>
@@ -266,7 +274,7 @@
                     </div>
                     <div class="col-2">
                         <p><a href="tel:88001006550" class="link-3_2">8 800 100 65 50</a></p>
-                        <p>круглосуточная бесплатная линия</p>
+                        <p>Пн-пт 8.00-18.00</p>
                     </div>
                 </div>
             </div>
@@ -298,6 +306,15 @@
 
 </div>
 <!-- Popups -->
+
+    <div class="popup_wrapp scroll" data-popup="popup_13">
+        <div class="popup">
+            <button type="button" class="close-popup"></button>
+            <div class="popup-header">
+                <h3>Данная функция временно не работает, обратитесь к менеджеру или администратору по эл.почте info@print.ru</h3>
+            </div>
+        </div>
+    </div>
 
     <div class="popup_wrapp scroll" data-popup="popup_1">
         <div class="popup">
@@ -364,20 +381,32 @@
                 <h3>Заказать звонок</h3>
             </div>
             <div class="popup-form">
-                <form class="form">
+                <form class="form" id="Callback">
                     <input type="hidden" name="type" value="2">
                     <input type="hidden" name="description" value="Callback">
                     <div class="input_wrapp">
                         <i class="user-2"></i>
-                        <input type="text" name="name" placeholder="Имя*"/>
+                        <input type="text" name="name" class="important" placeholder="Имя*" />
+                        <div class="error-block">
+                            <p>Введите ваше имя</p>
+                        </div>
                     </div>
                     <div class="input_wrapp">
                         <i class="tel"></i>
-                        <input type="tel" name="contact" placeholder="Номер телефона или e-mail*"/>
+                        <input type="tel" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
+                        <div class="error-block er_1">
+                            <p>Укажите верный номер телефона</p>
+                        </div>
+                        <div class="error-block er_2">
+                            <p>Укажите верный эл.адрес</p>
+                        </div>
                     </div>
                     <div class="input_wrapp">
                         <i class="doc"></i>
-                        <textarea name="comment" placeholder="Текст вопроса "></textarea>
+                        <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
+                        <div class="error-block">
+                            <p>Введите ваше сообщение</p>
+                        </div>
                     </div>
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Отправить</button>
@@ -398,7 +427,7 @@
                     @csrf
                     <div class="inputs_wrapp">
                         <div class="input_wrapp">
-                            <i class="envelop-3"></i>
+                            <i class="user-2"></i>
                             <input type="text" name="login" placeholder="Логин*" required/>
                         </div>
                         <div class="input_wrapp">
@@ -423,7 +452,7 @@
                     </div>--}}
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Войти</button>
-                        <a href="{{ route('register') }}" class="transparent-pill_2">Зарегистрироваться</a>
+                        {{--<a href="{{ route('register') }}" class="transparent-pill_2">Зарегистрироваться</a>--}}
                     </div>
                 </form>
             </div>

@@ -80,7 +80,7 @@ class GetUsers implements ShouldQueue
             'login' => $user->clent->login,
         ])->fill([
             'password' =>  $user->clent->pass,
-            'id_1c' => $client->id_1c
+            'id_1c' => $user->clent->id_clent
         ])->save();
 
         if ($user->clent->dop_ofice == 'истина') {

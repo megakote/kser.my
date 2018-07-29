@@ -293,7 +293,7 @@
     <!-- /Section 2 - About Page -->
 
     <!-- Section 3 - About Page -->
-
+{{--
     <section class="sect-3_2">
         <div class="row">
 
@@ -397,6 +397,6 @@
 
         </div>
     </section>
-
+--}}
     <!-- /Section 3 - About Page -->
 @endsection

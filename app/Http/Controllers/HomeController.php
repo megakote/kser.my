@@ -8,7 +8,7 @@ use App\Models\MainPagePricesTabs;
 use App\Models\MainPageClient;
 use App\Models\Feedback;
 use App\Models\Slider;
-use App\Models\Order;
+use App\Models\MainPageSection;
 
 class HomeController extends Controller
 {
@@ -33,6 +33,7 @@ class HomeController extends Controller
         $data['pricesTabs'] = MainPagePricesTabs::all()->sortBy('order');
         $data['clients'] = MainPageClient::all();
         $data['feedback'] = Feedback::all();
+        $data['sections'] = MainPageSection::all();
         $data['slider'] = Slider::orderBy('order', 'asc')->get();
 
         return view('home', $data);

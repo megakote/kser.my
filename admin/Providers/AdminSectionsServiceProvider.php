@@ -25,6 +25,7 @@ class AdminSectionsServiceProvider extends ServiceProvider {
        'App\Models\Feedback' => 'Admin\Http\Sections\Feedback',
        'App\Models\Form' => 'Admin\Http\Sections\Forms',
        'App\Models\MainPagePricesTabs' => 'Admin\Http\Sections\MainPagePricesTabs',
+       'App\Models\MainPageSection' => 'Admin\Http\Sections\MainPageSections',
        'App\Models\Page' => 'Admin\Http\Sections\Pages',
        'App\Models\Menu' => 'Admin\Http\Sections\Menus',
        'App\Models\MainPageClient' => 'Admin\Http\Sections\MainPageClients',
