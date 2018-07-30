@@ -53,32 +53,32 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
-    $(".tabs").each(function() {
-
-        $(this).find(".tab-link").each(function() {
-
-            if( $(this).hasClass("active") ) {
-
-                indexActiveTab = $(this).index(".tab-link");
-
-                $(this).click();
-
-                return false;
-
-            } else {
-
-                indexActiveTab = 0;
-
-            }
-
-        });
-        $(".tab-link:first-child").addClass("active");
-        $("#tab_1").prop('checked', true);
-        // $(this).find(".tab-link").eq(indexActiveTab).click();
-        // $(this).find(".tab-link").eq(indexActiveTab).addClass("active");
-
-    });
-
+    // $(".tabs").each(function() {
+    //
+    //     $(this).find(".tab-link").each(function() {
+    //
+    //         if( $(this).hasClass("active") ) {
+    //
+    //             indexActiveTab = $(this).index(".tab-link");
+    //
+    //             $(this).click();
+    //
+    //             return false;
+    //
+    //         } else {
+    //
+    //             indexActiveTab = 0;
+    //
+    //         }
+    //
+    //     });
+    //
+    //     $(this).find(".tab-link").eq(indexActiveTab).click();
+    //     $(this).find(".tab-link").eq(indexActiveTab).addClass("active");
+    //
+    // });
+    $(".sect-4 .tab-link:first-child").addClass("active");
+    $(".sect-4 #tab_1").prop('checked', true);
     $(".tab-link").click(function (e) {
 
         if( $(this).hasClass("active") ) {
