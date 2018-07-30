@@ -72,9 +72,10 @@ $(document).ready(function() {
             }
 
         });
-
-        $(this).find(".tab-link").eq(indexActiveTab).click();
-        $(this).find(".tab-link").eq(indexActiveTab).addClass("active");
+        $(".tab-link:first-child").addClass("active");
+        $("#tab_1").prop('checked', true);
+        // $(this).find(".tab-link").eq(indexActiveTab).click();
+        // $(this).find(".tab-link").eq(indexActiveTab).addClass("active");
 
     });
 
