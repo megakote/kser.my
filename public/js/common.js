@@ -98,6 +98,10 @@ $(document).ready(function () {
 
     $('#WorkStatusBtn').on('click', function () {
         let id = $('#WorkStatusId').val()
+        //
+        // if ($(this).closest("form").hasClass('checked')) {
+        //
+        // }
         $.ajax({
             type: "POST",
             url: "/api/work-status",

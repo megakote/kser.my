@@ -495,23 +495,28 @@ $(document).ready(function() {
         form_id = parentBlock.attr("id");
 
         if(parentBlock.hasClass('tested')) {
+            var a = false;
 
-            if($(this).attr('type') == 'text') {
-
-                validateName(form_id);
+            if( $(this).attr('type') == 'text' && $(this).hasClass("contact_input")) {
+                a = validateContactInp(form_id);
+                console.log("input.contact_input")
 
             } else if($(this).attr('type') == 'email') {
 
-                validateEmail(form_id);
+                a = validateEmail(form_id);
 
             } else if($(this).attr('type') == 'tel') {
 
-                validateTel(form_id);
+                a = validateTel(form_id);
 
-            } else if( $(this).attr('type') == '' && $(this).hasClass("contact_input") ) {
+            } else if($(this).attr('type') == 'text') {
 
-                validateContactInp(form_id);
-
+                a = validateName(form_id);
+            }
+            if (a) {
+                parentBlock.addClass('checked');
+            } else {
+                parentBlock.removeClass('checked');
             }
 
         }
@@ -712,7 +717,7 @@ function validateContactInp(form_id) {
 }
 
 function validateForm(form_id) {
-    var a, c, d, e;
+    var a, c, d, e, f;
 
     if( $("#" + form_id).find("input[type='email']").length > 0 ) {
         a = validateEmail(form_id);
@@ -720,7 +725,7 @@ function validateForm(form_id) {
         a = true;
     }
 
-    if( $("#" + form_id).find("input[type='text']").length > 0 ) {
+    if( $("#" + form_id).find("input[type='text']").not('.contact_input').length > 0 ) {
         c = validateName(form_id);
     } else {
         c = true;
@@ -739,17 +744,12 @@ function validateForm(form_id) {
     }
 
     if( $("#" + form_id).find("input.contact_input").length > 0 ) {
-        e = validateContactInp(form_id);
+        f = validateContactInp(form_id);
     } else {
-        e = true;
+        f = true;
     }
-console.log(a)
-console.log(c)
-console.log(d)
-console.log(e)
-console.log(a && c && d && e)
-console.log('------------------')
-    return a && c && d && e;
+
+    return a && c && d && e && f;
 }
 
 function ajaxFormRequest(form_id, url) {
