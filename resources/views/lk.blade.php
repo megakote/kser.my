@@ -353,7 +353,7 @@
                     <div class="col-10 align-right">
                         <p>
                             Прием заявок производится через <a href="#" data-popup-name="popup_7" class="show_popup"><b>веб-форму</b></a>, по e-mail {{ Auth::user()->client->offices()->first()->manager_mail }}<br>
-                            или по телефонам 8(499) 739-15-15 (доб.{{ Auth::user()->client->offices()->first()->manager_dob }}), моб тел {{ Auth::user()->client->offices()->first()->manager_mob }} <br>
+                            или по телефонам 8(499) 739-15-15 ({{ Auth::user()->client->offices()->first()->manager_dob }}), моб тел {{ Auth::user()->client->offices()->first()->manager_mob }} <br>
                             Ваш менеджер: {{ Auth::user()->client->manager }}
                         </p>
                     </div>

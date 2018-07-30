@@ -30,7 +30,7 @@ class LkController extends Controller
             $data['orders'] = $data['orders']->where('type', 'like', $request->type);
 
         if(!!$request->order_id)
-            $data['orders'] = $data['orders']->where('nomer', $request->order_id);
+            $data['orders'] = $data['orders']->where('nomer', $request->order_id)->where('bill_number', $request->order_id);
 
         if(!!$request->date_from)
             $data['orders'] = $data['orders']->where('time_cr', '>', $request->date_from);

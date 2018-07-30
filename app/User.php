@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function client()
     {
-        return $this->belongsTo(Models\Client::class, 'id_1c', 'id');
+        return $this->belongsTo(Models\Client::class, 'id_1c', 'id_1c');
     }
 
     public function isAdmin()
