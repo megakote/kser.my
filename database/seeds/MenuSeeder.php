@@ -127,12 +127,12 @@ class MenuSeeder extends Seeder
             'url'       => '/feedback'
         ]);
         Menu::create([
-            'parent_id' => $footer1->id,
+            'parent_id' => $footer2->id,
             'title'     => 'Статьи',
             'url'       => '/'
         ]);
         Menu::create([
-            'parent_id' => $footer1->id,
+            'parent_id' => $footer2->id,
             'title'     => 'Контакты',
             'url'       => '/contacts'
         ]);
