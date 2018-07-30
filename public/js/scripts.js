@@ -332,6 +332,7 @@ $(document).ready(function() {
             }, 700);
 
             parentBlock.removeClass("active");
+            $(this).text('Подробнее');
 
         } else {
 
@@ -347,6 +348,7 @@ $(document).ready(function() {
 
             }, 900);
 
+            $(this).text('Свернуть');
         }
 
     });

@@ -133,10 +133,10 @@
                                 <p>Дата</p>
                             </div>
                             <div class="cell cell-3">
-                                <p>Оплачено</p>
+                                <p>Оплата</p>
                             </div>
                             <div class="cell cell-4">
-                                <p>Тип<br /> заявки</p>
+                                <p>Тип заявки</p>
                             </div>
                             <div class="cell cell-5">
                                 <p>Статус</p>
@@ -145,13 +145,20 @@
                                 <p>Сумма</p>
                             </div>
                             <div class="cell cell-7">
-                                <p>Дата<br /> доставки</p>
+                                <p>№ Счетов</p>
                             </div>
                             <div class="cell cell-8">
-                                <p>Ф.И.О.</p>
+                                <p>Дата<br /> доставки</p>
+
                             </div>
                             <div class="cell cell-9">
-                                <p class="tab-novisible">Подробнее</p>
+                                <p>ФИО <br> подавшего</p>
+                            </div>
+                            <div class="cell cell-10">
+                                <p>Доп. <br> оффис</p>
+                            </div>
+                            <div class="cell cell-11">
+                                <p class="tab-novisible">Доп. данные</p>
                             </div>
                         </div>
                         @foreach($orders as $order)
@@ -161,7 +168,7 @@
                                         <p>{{ $order->nomer }}</p>
                                     </div>
                                     <div class="cell cell-2">
-                                        <p>{{ $order->time_cr }}</p>
+                                        <p>{{ date('d.m.y', strtotime($order->time_cr )) }}</p>
                                     </div>
                                     <div class="cell cell-3">
                                         <div class="checkbox-3">
@@ -179,12 +186,18 @@
                                         <p>{{ $order->prise }}</p>
                                     </div>
                                     <div class="cell cell-7">
-                                        <p>{{ $order->exec_time }}</p>
+                                        <p>{{ $order->bill_number }}</p>
                                     </div>
                                     <div class="cell cell-8">
-                                        <p>{{ $order->name_delivery }}</p>
+                                        <p>{{ $order->exec_time }}</p>
                                     </div>
                                     <div class="cell cell-9">
+                                        <p>{{ $order->name_delivery }}</p>
+                                    </div>
+                                    <div class="cell cell-10">
+                                        <p>{{ $order->name_dop }}</p>
+                                    </div>
+                                    <div class="cell cell-11">
                                         <p class="tab-novisible"><a href="#" class="link-2 slide_btn">Подробнее</a></p>
                                         <p class="desk-novisible"><a href="#" class="slide_btn"><i class="more_arrow"></i></a></p>
                                     </div>
@@ -201,18 +214,10 @@
                                         </div>
                                         <div class="table-3">
                                             <div class="cell-1">
-                                                <p>Ф.И.О. подавшего:</p>
+                                                <p>ФИО подавшего:</p>
                                             </div>
                                             <div class="cell-2">
                                                 <p>{{ $order->fio_pod }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="table-3">
-                                            <div class="cell-1">
-                                                <p>№ счетов:</p>
-                                            </div>
-                                            <div class="cell-2">
-                                                <p><i class="upload"></i><a href="#" class="orange_link">{{ $order->nomer }}</a></p>
                                             </div>
                                         </div>
                                         <div class="table-3 table-3_2">
@@ -254,6 +259,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="table-3">
+                                            <div class="cell-1">
+                                                <p>№ счетов:</p>
+                                            </div>
+                                            <div class="cell-2">
+                                                <p><i class="upload"></i><a href="#" class="orange_link">{{ $order->nomer }}</a></p>
+                                            </div>
+                                        </div>
                                         <div class="table-3 table-3_3">
                                             <div class="cell-1">
                                                 <p>Текст заявки:</p>
@@ -274,7 +287,7 @@
                                         </div>
                                         <div class="table-3">
                                             <div class="cell-1">
-                                                <p>Доставка:</p>
+                                                <p>Доставщик:</p>
                                             </div>
                                             <div class="cell-2">
                                                 <p>{{ $order->name_delivery }}</p>
@@ -282,10 +295,10 @@
                                         </div>
                                         <div class="table-3">
                                             <div class="cell-1">
-                                                <p>Дата доставки:</p>
+                                                <p>Дата заказа:</p>
                                             </div>
                                             <div class="cell-2">
-                                                <p>{{ $order->exec_time }}</p>
+                                                <p>{{ date('d.m.Y', strtotime($order->exec_time)) }}</p>
                                             </div>
                                         </div>
                                         <div class="table-3">
@@ -293,12 +306,12 @@
                                                 <p>Дата выполнения:</p>
                                             </div>
                                             <div class="cell-2">
-                                                <p>{{ $order->exec_act }}</p>
+                                                <p>{{ date('d.m.Y', strtotime($order->exec_act))}}</p>
                                             </div>
                                         </div>
                                         <div class="table-3">
                                             <div class="cell-1">
-                                                <p>Ф.И.О. мастера:</p>
+                                                <p>ФИО мастера:</p>
                                             </div>
                                             <div class="cell-2">
                                                 <p>{{ $order->name_ref }}</p>
