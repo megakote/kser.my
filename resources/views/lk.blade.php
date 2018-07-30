@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <a href="#" class="orange_link" id="advanced_filter_btn"><i class="settings"></i>Расширенный поиск</a>
+                        {{--<a href="#" class="orange_link" id="advanced_filter_btn"><i class="settings"></i>Расширенный поиск</a>--}}
                     </div>
                 </div>
                 <div class="sort_wrapp">
@@ -341,6 +341,23 @@
                     </div>
                 </div>
 
+            </div>
+
+        </section>
+        <section class="sect-1-cabinet">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <h3>Инвестторгбанк</h3>
+                    </div>
+                    <div class="col-10 align-right">
+                        <p>
+                            Прием заявок производится через <a href="#" data-popup-name="popup_7" class="show_popup"><b>веб-форму</b></a>, по e-mail {{ Auth::user()->client->offices()->first()->manager_mail }}<br>
+                            или по телефонам 8(499) 739-15-15 (доб.{{ Auth::user()->client->offices()->first()->manager_dob }}), моб тел {{ Auth::user()->client->offices()->first()->manager_mob }} <br>
+                            Ваш менеджер: {{ Auth::user()->client->manager }}
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </section>

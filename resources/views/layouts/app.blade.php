@@ -311,7 +311,8 @@
         <div class="popup">
             <button type="button" class="close-popup"></button>
             <div class="popup-header">
-                <h3>Данная функция временно не работает, обратитесь к менеджеру или администратору по эл.почте info@print.ru</h3>
+                <h4>К сожалению в настоящий момент функция временно не доступна. Пожалуйста, обратитесь к Вашему менеджеру или в call-центр по ел почте
+                    <a href="mailto:"><b>info@print.ru</b></a></h4>
             </div>
         </div>
     </div>

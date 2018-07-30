@@ -122,10 +122,10 @@ $(document).ready(function () {
     })
 
 
-    $("#advanced_filter_btn").on('click', function () {
-        $("#AdvancedSearch").toggle();
-        return false;
-    })
+    // $("#advanced_filter_btn").on('click', function () {
+    //     $("#AdvancedSearch").toggle();
+    //     return false;
+    // })
 
     $("body").on('click', '.mCSB_container', function (event) {
         if ( $(event.target).hasClass('mCSB_container') ) {
@@ -191,15 +191,20 @@ $(window).on('load', function () {
             type: "POST",
             url: "/api/whoiam",
             success: function(data) {
-                $.cookie('city', data.city);
-                $("#city_val").text($.cookie('city'));
+                if (data.city)  {
+                    $.cookie('city', data.city);
+                    $("#city_val").text($.cookie('city'));
+                } else {
+                    $.cookie('city', 'Москва');
+                    $("#city_val").text('Москва');
+                }
             }
         });
     } else {
         $("#city_val").text($.cookie('city'));
     }
 
-    $("#AdvancedSearch").hide();
+    // $("#AdvancedSearch").hide();
 });
 
 
