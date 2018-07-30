@@ -1,40 +1,40 @@
 $(window).on("load",function(){
 
-	$(".scroll").mCustomScrollbar();
-
-	$(".scroll_x").mCustomScrollbar({
-	    axis:"x"
-	});
-
-	if( bodyWidth <= 900 ) {
-
-		$(".main-nav").mCustomScrollbar();
-
-	} else {
-
-		$(".main-nav").mCustomScrollbar("destroy");
-
-	}
-
-	if( bodyWidth <= 768 ) {
-
-		$(".main-nav_wrapp").mCustomScrollbar();
-
-	} else {
-
-		$(".main-nav_wrapp").mCustomScrollbar("destroy");
-
-	}
-
-	if( bodyWidth <= 468 ) {
-
-		$("#respsidebar").mCustomScrollbar();
-
-	} else {
-
-		$("#respsidebar").mCustomScrollbar("destroy");
-
-	}
+	// $(".scroll").mCustomScrollbar();
+	//
+	// $(".scroll_x").mCustomScrollbar({
+	//     axis:"x"
+	// });
+	//
+	// if( bodyWidth <= 900 ) {
+	//
+	// 	$(".main-nav").mCustomScrollbar();
+	//
+	// } else {
+	//
+	// 	$(".main-nav").mCustomScrollbar("destroy");
+	//
+	// }
+	//
+	// if( bodyWidth <= 768 ) {
+	//
+	// 	$(".main-nav_wrapp").mCustomScrollbar();
+	//
+	// } else {
+	//
+	// 	$(".main-nav_wrapp").mCustomScrollbar("destroy");
+	//
+	// }
+	//
+	// if( bodyWidth <= 468 ) {
+	//
+	// 	$("#respsidebar").mCustomScrollbar();
+	//
+	// } else {
+	//
+	// 	$("#respsidebar").mCustomScrollbar("destroy");
+	//
+	// }
 
 });
 

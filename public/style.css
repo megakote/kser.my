@@ -5997,6 +5997,7 @@ textarea.error_input {
 }
 
 .table_orders_body {
-max-height: 600px;
-overflow-y: auto;
+    width: calc(100% + 15px);
+    max-height: 600px;
+    overflow-y: scroll;
 }
