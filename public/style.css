@@ -5995,3 +5995,8 @@ textarea.error_input {
 .select2-results__option {
     color: #808080 !important;
 }
+
+.table_orders_body {
+max-height: 400px;
+overflow-y: auto;
+}

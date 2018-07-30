@@ -161,6 +161,7 @@
                                 <p class="tab-novisible">Доп. данные</p>
                             </div>
                         </div>
+                        <div class="table_orders_body">
                         @foreach($orders as $order)
                             <div class="table_wrapp">
                                 <div class="table-row">
@@ -337,6 +338,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        </div>
 
 
                     </div>
