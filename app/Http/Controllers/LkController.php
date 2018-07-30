@@ -12,6 +12,7 @@ class LkController extends Controller
 
     public function index(Request $request)
     {
+//        dd(Auth::user()->client->orders);
         if (!(Auth::user() && Auth::user()->client)) {
             return redirect()->route('home');
         }

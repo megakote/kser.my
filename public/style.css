@@ -5984,3 +5984,10 @@ textarea.error_input {
     font-weight: 400;
     color: #ff0000;
 }
+
+.sect-2-cabinet .col-left{
+    width: 150px;
+    float: left;
+}
+
+.sect-2-cabinet .col-right.align-right {

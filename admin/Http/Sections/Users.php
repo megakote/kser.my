@@ -75,12 +75,14 @@ class Users extends Section implements Initializable
      */
     public function onEdit($id)
     {
+        $clients = Client::all()->pluck('id_1c','id_1c')->toArray();
         $display = AdminForm::panel();
         $display->addBody([
             AdminFormElement::text('name', 'Имя'),
             AdminFormElement::text('login', 'Логин')->required(),
-            AdminFormElement::select('id_1c', 'Пользователь 1С')->setModelForOptions(new Client())
-                ->setDisplay('id_1c')->required(),
+//            AdminFormElement::select('id_1c', 'Пользователь 1С')->setModelForOptions(new Client())->setFetchColumns('id_1c')
+            AdminFormElement::select('id_1c', 'Пользователь 1С')->setOptions($clients)->setFetchColumns('id_1c')
+                ->setDisplay('id_1c'),
             AdminFormElement::checkbox('is_admin', 'админ ?')
         ]);
 
