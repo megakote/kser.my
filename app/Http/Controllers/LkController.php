@@ -19,7 +19,7 @@ class LkController extends Controller
 
         $data = [];
 
-        $data['orders'] = Auth::user()->client->orders;
+        $data['orders'] = Auth::user()->client->orders()->orderBy('time_cr', 'desc')->get();
 
         if (!!$request->name_dop)
             $data['orders'] = $data['orders']->where('name_dop', $request->name_dop);

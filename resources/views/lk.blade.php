@@ -193,10 +193,10 @@
                                         <p>{{ $order->bill_number }}</p>
                                     </div>
                                     <div class="cell cell-8">
-                                        <p>{{ $order->exec_time }}</p>
+                                        <p>{{ date('d.m.y', strtotime($order->exec_time )) }}</p>
                                     </div>
                                     <div class="cell cell-9">
-                                        <p>{{ $order->name_delivery }}</p>
+                                        <p>{{ $order->fio_pod }}</p>
                                     </div>
                                     <div class="cell cell-11">
                                         <p class="tab-novisible"><a href="#" class="link-2 slide_btn">Подробнее</a></p>
