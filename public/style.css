@@ -6017,3 +6017,8 @@ textarea.error_input {
 .form_wrapp.about_us {
     max-width: 100%;
 }
+
+.imsorry,
+.imsorry a{
+    font-size: 20px !important;
+}

@@ -313,8 +313,8 @@
         <div class="popup">
             <button type="button" class="close-popup"></button>
             <div class="popup-header">
-                <h4>К сожалению в настоящий момент функция временно не доступна. Пожалуйста, обратитесь к Вашему менеджеру или в call-центр по ел почте
-                    <a href="mailto:"><b>info@print.ru</b></a></h4>
+                <h3 class="imsorry">К сожалению в настоящий момент функция временно не доступна. Пожалуйста, обратитесь к Вашему менеджеру или в call-центр по ел почте
+                    <a href="mailto:abc@print.ru"><b>abc@print.ru</b></a></h3>
             </div>
         </div>
     </div>
