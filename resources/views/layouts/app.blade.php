@@ -354,7 +354,6 @@
                                 <p>Введите ваше сообщение</p>
                             </div>
                         </div>
-                        <p>Мы свяжемся с Вами в течение 5 минут</p>
                         <div class="submit_wrapp">
                             <button type="submit" class="blue-pill">Отправить</button>
                         </div>
