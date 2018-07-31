@@ -16,9 +16,6 @@ function paginate($items, $perPage = 5)
     );
 }
 function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
-    if (!$ip) {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
     $output = NULL;
     if (filter_var($ip, FILTER_VALIDATE_IP) === FALSE) {
         $ip = $_SERVER["REMOTE_ADDR"];
