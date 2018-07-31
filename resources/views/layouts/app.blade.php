@@ -406,7 +406,7 @@
                     </div>
                     <div class="input_wrapp">
                         <i class="doc"></i>
-                        <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
+                        <textarea name="comment" class="" placeholder="Текст вопроса "></textarea>
                         <div class="error-block">
                             <p>Введите ваше сообщение</p>
                         </div>
