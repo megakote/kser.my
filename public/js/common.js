@@ -200,6 +200,10 @@ $(document).ready(function () {
 $(window).on('load', function () {
     $('.sort_wrapp').show();
     $('.sort_wrapp + .scroll_x').show();
+
+    var block = $('.table_orders_body');
+    block.scrollTop = block.scrollHeight;
+
     $("#tab_2_1").prop("checked", true);
     if (!$.cookie('city')){
         $.ajax({
