@@ -327,7 +327,7 @@
             <div class="popup-form">
                 <div class="form_wrapp about_us">
                     <form id="form12" method="post" action="" class="form">
-                        <input type="hidden" name="type" value="1">
+                        <input type="hidden" name="type" value="8">
                         <input type="hidden" name="description" value="Consultation">
 
                         <div class="input_wrapp">
