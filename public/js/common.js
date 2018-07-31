@@ -93,9 +93,10 @@ $(document).ready(function () {
                     }
                 }
             });
-            e.preventDefault();
-            return false;
+
         }
+        e.preventDefault();
+        return false;
     });
 
     $('#WorkStatusBtn').on('click', function () {
