@@ -223,6 +223,16 @@
                                                 <p>{{ $order->fio_pod }}</p>
                                             </div>
                                         </div>
+                                        <div class="table-3 table-3_3">
+                                            <div class="cell-1">
+                                                <p>Текст заявки:</p>
+                                            </div>
+                                            <div class="cell-2">
+                                                <div class="text_wrapp">
+                                                    {{ $order->text_z }}
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="table-3 table-3_2">
                                             <div class="cell-1">
                                                 <p>Заказано:</p>
@@ -268,16 +278,6 @@
                                             </div>
                                             <div class="cell-2">
                                                 <p><i class="upload"></i><a href="#" class="orange_link">{{ $order->nomer }}</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="table-3 table-3_3">
-                                            <div class="cell-1">
-                                                <p>Текст заявки:</p>
-                                            </div>
-                                            <div class="cell-2">
-                                                <div class="text_wrapp">
-                                                    {{ $order->text_z }}
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="table-3">
