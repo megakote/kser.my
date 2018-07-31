@@ -47,6 +47,7 @@
                                     <div class="col-2">
                                         <div class="select_wrapp select-wrapp_2">
                                             <select name="name_dop" data-placeholder="Все">
+                                                <option value="">Все</option>
                                                 @foreach(Auth::user()->client->offices as $office)
                                                     <option {{ (request()->name_dop == $office->name_dop ? 'selected' : '') }} value="{{ $office->name_dop }}">{{ $office->name_dop }}</option>
                                                 @endforeach
@@ -73,6 +74,7 @@
                                                 <option {{ (request()->type == "Гарантийный ремонт" ? 'selected' : '') }} value="Гарантийный ремонт">Гарантийный ремонт</option>
                                                 <option {{ (request()->type == "Устранение брака заправки" ? 'selected' : '') }} value="Устранение брака заправки">Устранение брака заправки</option>
                                                 <option {{ (request()->type == "Заправка > (взятие)" ? 'selected' : '') }} value="Заправка > (взятие)">Заправка &gt; (взятие)</option>
+                                                <option {{ (request()->type == "Заправка > (отвоз)" ? 'selected' : '') }} value="Заправка > (отвоз)">Заправка &gt; (отвоз)</option>
                                             </select>
                                         </div>
                                     </div>
@@ -122,7 +124,7 @@
                         <button type="submit" class="orange-pill submit_btn">Применить</button>
                     </form>
                 </div>
-                <div class="scroll_x">
+                <div class="scroll_x" style="display: none;">
 
                     <div class="table_2">
                         <div class="table-row table-header">
@@ -133,7 +135,7 @@
                                 <p>Дата</p>
                             </div>
                             <div class="cell cell-10">
-                                <p>Доп. <br> офис</p>
+                                <p>Доп. офис</p>
                             </div>
                             <div class="cell cell-3">
                                 <p>Оплата</p>
@@ -148,14 +150,14 @@
                                 <p>Сумма</p>
                             </div>
                             <div class="cell cell-7">
-                                <p>№ Счетов</p>
+                                <p>№ счетов</p>
                             </div>
                             <div class="cell cell-8">
                                 <p>Дата<br /> доставки</p>
 
                             </div>
                             <div class="cell cell-9">
-                                <p>ФИО <br> подавшего</p>
+                                <p>ФИО подавшего</p>
                             </div>
                             <div class="cell cell-11">
                                 <p class="tab-novisible">Доп. данные</p>
@@ -368,7 +370,7 @@
                     <p>
                         Прием заявок производится через <a href="#" data-popup-name="popup_7" class="show_popup"><b>веб-форму</b></a>, по e-mail
                         <a href="mailto:{{ Auth::user()->client->offices()->first()->manager_mail }}"><b>{{ Auth::user()->client->offices()->first()->manager_mail }}</b></a><br>
-                        или по телефонам 8(499) 739-15-15 ({{ Auth::user()->client->offices()->first()->manager_dob }}), моб тел {{ Auth::user()->client->offices()->first()->manager_mob }} <br>
+                        или по телефонам 8(499) 739-15-15 ({{ Auth::user()->client->offices()->first()->manager_dob }}), моб. тел. {{ Auth::user()->client->offices()->first()->manager_mob }} <br>
                         Ваш менеджер: {{ Auth::user()->client->manager }}
                     </p>
                 </div>

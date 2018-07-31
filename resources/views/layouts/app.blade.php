@@ -18,6 +18,8 @@
     <link href="{{ asset('vendors/css/jquery.mCustomScrollbar.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/css/select2.css') }}" rel="stylesheet">
 
+    <script type="text/javascript" src="{{ asset('vendors/js/jquery.js') }}"></script>
+
     <link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 </head>
 <body>
@@ -667,7 +669,6 @@
     </div>
     <!-- /Popups -->
     <!-- Scripts -->
-    <script type="text/javascript" src="{{ asset('vendors/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/js/smoothscroll.js') }}"></script>
@@ -684,6 +685,16 @@
     <script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
     <!-- Скрипт выбора города -->
 
+    <script type="text/javascript">
+        $('.nav-2 a').on('click', function (e) {
+            var index = $(this).parent().index();
+            if (index < 7) {
+                e.preventDefault();
+                window.location.replace(window.location.origin + '/?tt=' + index)
+                return false;
+            }
+        });
+    </script>
     <script type="text/javascript">
 
         jQuery(document).ready(function(){

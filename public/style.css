@@ -4164,7 +4164,7 @@ textarea:focus {
 
 .table_2 .table-header .cell-2,
 .table_wrapp > .table-row > .cell-2 {
-    width: 6%;
+    width: 7%;
 }
 
 .table_2 .table-header .cell-3,
@@ -4194,7 +4194,7 @@ textarea:focus {
 
 .table_2 .table-header .cell-8,
 .table_wrapp > .table-row > .cell-8 {
-    width: 8%;
+    width: 7%;
 }
 
 .table_2 .table-header .cell-9,
@@ -5980,8 +5980,10 @@ textarea.error_input {
     font-size: 24px;
 }
 
-.sect-2-cabinet .col-right.align-right p{
+.sect-2-cabinet .col-right.align-right p,
+.sect-2-cabinet .col-right.align-right p a{
     font-size: 22px;
+    line-height: 30px;
 }
 
 .select2-dropdown.select2-dropdown--below {

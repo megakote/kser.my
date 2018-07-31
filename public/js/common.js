@@ -193,6 +193,7 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
     $('.sort_wrapp').show();
+    $('.sort_wrapp + .scroll_x').show();
     if (!$.cookie('city')){
         $.ajax({
             type: "POST",
