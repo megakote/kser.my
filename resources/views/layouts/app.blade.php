@@ -53,7 +53,8 @@
                         </div>
                     @else
                         {{--<a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /--}}
-                        <a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход</a>
+                        <a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /
+                            регистрация</a>
                     @endauth
                     <a href="#" class="blue-pill show_popup" data-popup-name="popup_13">Узнать статус ремонта</a>
                 </div>
@@ -455,6 +456,7 @@
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Войти</button>
                         {{--<a href="{{ route('register') }}" class="transparent-pill_2">Зарегистрироваться</a>--}}
+                        <a href="#" class="transparent-pill_2 show_popup" data-popup-name="popup_13">Зарегистрироваться</a>
                     </div>
                 </form>
             </div>
