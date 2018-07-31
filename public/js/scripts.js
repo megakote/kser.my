@@ -730,7 +730,7 @@ function validateForm(form_id) {
         c = true;
     }
 
-    if( $("#" + form_id).find("input[type='tel']").length > 0 ) {
+    if( $("#" + form_id).find("input[type='tel']").not('.contact_input').length > 0 ) {
         d = validateTel(form_id);
     } else {
         d = true;
