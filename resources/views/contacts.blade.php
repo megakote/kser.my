@@ -5,14 +5,14 @@
 
     <section class="contacts_sect grey-bg">
 
-        <img class="bg_shape bg_shape_33" src="img/shape_14.png" alt="">
-        <img class="bg_shape bg_shape_34" src="img/shape_15.png" alt="">
+        <img class="bg_shape bg_shape_33" src="/img/shape_14.png" alt="">
+        <img class="bg_shape bg_shape_34" src="/img/shape_15.png" alt="">
 
         <div class="row">
 
             <div class="breadcrumbs_wrapp">
                 <ul class="breadcrumbs">
-                    <li><a href="#">Главная</a></li>
+                    <li><a href="/">Главная</a></li>
                     <li><a href="#">Адреса сервисных центров</a></li>
                 </ul>
             </div>
@@ -78,5 +78,5 @@
 
     <!-- /Section 1 Contacts -->
 
-    <script type="text/javascript" src="{{ asset('vendors/js/infobox.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('vendors/js/infobox.js') }}"></script>--}}
 @endsection

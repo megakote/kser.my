@@ -200,6 +200,7 @@ $(document).ready(function () {
 $(window).on('load', function () {
     $('.sort_wrapp').show();
     $('.sort_wrapp + .scroll_x').show();
+    $("#tab_2_1").prop("checked", true);
     if (!$.cookie('city')){
         $.ajax({
             type: "POST",
