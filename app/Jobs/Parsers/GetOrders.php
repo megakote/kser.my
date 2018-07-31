@@ -62,6 +62,7 @@ class GetOrders implements ShouldQueue
         $order_xml = new SimpleXMLElement($xml);
         foreach ($order_xml->order as $order) {
             $works = $order->items_zz;
+            $works3 = $order->items_zapravka;
 
             $arr = $this->makeArray($order);
             $order = Order::firstOrNew(["nomer" => $arr['nomer']]);

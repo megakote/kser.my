@@ -6029,3 +6029,11 @@ textarea.error_input {
 [data-popup="popup_13"] {
    z-index: 100;
 }
+
+[data-popup="popup_12"] textarea{
+    height: 140px;
+}
+
+[data-popup="popup_12"] .popup{
+    max-width: 490px;
+}

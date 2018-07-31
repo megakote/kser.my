@@ -253,7 +253,7 @@
                                                             <p>Сумма</p>
                                                         </div>
                                                     </div>
-                                                    @foreach($order->works() as $work)
+                                                    @foreach($order->works as $work)
                                                         <div class="table-row">
                                                             <div class="cell cell-1">
                                                                 <p>{{ $work->name }}</p>
