@@ -6082,13 +6082,14 @@ textarea.error_input {
 .clear_btn {
 position: absolute;
     bottom: 20px;
-    padding: 5px 0;
+    padding: 0px 0;
     right: 10px;
+    border-bottom: 1px dotted;
 
 }
 
 .clear_btn:hover {
-    text-decoration: underline;
+    border-bottom: 1px dotted rgb(224, 228, 235);
 }
 
 .sort_wrapp {
