@@ -69,6 +69,10 @@ $(document).ready(function () {
     $("form#addFeedback").submit(function(e) {
         $(this).addClass("tested");
         if (validateForm($(this).attr("id"))) {
+            if (!$("input[name='stars']").val()) {
+                $('#review_rat + .error-block').show()
+                return false;
+            }
 
             let form_data = $(this).serialize(); //собераем все данные из формы
             $.ajax({
@@ -80,11 +84,11 @@ $(document).ready(function () {
                 success: function(data) {
                     clearForms()
                     $("input[name='stars']").val('');
+                    $('#review_rat li').removeClass('is-active');
                     if ( $(".popup_wrapp").is(":visible") ) {
                         $(".popup_wrapp").fadeOut(300);
                     }
-                    if (data.success) {0
-
+                    if (data.success) {
                         $('#responsePopup').show()
                         $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
                     } else if (data.error) {
@@ -126,6 +130,7 @@ $(document).ready(function () {
 
     $("#review_rat li").on('click', function () {
         $("input[name='stars']").val($(this).data('index') + 1);
+        $('#review_rat + .error-block').hide()
     })
 
 

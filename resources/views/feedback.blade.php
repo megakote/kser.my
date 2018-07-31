@@ -52,6 +52,9 @@
                                     <input type="hidden" name="stars">
                                     {{ csrf_field() }}
                                     <div id="review_rat"></div>
+                                    <div class="error-block er_1">
+                                        <p>Поставьте Вашу оценку</p>
+                                    </div>
                                 </div>
                                 <div class="review_form clearfix">
                                     <div class="left">
@@ -63,7 +66,7 @@
                                             </div>
                                         </div>
                                         <div class="input_wrapp">
-                                            <i class="contact2_i"></i>
+                                            <i class="contact_i"></i>
                                             <input type="tel" name="contact" class="important contact_input" placeholder="Номер телефона или e-mail*">
                                             <div class="error-block er_1">
                                                 <p>Укажите верный номер телефона</p>
@@ -106,7 +109,7 @@
                                 </div>
                                 <h3>{{ $feedback_item->name }}</h3>
                                 <ul class="info">
-                                    <li><i class="data"></i>{{ $feedback_item->created_at->diffForHumans() }}</li>
+                                    <li><i class="data"></i>{{ date('d.m.y', strtotime($feedback_item->created_at )) }}</li>
                                     <li><i class="map-mark_2"></i>{{ $feedback_item->city }}</li>
                                 </ul>
                                 <div class="rate_2" id="rate_{{ $feedback_item->id }}" data-rate="{{ $feedback_item->stars }}"></div>
