@@ -64,7 +64,7 @@ class FormController extends Controller
         $user = User::find($data['id']);
         $text = '<?xml version="1.0" encoding="UTF-8"?>
                     <data>
-                      <site>ксер.рф</site>
+                      <site>Сервиспринт.рф</site>
                     </data>';
         $text = html_entity_decode($text, ENT_NOQUOTES, 'UTF-8');
         $xml = new SimpleXMLElement($text);
@@ -102,7 +102,7 @@ class FormController extends Controller
     {
         $text = '<?xml version="1.0" encoding="UTF-8"?>
                     <data>
-                      <site>ксер.рф</site>
+                      <site>Сервиспринт.рф</site>
                     </data>';
         $text = html_entity_decode($text, ENT_NOQUOTES, 'UTF-8');
         $xml = new SimpleXMLElement($text);
