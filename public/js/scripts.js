@@ -497,9 +497,8 @@ $(document).ready(function() {
         if(parentBlock.hasClass('tested')) {
             var a = false;
 
-            if( $(this).attr('type') == 'text' && $(this).hasClass("contact_input")) {
+            if( $(this).attr('type') == 'tel' && $(this).hasClass("contact_input")) {
                 a = validateContactInp(form_id);
-                console.log("input.contact_input")
 
             } else if($(this).attr('type') == 'email') {
 
@@ -540,7 +539,7 @@ $(document).ready(function() {
 function validateName(form_id) {
     var activeInput = $("#" + form_id + " input[type='text']");
     var name = activeInput.val(),
-        patt =  /^[а-яА-Яa-zA-Z\s\.]{2,30}$/;
+        patt =  /^[а-яА-Яa-zA-Z0-9\s\.]{2,30}$/;
     if (patt.test(name)  || 
         ( activeInput.val() == 0 && !activeInput.hasClass("important") ) ) {
         activeInput.removeClass('error_input');
