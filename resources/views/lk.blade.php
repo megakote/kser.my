@@ -239,7 +239,10 @@
                                                 <p>Заказано:</p>
                                             </div>
                                             <div class="cell-2">
-                                                @if($repair_works = $order->works)
+                                                @php($repair_works = $order->works)
+                                                @php($repair_worksz = $order->worksz)
+                                                @if($repair_works->count())
+
                                                     <div class="table-4">
                                                         <div class="table-row table-header">
                                                             <div class="cell cell-1">
@@ -272,7 +275,7 @@
                                                             </div>
                                                         @endforeach
                                                     </div>
-                                                @elseif ($repair_worksz = $order->worksz)
+                                                @elseif ($repair_worksz->count())
                                                     <div class="table-4 zap">
                                                         <div class="table-row table-header">
                                                             <div class="cell cell-1">
