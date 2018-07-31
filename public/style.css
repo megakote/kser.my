@@ -4157,6 +4157,10 @@ textarea:focus {
     background-color: #e9e9e9;
 }
 
+.table_4 .table-row:nth-child(even) {
+    background-color: inherit;
+}
+
 .table_2 .table-header .cell-1,
 .table_wrapp > .table-row > .cell-1 {
     width: 8%;
@@ -4291,9 +4295,7 @@ textarea:focus {
 .table_2 .table_wrapp:nth-child(even) > .table-row {
     background-color: #e9e9e9;
 }
-table-4 .table_wrapp:nth-child(even) > .table-row {
-    background-color: none;
-}
+
 .table_wrapp.active .link-2 {
     color: #f99202;
     text-decoration: none;
