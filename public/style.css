@@ -5982,7 +5982,7 @@ textarea.error_input {
 
 .sect-2-cabinet .col-right.align-right p,
 .sect-2-cabinet .col-right.align-right p a{
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
 }
 
@@ -6016,6 +6016,9 @@ textarea.error_input {
 
 .form_wrapp.about_us {
     max-width: 100%;
+    max-width: 100%;
+    float: none;
+    box-shadow: none;
 }
 
 .imsorry,

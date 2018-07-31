@@ -40,7 +40,7 @@
             </div>
 
             <div class="align-center">
-                <a href="#" class="yellow-pill yellow-pill_2">Написать руководителю</a>
+                <a href="#" class="yellow-pill yellow-pill_2 show_popup" data-popup-name="popup_12">Написать руководителю</a>
             </div>
 
             <div>
@@ -287,43 +287,6 @@
                 </div>
             </div>
 
-        </div>
-    </section>
-    <section class="sect-1_2">
-        <div class="form_wrapp about_us">
-            <form id="form2" method="post" action="" class="form">
-                <input type="hidden" name="type" value="1">
-                <input type="hidden" name="description" value="Consultation">
-                <h3>Написать руководителю</h3>
-                <div class="input_wrapp">
-                    <i class="user-2"></i>
-                    <input type="text" class="important" name="name" placeholder="Имя*" />
-                    <div class="error-block">
-                        <p>Введите ваше имя</p>
-                    </div>
-                </div>
-                <div class="input_wrapp">
-                    <i class="contact_i"></i>
-                    <input type="tel" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
-                    <div class="error-block er_1">
-                        <p>Укажите верный номер телефона</p>
-                    </div>
-                    <div class="error-block er_2">
-                        <p>Укажите верный эл.адрес</p>
-                    </div>
-                </div>
-                <div class="input_wrapp">
-                    <i class="doc"></i>
-                    <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
-                    <div class="error-block">
-                        <p>Введите ваше сообщение</p>
-                    </div>
-                </div>
-                <p>Мы свяжемся с Вами в течение 5 минут</p>
-                <div class="submit_wrapp">
-                    <button type="submit" class="blue-pill">Отправить</button>
-                </div>
-            </form>
         </div>
     </section>
     <!-- /Section 2 - About Page -->
