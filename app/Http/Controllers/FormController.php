@@ -148,7 +148,8 @@ class FormController extends Controller
 
     private function sendTo1C($xml, $type)
     {
-        Storage::delete(Storage::files('new_order'));
+        //Storage::delete(Storage::files('new_order'));
+        //Storage::delete(Storage::files('order_res'));
 
         $path = 'new_order/' . substr($xml->sn, -5) . '_' . $type . '.xml';
 

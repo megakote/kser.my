@@ -36,7 +36,7 @@
                         {{--<a href="#" class="orange_link" id="advanced_filter_btn"><i class="settings"></i>Расширенный поиск</a>--}}
                     </div>
                 </div>
-                <div class="sort_wrapp">
+                <div class="sort_wrapp" style="display: none;">
                     <form id="AdvancedSearch" action="/lk">
                         <div class="inner clearfix">
                             <div class="left">

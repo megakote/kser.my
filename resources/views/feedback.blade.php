@@ -46,7 +46,7 @@
                             @if(session('status'))
                                 {{ session('status') }}
                             @else
-                                <form method="POST" id="addFeedback">
+                             <form method="POST" id="addFeedback">
                                 <div class="rates_wrapp_2">
                                     <p>Поставьте оценку магазину</p>
                                     <input type="hidden" name="stars">
@@ -56,18 +56,30 @@
                                 <div class="review_form clearfix">
                                     <div class="left">
                                         <div class="input_wrapp">
-                                            <i class="user-2"></i>
-                                            <input type="text" placeholder="Имя*" name="name">
+                                            <i class="user-3"></i>
+                                            <input type="text" name="name" class="important" placeholder="Имя*">
+                                            <div class="error-block">
+                                                <p>Заполните это поле</p>
+                                            </div>
                                         </div>
                                         <div class="input_wrapp">
-                                            <i class="tel"></i>
-                                            <input type="tel" placeholder="Номер телефона или e-mail*" name="contact">
+                                            <i class="contact2_i"></i>
+                                            <input type="tel" name="contact" class="important contact_input" placeholder="Номер телефона или e-mail*">
+                                            <div class="error-block er_1">
+                                                <p>Укажите верный номер телефона</p>
+                                            </div>
+                                            <div class="error-block er_2">
+                                                <p>Укажите верный эл.адрес</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="right">
                                         <div class="input_wrapp">
-                                            <i class="doc"></i>
-                                            <textarea placeholder="Текст отзыва " name="body"></textarea>
+                                            <i class="doc-3"></i>
+                                            <textarea name="body" class="important" placeholder="Текст отзыва*"></textarea>
+                                            <div class="error-block">
+                                                <p>Введите ваше сообщение</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="submit_wrapp">

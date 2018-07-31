@@ -32,7 +32,7 @@
                             </div>
                             <div class="input_wrapp">
                                 <i class="contact_i"></i>
-                                <input type="text" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
+                                <input type="tel" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
                                 <div class="error-block er_1">
                                     <p>Укажите верный номер телефона</p>
                                 </div>
@@ -101,7 +101,7 @@
                                 <input type="hidden" name="description" value="Offer">
                                 <div class="input_wrapp">
                                     <i class="contact2_i"></i>
-                                    <input type="text" class="contact_input important" name="contact" placeholder="Номер телефона или e-mail" />
+                                    <input type="tel" class="contact_input important" name="contact" placeholder="Номер телефона или e-mail" />
                                     <div class="error-block er_1">
                                         <p>Укажите верный номер телефона</p>
                                     </div>

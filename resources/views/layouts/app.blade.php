@@ -209,8 +209,8 @@
                                 </div>
                             </div>
                             <div class="input_wrapp">
-                                <i class="phone-2"></i>
-                                <input type="text" name="contact" class="important contact_input" placeholder="Номер телефона или e-mail*">
+                                <i class="contact2_i"></i>
+                                <input type="tel" name="contact" class="important contact_input" placeholder="Номер телефона или e-mail*">
                                 <div class="error-block er_1">
                                     <p>Укажите верный номер телефона</p>
                                 </div>

@@ -15,11 +15,12 @@ $(document).ready(function () {
 
                 },
                 success: function(data) {
+                    clearForms()
                     if ( $(".popup_wrapp").is(":visible") ) {
                         $(".popup_wrapp").fadeOut(300);
                     }
                     if (data.success) {
-                        clearForms()
+
                         $('#responsePopup').show()
                         $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                     } else if (data.error) {
@@ -47,11 +48,11 @@ $(document).ready(function () {
 
                 },
                 success: function(data) {
+                    clearForms()
                     if ( $(".popup_wrapp").is(":visible") ) {
                         $(".popup_wrapp").fadeOut(300);
                     }
                     if (data.success) {
-                        clearForms()
                         $('#responsePopup').show()
                         $('#responseText').html("Заявка зарегистрирована под номером №" + data.success + ". Сотрудник компании свяжется с Вами в течении 5-10 минут. Спасибо за Ваше обращение!")
                     } else if (data.error) {
@@ -77,12 +78,13 @@ $(document).ready(function () {
                 beforeSend: function(){
                 },
                 success: function(data) {
+                    clearForms()
+                    $("input[name='stars']").val('');
                     if ( $(".popup_wrapp").is(":visible") ) {
                         $(".popup_wrapp").fadeOut(300);
                     }
                     if (data.success) {0
-                        clearForms()
-                        $("input[name='stars']").val('');
+
                         $('#responsePopup').show()
                         $('#responseText').html("Заявка на размещение отзыва зарегистрирована под номером №" + data.success + ". После обработки модератором отзыв появится на сайте. Спасибо за Ваше обращение!")
                     } else if (data.error) {
@@ -190,6 +192,7 @@ $(document).ready(function () {
 });
 
 $(window).on('load', function () {
+    $('.sort_wrapp').show();
     if (!$.cookie('city')){
         $.ajax({
             type: "POST",
