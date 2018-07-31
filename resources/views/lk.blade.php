@@ -238,38 +238,121 @@
                                                 <p>Заказано:</p>
                                             </div>
                                             <div class="cell-2">
-                                                <div class="table-4">
-                                                    <div class="table-row table-header">
-                                                        <div class="cell cell-1">
-                                                            <p>Наименование работ</p>
-                                                        </div>
-                                                        <div class="cell cell-2">
-                                                            <p>Количество</p>
-                                                        </div>
-                                                        <div class="cell cell-3">
-                                                            <p>Цена</p>
-                                                        </div>
-                                                        <div class="cell cell-4">
-                                                            <p>Сумма</p>
-                                                        </div>
-                                                    </div>
-                                                    @foreach($order->works as $work)
-                                                        <div class="table-row">
+                                                @if($repair_works = $order->works)
+                                                    <div class="table-4">
+                                                        <div class="table-row table-header">
                                                             <div class="cell cell-1">
-                                                                <p>{{ $work->name }}</p>
+                                                                <p>Наименование работ</p>
                                                             </div>
                                                             <div class="cell cell-2">
-                                                                <p>{{ $work->kol }}</p>
+                                                                <p>Количество</p>
                                                             </div>
                                                             <div class="cell cell-3">
-                                                                <p>{{ $work->cena }}</p>
+                                                                <p>Цена</p>
                                                             </div>
                                                             <div class="cell cell-4">
-                                                                <p>{{ $work->summ }}</p>
+                                                                <p>Сумма</p>
                                                             </div>
                                                         </div>
-                                                    @endforeach
-                                                </div>
+                                                        @foreach($repair_works as $work)
+                                                            <div class="table-row">
+                                                                <div class="cell cell-1">
+                                                                    <p>{{ $work->name }}</p>
+                                                                </div>
+                                                                <div class="cell cell-2">
+                                                                    <p>{{ $work->kol }}</p>
+                                                                </div>
+                                                                <div class="cell cell-3">
+                                                                    <p>{{ $work->cena }}</p>
+                                                                </div>
+                                                                <div class="cell cell-4">
+                                                                    <p>{{ $work->summ }}</p>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                @elseif ($repair_worksz = $order->worksz)
+                                                    <div class="table-4 zap">
+                                                        <div class="table-row table-header">
+                                                            <div class="cell cell-1">
+                                                                <p>№</p>
+                                                            </div>
+                                                            <div class="cell cell-2">
+                                                                <p>Вид работ</p>
+                                                            </div>
+                                                            <div class="cell cell-3">
+                                                                <p>Заправка</p>
+                                                            </div>
+                                                            <div class="cell cell-4">
+                                                                <p>Утиль</p>
+                                                            </div>
+                                                            <div class="cell cell-5">
+                                                                <p>Примечание</p>
+                                                            </div>
+                                                            <div class="cell cell-6">
+                                                                <p>Испр. <br>брака</p>
+                                                            </div>
+                                                            <div class="cell cell-7">
+                                                                <p>Нов. <br>вал</p>
+                                                            </div>
+                                                            <div class="cell cell-8">
+                                                                <p>Вал</p>
+                                                            </div>
+                                                            <div class="cell cell-9">
+                                                                <p>Чип</p>
+                                                            </div>
+                                                            <div class="cell cell-10">
+                                                                <p>Рез. <br>вал</p>
+                                                            </div>
+                                                            <div class="cell cell-11">
+                                                                <p>Магн. <br>вал</p>
+                                                            </div>
+                                                            <div class="cell cell-12">
+                                                                <p>Заправщик</p>
+                                                            </div>
+                                                        </div>
+                                                        @foreach($repair_worksz as $work)
+                                                            <div class="table-row">
+                                                                <div class="cell cell-1">
+                                                                    <p>{{ $work->n }}</p>
+                                                                </div>
+                                                                <div class="cell cell-2">
+                                                                    <p>{{ $work->t }}</p>
+                                                                </div>
+                                                                <div class="cell cell-3">
+                                                                    <p>{{ $work->z }}</p>
+                                                                </div>
+                                                                <div class="cell cell-4">
+                                                                    <p>{{ $work->u }}</p>
+                                                                </div>
+                                                                <div class="cell cell-5">
+                                                                    <p>{{ $work->p }}</p>
+                                                                </div>
+                                                                <div class="cell cell-6">
+                                                                    <p>{{ $work->i }}</p>
+                                                                </div>
+                                                                <div class="cell cell-7">
+                                                                    <p>{{ $work->new }}</p>
+                                                                </div>
+                                                                <div class="cell cell-8">
+                                                                    <p>{{ $work->v }}</p>
+                                                                </div>
+                                                                <div class="cell cell-9">
+                                                                    <p>{{ $work->c }}</p>
+                                                                </div>
+                                                                <div class="cell cell-10">
+                                                                    <p>{{ $work->r }}</p>
+                                                                </div>
+                                                                <div class="cell cell-11">
+                                                                    <p>{{ $work->m }}</p>
+                                                                </div>
+                                                                <div class="cell cell-12">
+                                                                    <p>{{ $work->zm }}</p>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="table-3">

@@ -12,6 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use App\Config;
 use App\Models\Order;
 use App\Models\RepairWorks;
+use App\Models\RepairWorksZ;
 
 use Storage;
 use SimpleXMLElement;
@@ -62,7 +63,7 @@ class GetOrders implements ShouldQueue
         $order_xml = new SimpleXMLElement($xml);
         foreach ($order_xml->order as $order) {
             $works = $order->items_zz;
-            $works3 = $order->items_zapravka;
+            $worksZ = $order->items_zapravka;
 
             $arr = $this->makeArray($order);
             $order = Order::firstOrNew(["nomer" => $arr['nomer']]);
@@ -70,6 +71,9 @@ class GetOrders implements ShouldQueue
 
             if ($works->item){
                 $this->addJobs($works, $order);
+            }
+            if ($worksZ->item){
+                $this->addJobs($worksZ, $order);
             }
 
         }
@@ -103,6 +107,39 @@ class GetOrders implements ShouldQueue
             $work = new RepairWorks();
             $work->order_id = $order->id;
             $work->fill($item)->save();
+        }
+    }
+
+    private function addJobsZ($works, $order)
+    {
+        // Ахалай махалай
+        $json = json_encode($works);
+        $array = json_decode($json,TRUE);
+
+        $works = [];
+        if(!isset($array['item'][0])){
+            $works[0] = $array['item'];
+        } else {
+            $works = $array['item'];
+        }
+
+        foreach ($works as $item) {
+            $work = new RepairWorksZ();
+            $work->order_id = $order->id;
+            $work->fill([
+                'n' => $item->n1,
+                't' => $item->n2,
+                'z' => $item->n3,
+                'u' => $item->n4,
+                'p' => $item->n5,
+                'i' => $item->n6,
+                'new' => $item->n7,
+                'v' => $item->n8,
+                'c' => $item->n9,
+                'r' => $item->n10,
+                'm' => $item->n11,
+                'zm' => $item->n12,
+            ])->save();
         }
     }
 }

@@ -125,7 +125,7 @@
 
     <!-- Section 4 - Main Page -->
 
-    <section class="sect-4 grey-bg">
+    <section class="sect-4 grey-bg prices_sect">
 
         <img class="bg_shape bg_shape_7" src="img/shape_2.png" alt="" />
         <img class="bg_shape bg_shape_8" src="img/shape_2.png" alt="" />
@@ -260,7 +260,8 @@
     $(window).on('load', function () {
         var get_index = getUrlParameter('tt');
        if (get_index){
-           $('html, body').animate({ scrollTop: $('.sect-4 .tabs').offset().top }, 500);
+           // $('html, body').animate({ scrollTop: $('.sect-4 .tabs').offset().top }, 500);
+           $('html, body').animate({ scrollTop: $('.prices_sect').offset().top }, 500);
            var $set = $('.sect-4 .tabs .tabs-links label');
 
            $.each($set, function(index, value){

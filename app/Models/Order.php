@@ -43,4 +43,8 @@ class Order extends Model
     {
         return $this->hasMany(RepairWorks::class);
     }
+    public function worksz()
+    {
+        return $this->hasMany(RepairWorksZ::class);
+    }
 }

@@ -4462,7 +4462,7 @@ p .upload {
     width: 100%;
     max-width: 820px;
     height: auto;
-    padding: 7px 10px 7px 0px;
+    padding: 0px;
     border: none;
     font-size: 14px;
     line-height: 20px;
@@ -6040,4 +6040,41 @@ textarea.error_input {
 
 [data-popup="popup_12"] .popup{
     max-width: 490px;
+}
+
+.table-4.zap > .table-row > .cell-1{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-2{
+    width: 11%;
+}
+.table-4.zap > .table-row > .cell-3{
+    width: 8%;
+}
+.table-4.zap > .table-row > .cell-4{
+    width: 8%;
+}
+.table-4.zap > .table-row > .cell-5{
+    width: 12%;
+}
+.table-4.zap > .table-row > .cell-6{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-7{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-8{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-9{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-10{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-11{
+    width: 7%;
+}
+.table-4.zap > .table-row > .cell-12{
+    width: 12%;
 }
