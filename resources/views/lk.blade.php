@@ -155,7 +155,7 @@
                                 <p>ФИО <br> подавшего</p>
                             </div>
                             <div class="cell cell-10">
-                                <p>Доп. <br> оффис</p>
+                                <p>Доп. <br> офис</p>
                             </div>
                             <div class="cell cell-11">
                                 <p class="tab-novisible">Доп. данные</p>
