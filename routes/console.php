@@ -18,6 +18,6 @@ Artisan::command('inspire', function () {
 })->describe('Display an inspiring quote');
 
 Artisan::command('pars', function () {
-//    dispatch(new App\Jobs\Parsers\GetUsers());
+    dispatch(new App\Jobs\Parsers\GetUsers());
     dispatch(new App\Jobs\Parsers\GetOrders());
 });
