@@ -219,4 +219,6 @@ $(window).on('load', function () {
 function clearForms() {
     $("form input").not('[name="type"]').not('[name="description"]').val('')
     $("form textarea").val('')
+    $("form").removeClass('tested')
+
 }

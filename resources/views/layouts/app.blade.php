@@ -395,7 +395,7 @@
                         </div>
                     </div>
                     <div class="input_wrapp">
-                        <i class="tel"></i>
+                        <i class="contact_i"></i>
                         <input type="tel" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
                         <div class="error-block er_1">
                             <p>Укажите верный номер телефона</p>
