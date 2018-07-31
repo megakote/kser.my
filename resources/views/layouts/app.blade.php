@@ -53,8 +53,7 @@
                         </div>
                     @else
                         {{--<a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /--}}
-                        <a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход /
-                            регистрация</a>
+                        <a href="#" class="grey-pill show_popup" data-popup-name="popup_4"><i class="user"></i>Вход</a>
                     @endauth
                     <a href="#" class="blue-pill show_popup" data-popup-name="popup_13">Узнать статус ремонта</a>
                 </div>
