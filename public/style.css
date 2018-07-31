@@ -4457,7 +4457,7 @@ p .upload {
     display: block;
     width: 100%;
     max-width: 820px;
-    height: 80px;
+    height: auto;
     padding: 7px 10px 7px 17px;
     border: none;
     font-size: 14px;
