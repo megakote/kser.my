@@ -18,10 +18,10 @@ class FeedbackController extends Controller
         $data = [];
         $data['feedback'] = Feedback::paginate(15);
         $data['all'] = Feedback::all()->count();
-        $data['arithmetic'] = Feedback::all()->avg('stars');
+        $data['arithmetic'] = round(Feedback::all()->avg('stars'), 2);
         $stars = [];
         foreach (Feedback::all()->groupBy('stars') as $star => $collection) {
-            $stars[$star] = ['count' => $collection->count(), 'percent' => ($collection->count() * 100) / $data['all'] ];
+            $stars[$star] = ['count' => $collection->count(), 'percent' => round(($collection->count() * 100) / $data['all']) ];
 
         }
         krsort($stars);
