@@ -73,7 +73,7 @@ class GetOrders implements ShouldQueue
                 $this->addJobs($works, $order);
             }
             if ($worksZ->item){
-                $this->addJobs($worksZ, $order);
+                $this->addJobsZ($worksZ, $order);
             }
 
         }
@@ -127,18 +127,18 @@ class GetOrders implements ShouldQueue
             $work = new RepairWorksZ();
             $work->order_id = $order->id;
             $work->fill([
-                'n' => $item->n1,
-                't' => $item->n2,
-                'z' => $item->n3,
-                'u' => $item->n4,
-                'p' => $item->n5,
-                'i' => $item->n6,
-                'new' => $item->n7,
-                'v' => $item->n8,
-                'c' => $item->n9,
-                'r' => $item->n10,
-                'm' => $item->n11,
-                'zm' => $item->n12,
+                'n' => (is_array($item['n1'])) ? '' : $item['n1'],
+                't' => (is_array($item['n2'])) ? '' : $item['n2'],
+                'z' => (is_array($item['n3'])) ? '' : $item['n3'],
+                'u' => (is_array($item['n4'])) ? '' : $item['n4'],
+                'p' => (is_array($item['n5'])) ? '' : $item['n5'],
+                'i' => (is_array($item['n6'])) ? '' : $item['n6'],
+                'new' => (is_array($item['n7'])) ? '' : $item['n7'],
+                'v' => (is_array($item['n8'])) ? '' : $item['n8'],
+                'c' => (is_array($item['n9'])) ? '' : $item['n9'],
+                'r' => (is_array($item['n10'])) ? '' : $item['n10'],
+                'm' => (is_array($item['n11'])) ? '' : $item['n11'],
+                'zm' => (is_array($item['n12'])) ? '' : $item['n12'],
             ])->save();
         }
     }

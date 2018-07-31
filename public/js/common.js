@@ -150,6 +150,11 @@ $(document).ready(function () {
         $('textarea[name="address"]').val(addr)
     })
 
+    $('#clear_btn').on('click', function () {
+        window.location.replace(window.location.origin + '/lk')
+        return false;
+    })
+
     // $('#AdvancedSearch select').on('change', function () {
     //     $('#AdvancedSearch').submit();
     // })
@@ -230,5 +235,4 @@ function clearForms() {
     $("form input").not('[name="type"]').not('[name="description"]').val('')
     $("form textarea").val('')
     $("form").removeClass('tested')
-
 }

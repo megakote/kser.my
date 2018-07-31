@@ -122,6 +122,7 @@
                             </div>
                         </div>
                         <button type="submit" class="orange-pill submit_btn">Применить</button>
+                        <button type="submit" id="clear_btn" class="grey-pill clear_btn">Очистить</button>
                     </form>
                 </div>
                 <div class="scroll_x" style="display: none;">

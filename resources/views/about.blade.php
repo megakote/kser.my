@@ -17,8 +17,8 @@
 
             <div class="breadcrumbs_wrapp">
                 <ul class="breadcrumbs">
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">О компании</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="#">О Нас</a></li>
                 </ul>
             </div>
 

@@ -6078,3 +6078,13 @@ textarea.error_input {
 .table-4.zap > .table-row > .cell-12{
     width: 12%;
 }
+
+.clear_btn {
+    width: 15%;
+    min-width: 130px;
+    padding: 7px 2%;
+    position: absolute;
+    border: 1px solid #FFF;
+    top: 73px;
+    right: 2%;
+}

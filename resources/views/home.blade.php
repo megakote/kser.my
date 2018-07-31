@@ -258,7 +258,7 @@
     };
 
     $(window).on('load', function () {
-        var get_index = getUrlParameter('tt');
+       var get_index = getUrlParameter('tt');
        if (get_index){
            // $('html, body').animate({ scrollTop: $('.sect-4 .tabs').offset().top }, 500);
            $('html, body').animate({ scrollTop: $('.prices_sect').offset().top }, 500);
