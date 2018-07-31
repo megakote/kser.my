@@ -6080,11 +6080,13 @@ textarea.error_input {
 }
 
 .clear_btn {
-    width: 15%;
-    min-width: 130px;
-    padding: 7px 2%;
     position: absolute;
-    border: 1px solid #FFF;
-    top: 73px;
-    right: 2%;
+    bottom: -33px;
+    padding: 5px 0;
+    right: 0px;
+
+}
+
+.sort_wrapp {
+    margin-bottom: 40px;
 }

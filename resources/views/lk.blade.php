@@ -122,8 +122,10 @@
                             </div>
                         </div>
                         <button type="submit" class="orange-pill submit_btn">Применить</button>
-                        <button type="submit" id="clear_btn" class="grey-pill clear_btn">Очистить</button>
+                        
                     </form>
+                    <a href="/lk" class="clear_btn">Очистить параметры поиска</a>
+                    {{--<button type="submit" id="clear_btn" class="grey-pill clear_btn">Очистить</button>--}}
                 </div>
                 <div class="scroll_x" style="display: none;">
 
