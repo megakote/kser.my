@@ -132,6 +132,9 @@
                             <div class="cell cell-2">
                                 <p>Дата</p>
                             </div>
+                            <div class="cell cell-10">
+                                <p>Доп. <br> офис</p>
+                            </div>
                             <div class="cell cell-3">
                                 <p>Оплата</p>
                             </div>
@@ -154,9 +157,6 @@
                             <div class="cell cell-9">
                                 <p>ФИО <br> подавшего</p>
                             </div>
-                            <div class="cell cell-10">
-                                <p>Доп. <br> офис</p>
-                            </div>
                             <div class="cell cell-11">
                                 <p class="tab-novisible">Доп. данные</p>
                             </div>
@@ -170,6 +170,9 @@
                                     </div>
                                     <div class="cell cell-2">
                                         <p>{{ date('d.m.y', strtotime($order->time_cr )) }}</p>
+                                    </div>
+                                    <div class="cell cell-10">
+                                        <p>{{ $order->name_dop }}</p>
                                     </div>
                                     <div class="cell cell-3">
                                         <div class="checkbox-3">
@@ -194,9 +197,6 @@
                                     </div>
                                     <div class="cell cell-9">
                                         <p>{{ $order->name_delivery }}</p>
-                                    </div>
-                                    <div class="cell cell-10">
-                                        <p>{{ $order->name_dop }}</p>
                                     </div>
                                     <div class="cell cell-11">
                                         <p class="tab-novisible"><a href="#" class="link-2 slide_btn">Подробнее</a></p>
