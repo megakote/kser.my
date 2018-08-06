@@ -81,6 +81,7 @@ class Articles extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
+            AdminFormElement::image('img', 'Изображение')->required(),
             AdminFormElement::text('title', 'Заголовок')->required()->unique(),
             AdminFormElement::text('description', 'Описание')->required(),
             ($id) ? AdminFormElement::text('slug', 'Короткий URL')->unique() : '',

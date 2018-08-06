@@ -205,8 +205,10 @@ $(document).ready(function () {
 $(window).on('load', function () {
     $('.sort_wrapp').show();
     $('.sort_wrapp + .scroll_x').show();
-
-    $('.table_orders_body').scrollTop($('.table_orders_body').get(0).scrollHeight);
+    
+    if ($('.table_orders_body').length) {
+        $('.table_orders_body').scrollTop($('.table_orders_body').get(0).scrollHeight);
+    }
 
     $("#tab_2_1").prop("checked", true);
     if (!$.cookie('city')){

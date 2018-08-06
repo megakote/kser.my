@@ -20,7 +20,7 @@
 
     <script type="text/javascript" src="{{ asset('vendors/js/jquery.js') }}"></script>
 
-    <link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon.ico">
 </head>
 <body>
 <div class="wrapper">

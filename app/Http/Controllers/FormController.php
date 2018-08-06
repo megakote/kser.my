@@ -142,7 +142,7 @@ class FormController extends Controller
 
 
         $xml->order = " Имя: $form->name \n Звезд: $form->stars \n Текст отзыва: $form->body \n Ссылка на отзыв: http://www.xn----ctbinb4ameeder.xn--p1ai/admin/feedback/$form->id/edit";
-
+        $form->delete();
         return $this->sendTo1C($xml, 9);
     }
 

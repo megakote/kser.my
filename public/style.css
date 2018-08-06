@@ -2319,6 +2319,7 @@ textarea:focus {
     position: absolute;
     top: 100%;
     right: 10000px;
+    z-index: 10;
 }
 
 

@@ -194,7 +194,7 @@
                             </div>
                             <h3>{{ $feedback_item->name }}</h3>
                             <ul class="info">
-                                <li><i class="data"></i>{{ $feedback_item->created_at->diffForHumans() }}</li>
+                                <li><i class="data"></i>{{ $feedback_item->created_at->format('d.m.y') }}</li>
                                 <li><i class="map-mark_2"></i>{{ $feedback_item->city }}</li>
                             </ul>
                             <div class="descript">
