@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contacts;
-use App\Models\Feedback;
-use App\Models\Form;
+use App\Models\AboutPageSection;
+use App\Models\AboutPageAchievement;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -20,6 +20,8 @@ class PagesController extends Controller
     public function about()
     {
         $data = [];
+        $data['sections'] = AboutPageSection::all();
+        $data['achievements'] = AboutPageAchievement::all();
         return view('about', $data);
     }
 

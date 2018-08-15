@@ -97,7 +97,7 @@
             <div class="col-3 left">
                 <div class="append-elem" data-append-desktop-elem="3" data-min-screen="768">
                     <a href="tel:88001006550" class="tel-link">8(800) 100-65-50</a><br/>
-                    <a href="tel:84997391515" class="tel-link">8(499) 739-15-15</a>
+                    <a href="tel:84997531532" class="tel-link">8(499) 753-15-32</a>
                     <a href="#" class="transparent-pill show_popup" data-popup-name="popup_3">Заказать звонок</a>
                 </div>
             </div>
