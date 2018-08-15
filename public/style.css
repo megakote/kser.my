@@ -2166,7 +2166,7 @@ textarea:focus {
 }
 
 .thumb-1:hover {
-    z-index: 2;
+    z-index: 50;
 }
 
 .thumb-1 .icon-box {
