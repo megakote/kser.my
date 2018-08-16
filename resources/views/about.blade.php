@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="right">
-                    {{ $sections[0]->body }}
+                    {!! $sections[0]->body !!}
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
 
             <div>
 
-                {{ $sections[1]->body }}
+                {!! $sections[1]->body  !!}
 
             </div>
 
@@ -49,9 +49,9 @@
                 <a href="/Servis_print_presentation_4.pdf" download class="blue-pill blue-pill_3"><i class="doc-3"></i>Смотреть презентацию</a>
             </div>
 
-            {{ $sections[2]->body }}
+            {!!  $sections[2]->body  !!}
 
-            {{ $sections[3]->body }}
+            {!! $sections[3]->body  !!}
 
         </div>
 
