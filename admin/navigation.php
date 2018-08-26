@@ -41,6 +41,12 @@ $navigation->setFromArray([
         'url'   => '#',
         'id'    => 'articles',
     ],
+    [
+        'title' => 'О нас',
+        'icon'  => 'fa fa-exclamation-circle',
+        'url'   => '#',
+        'id'    => 'about',
+    ],
 
     // Examples
     // [

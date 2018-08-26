@@ -10,10 +10,10 @@ use AdminForm;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
-use App\Models\AboutPageSection;
+use App\Models\AboutPageAchievement;
 
 
-class AboutPageSections extends Section implements Initializable
+class AboutPageAchievements extends Section implements Initializable
 {
     /**
      * @var bool
@@ -39,9 +39,9 @@ class AboutPageSections extends Section implements Initializable
         app()->booted(function() {
             $page = \AdminNavigation::getPages()->findById('about');
             $page->setPages(function (PageInterface $subpage) {
-                $subpage->addPage(new Page(AboutPageSection::class))
+                $subpage->addPage(new Page(AboutPageAchievement::class))
                     ->setIcon('fa fa-building')
-                    ->setTitle('Куски О Нас');
+                    ->setTitle('Награды');
             });
         });
 
@@ -61,7 +61,8 @@ class AboutPageSections extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::link('title', 'Заголовок')
+            AdminColumn::text('title', 'Заголовок'),
+            AdminColumn::image('image', 'Картинка')
         );
 
         return $display;
@@ -78,7 +79,7 @@ class AboutPageSections extends Section implements Initializable
         $display = AdminForm::panel();
         $display->addBody([
             AdminFormElement::text('title', 'Заголовок')->required()->unique(),
-            AdminFormElement::wysiwyg('body', 'Текст')->required()
+            AdminFormElement::image('image', 'Картинка')->required()
         ]);
 
         return $display;
