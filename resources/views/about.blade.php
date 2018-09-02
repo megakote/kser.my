@@ -27,7 +27,7 @@
             <div class="article-3 clearfix">
                 <div class="left">
                     <div class="img-box">
-                        <img src="/img/about.jpg" alt="">
+                        <img src="{{ \App\Config::where('name', 'about_page_photo')->first()->value }}" alt="">
                     </div>
                 </div>
                 <div class="right">

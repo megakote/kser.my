@@ -11,10 +11,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Page as PageModel;
+use App\Config as PageModel;
 
 
-class Pages extends Section implements Initializable
+class Configs extends Section implements Initializable
 {
     /**
      * @var bool
@@ -49,7 +49,7 @@ class Pages extends Section implements Initializable
         $this->addToNavigation($priority = 500, function() {
             return PageModel::count();
         })->setIcon('fa fa-building');
-        $this->title = 'Страницы';
+        $this->title = 'Настройки';
     }
 
 
@@ -62,9 +62,8 @@ class Pages extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
         ->setColumns(
             AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::text('slug', 'Адрес'),
-            AdminColumn::link('title', 'Заголовок'),
-            AdminColumn::text('description', 'Описание')
+            AdminColumn::text('name', 'Заголовок'),
+            AdminColumn::text('value', 'Значение')
         );
 
         return $display;
@@ -80,10 +79,8 @@ class Pages extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::text('title', 'Заголовок')->required()->unique(),
-            ($id) ? AdminFormElement::text('slug', 'Короткий URL') : '',
-            AdminFormElement::text('description', 'Описание')->required(),
-            AdminFormElement::wysiwyg('body', 'Текст')->required()
+            AdminFormElement::text('name', 'Заголовок')->required()->unique(),
+            AdminFormElement::text('value', 'Описание')->required()
         ]);
 
         return $display;

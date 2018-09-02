@@ -233,6 +233,7 @@
                     </div>
                     <div class="submit_wrapp align-center">
                         <button type="submit" class="yellow-pill">Отправить</button>
+                        <a href="/page/politika-konfidencialnosti" class="private_politic">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</a>
                     </div>
                 </form>
             </div>
@@ -356,6 +357,7 @@
                         </div>
                         <div class="submit_wrapp">
                             <button type="submit" class="blue-pill">Отправить</button>
+                            <a href="/page/politika-konfidencialnosti" class="private_politic">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</a>
                         </div>
                     </form>
                 </div>
@@ -457,6 +459,7 @@
                     </div>
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Отправить</button>
+                        <a href="/page/politika-konfidencialnosti" class="private_politic">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</a>
                     </div>
                 </form>
             </div>
@@ -694,6 +697,7 @@
                     </div>
                     <div class="submit_wrapp">
                         <button type="submit" class="blue-pill">Подать заявку</button>
+                        <a href="/page/politika-konfidencialnosti" class="private_politic">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</a>
                     </div>
                 </form>
             </div>

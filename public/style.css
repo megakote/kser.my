@@ -5112,6 +5112,7 @@ label.active + .contacts_thumb {
 
 .sertificate .img-box img {
     display: block;
+    width: 100%;
     min-width: 100%;
     min-height: 100%;
     position: relative;
@@ -5123,6 +5124,7 @@ label.active + .contacts_thumb {
 }
 
 .sertificate p {
+    min-height: 40px;
     font-size: 14px;
     line-height: 20px;
     color: #000000;

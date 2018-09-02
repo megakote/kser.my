@@ -11,10 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Config::create([
+            'name' => 'about_page_photo',
+            'value' => '/img/about.jpg'
+        ]);
+
 //        $this->call(MenuSeeder::class);
 //        $this->call(UserSeeder::class);
 //        $this->call(PagesSeeder::class);
-        $this->call(AboutPageSeeder::class);
+//        $this->call(AboutPageSeeder::class);
 
 //        factory(App\Models\News::class, 50)->create();
 //        factory(App\Models\MainPageClient::class, 20)->create();
