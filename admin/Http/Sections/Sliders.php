@@ -78,7 +78,7 @@ class Sliders extends Section implements Initializable
         $display->addBody([
             AdminFormElement::image('image', 'Картинка')->required(),
             AdminFormElement::text('title', 'Заголовок')->required(),
-            AdminFormElement::text('description', 'Описание')
+            AdminFormElement::wysiwyg('description', 'Описание')
         ]);
 
         return $display;

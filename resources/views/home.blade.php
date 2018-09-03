@@ -4,35 +4,46 @@
     <!-- Section 1 - Promo Section - Main Page -->
 
     <section class="promo-section">
-        <div class="row">
-            <div class="promo-article clearfix">
-                <div class="left">
-                    <div class="promo-slider">
-                        @foreach($slider as $slide)
-                            <div class="slide">
-                                <h3>{{ $slide->title }}</h3>
-                                <p>{{ $slide->description }}</p>
-                                <img src="{{ $slide->image }}" alt="{{ $slide->title }}" />
+        <div class="promo-article clearfix">
+            <div class="promo-slider">
+                @foreach($slider as $slide)
+                    <div class="slide" style="background-image:url({{ $slide->image }});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="slide_content">
+                                        <h3>{{ $slide->title }}</h3>
+                                        <p>{!! $slide->description  !!} </p>
+                                    </div>
+                                </div>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
-                </div>
-                <div class="right clearfix">
+                @endforeach
+            </div>
+
+        </div>
+            <div class="row">
+                <div class="right promo-article-right">
                     <div class="form_wrapp">
                         <form id="form2" method="post" action="" class="form">
                             <input type="hidden" name="type" value="1">
                             <input type="hidden" name="description" value="Consultation">
-                            <h3>Оформите заявку онлайн и получите скидку 5% на работу мастера</h3>
+                            <h3>Оформите заявку онлайн и получите скидку 5% на работу
+                                мастера</h3>
                             <div class="input_wrapp">
                                 <i class="user-2"></i>
-                                <input type="text" class="important" name="name" placeholder="Имя*" />
+                                <input type="text" class="important" name="name"
+                                       placeholder="Имя*"/>
                                 <div class="error-block">
                                     <p>Введите ваше имя</p>
                                 </div>
                             </div>
                             <div class="input_wrapp">
                                 <i class="contact_i"></i>
-                                <input type="tel" name="contact" class="contact_input important" placeholder="Номер телефона или e-mail*" />
+                                <input type="tel" name="contact"
+                                       class="contact_input important"
+                                       placeholder="Номер телефона или e-mail*"/>
                                 <div class="error-block er_1">
                                     <p>Укажите верный номер телефона</p>
                                 </div>
@@ -42,7 +53,8 @@
                             </div>
                             <div class="input_wrapp">
                                 <i class="doc"></i>
-                                <textarea name="comment" class="important" placeholder="Текст вопроса "></textarea>
+                                <textarea name="comment" class="important"
+                                          placeholder="Текст вопроса "></textarea>
                                 <div class="error-block">
                                     <p>Введите ваше сообщение</p>
                                 </div>
@@ -55,7 +67,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- /Section 1 - Promo Section - Main Page -->

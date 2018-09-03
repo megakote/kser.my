@@ -428,6 +428,7 @@ textarea:focus {
     min-width: 300px;
     margin: 0 auto;
     padding: 0;
+    position: relative;
 }
 
 .offset-ziro {
@@ -6097,4 +6098,23 @@ textarea.error_input {
 
 .sort_wrapp {
     margin-bottom: 40px;
+}
+
+.promo-article-right {
+    position: absolute;
+    width: 370px;
+    padding: 0;
+    bottom: 15px;
+    right: 0;
+}
+
+.slick-initialized .slick-slide {
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.promo-slider .slick-dots {
+    text-align: center;
+    padding-right: 50%;
 }
